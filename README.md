@@ -10,4 +10,4 @@ Each build lives in its own folder, named by build ID. Every prototype runs offl
 
 | ID | Build | Status |
 |---|---|---|
-| BC-01 | [Quarterly top 5 risk board update](BC-01_top5-risk-board-update/) | Requirements ready |
+| BC-01 | [Quarterly top 5 risk board update](BC-01_top5-risk-board-update/) | Prototype built |

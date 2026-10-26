@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BC-01 thumbnail</title>
+<style>
+@font-face { font-family: "Space Grotesk"; font-weight: 500; src: url("../assets/fonts/space-grotesk-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Space Grotesk"; font-weight: 700; src: url("../assets/fonts/space-grotesk-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Mono"; font-weight: 400; src: url("../assets/fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Mono"; font-weight: 500; src: url("../assets/fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2"); }
+html, body { margin: 0; }
+.card { width: 1280px; height: 720px; background: #F4F1EA; color: #1A1A1A; position: relative; overflow: hidden; font-family: "Space Grotesk", sans-serif; }
+.thread { position: absolute; left: 0; right: 0; top: 96px; height: 3px; background: #FF5A1F; }
+.meta { position: absolute; left: 72px; top: 44px; font: 500 20px "IBM Plex Mono", monospace; letter-spacing: .04em; }
+.meta span { color: #FF5A1F; }
+.title { position: absolute; left: 72px; top: 150px; width: 560px; font-weight: 700; font-size: 68px; line-height: 1.02; letter-spacing: -.025em; }
+.title em { font-style: normal; color: #FF5A1F; }
+.sub { position: absolute; left: 72px; top: 420px; width: 520px; font-weight: 500; font-size: 26px; line-height: 1.35; color: #3a3833; }
+.chips { position: absolute; left: 72px; top: 540px; display: flex; gap: 10px; }
+.chip { border: 2px solid #1A1A1A; border-radius: 999px; padding: 8px 16px; font: 500 17px "IBM Plex Mono", monospace; }
+.chip.on { background: #1A1A1A; color: #F4F1EA; }
+.chart { position: absolute; right: 48px; top: 140px; width: 600px; height: 470px; }
+.foot { position: absolute; left: 0; right: 0; bottom: 0; background: #1A1A1A; color: #F4F1EA; font: 400 15px "IBM Plex Mono", monospace; padding: 14px 72px; display: flex; justify-content: space-between; }
+.foot b { font-weight: 500; color: #FF5A1F; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="meta">BC-01 <span>·</span> CYBERSECURITY BUILDER <span>·</span> BOARD DASHBOARD</div>
+  <div class="thread"></div>
+  <div class="title">Top 5 cyber risks, <em>every quarter</em>, one view.</div>
+  <div class="sub">See this quarter, last quarter, last year, and five years of change, tied to the business roadmap.</div>
+  <div class="chips"><span class="chip on">This quarter</span><span class="chip">vs last year</span><span class="chip">Five-year story</span></div>
+  <svg class="chart" id="chart" viewBox="0 0 600 470"></svg>
+  <div class="foot"><span><b>Built by Aby Rao</b> · github.com/abyrao/cybersecuritybuilder</span><span>Demo only · fictional data</span></div>
+</div>
+<script src="../js/data.js"></script>
+<script>
+(function () {
+  const D = window.BC01, NS = "http://www.w3.org/2000/svg", svg = document.getElementById("chart");
+  const mk = (t, a) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); svg.appendChild(n); return n; };
+  const xa = 30, xb = 360, ya = 30, rowH = 52;
+  const X = i => xa + (xb - xa) * i / (D.QUARTERS - 1), Y = r => ya + (r - 1) * rowH;
+  mk("rect", { x: xa - 14, y: Y(1) - 22, width: xb - xa + 28, height: rowH * 5 - 8, fill: "#EBE6DB", rx: 8 });
+  const now = D.topFive(D.CURRENT).map(r => r.id);
+  D.RISKS.slice().sort((a, b) => (a.id === "ai") - (b.id === "ai") || now.includes(a.id) - now.includes(b.id)).forEach(r => {
+    const pts = []; for (let i = 0; i < D.QUARTERS; i++) pts.push(X(i) + "," + Y(D.RANKS[i][r.id]));
+    const ai = r.id === "ai", strong = now.includes(r.id);
+    mk("polyline", { points: pts.join(" "), fill: "none", stroke: ai ? "#FF5A1F" : strong ? "#1A1A1A" : "#B9B3A7",
+      "stroke-width": ai ? 9 : strong ? 4 : 3, "stroke-linejoin": "round", "stroke-linecap": "round", opacity: ai ? 1 : strong ? .85 : .7 });
+  });
+  const yAi = Y(D.RANKS[D.CURRENT].ai);
+  mk("circle", { cx: X(D.CURRENT), cy: yAi, r: 13, fill: "#FF5A1F" });
+  const t = mk("text", { x: X(D.CURRENT) + 26, y: yAi + 9, "font-family": "Space Grotesk", "font-weight": 700, "font-size": 30, fill: "#FF5A1F" });
+  t.textContent = "#1 AI security";
+  const s = mk("text", { x: xa - 14, y: Y(8) + 52, "font-family": "IBM Plex Mono", "font-size": 15, fill: "#8A857C" });
+  s.textContent = D.quarterLabel(0) + " → " + D.quarterLabel(D.CURRENT) + " · rank of 8 tracked risks";
+})();
+</script>
+</body>
+</html>

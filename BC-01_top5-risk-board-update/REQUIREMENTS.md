@@ -1,7 +1,7 @@
 # BC-01 · Quarterly Top 5 Risk Board Update
 
 **Build type:** Dashboard · **Mindset shift:** Business communication · **Owner:** Aby Rao
-**Status:** Requirements ready · Prototype not yet built
+**Status:** Prototype built (see README.md)
 
 ---
 
