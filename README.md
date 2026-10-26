@@ -8,6 +8,6 @@ Each build lives in its own folder, named by build ID. Every prototype runs offl
 
 ## Builds
 
-| ID | Build | Status |
-|---|---|---|
-| BC-01 | [Quarterly top 5 risk board update](BC-01_top5-risk-board-update/) | Prototype built |
+| ID | Build | Visual scheme | Status |
+|---|---|---|---|
+| BC-01 | [Quarterly top 5 risk board update](BC-01_top5-risk-board-update/) | 1 · Paper & Signal | Prototype built |
