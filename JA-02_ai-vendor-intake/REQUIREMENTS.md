@@ -267,6 +267,6 @@ Assessment schema:
 
 ## Open questions for Aby
 
-1. "Sifa flow" in the voice notes: I read it as the intake workflow (Start → Recon → Use → Risk → Route → Decision → Register). If you meant a specific framework, tell me which one.
+1. ~~"Sifa flow"~~ Resolved Oct 26: it means the intake workflow (Start → Recon → Use → Risk → Route → Decision → Register).
 2. Should Scribely's corrected answer stay Medium only after the vendor signs a no-training clause, or as soon as the requester picks the enterprise plan?
 3. Use your organization's real tier thresholds and review intervals, or keep these?
