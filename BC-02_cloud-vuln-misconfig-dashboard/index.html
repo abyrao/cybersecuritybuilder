@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloud Risk by Unit · BC-02</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <span class="badge mono">BC-02</span>
+      <span class="brand-name">Cloud Risk by Unit</span>
+    </div>
+    <nav class="seg" role="tablist" aria-label="Views">
+      <span class="seg-ind" aria-hidden="true"></span>
+      <button class="seg-btn on" data-view="overview" role="tab" data-tip="Where is our risk? · Shortcut: 1">Overview</button>
+      <button class="seg-btn" data-view="units" role="tab" data-tip="What should we fix first? · Shortcut: 2">Units</button>
+      <button class="seg-btn" data-view="board" role="tab" data-tip="What can I pick up? · Shortcut: 3">Fix board</button>
+      <button class="seg-btn" data-view="reduced" role="tab" data-tip="What have we reduced? · Shortcut: 4">Reduced</button>
+      <button class="seg-btn" data-view="sources" role="tab" data-tip="Where does it come from? · Shortcut: 5">Sources</button>
+    </nav>
+    <div class="tools">
+      <label class="persona" data-tip="Switch people to see what each one can approve. Nobody can approve their own fix.">
+        <span class="lbl">Viewing as</span>
+        <select id="persona" aria-label="Viewing as"></select>
+      </label>
+      <button id="checksBtn" class="tool" data-tip="Known-answer checks and guardrails">Checks</button>
+      <button id="logBtn" class="tool" data-tip="Every action in this session">Log</button>
+      <button id="presenterBtn" class="tool" aria-pressed="false" data-tip="Larger view for the room">Present</button>
+      <button id="resetBtn" class="tool" data-tip="Restore the starting data">Reset</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="head">
+      <div>
+        <h1 id="question">Where is our cloud risk?</h1>
+        <p id="subhead" class="subhead"></p>
+      </div>
+      <div id="headRight"></div>
+    </section>
+    <section id="view" class="view"></section>
+  </main>
+
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <button class="tool close" data-close="drawer">Close</button>
+    <div id="drawerBody"></div>
+  </aside>
+
+  <aside id="checks" class="drawer" aria-hidden="true">
+    <button class="tool close" data-close="checks">Close</button>
+    <div id="checksBody"></div>
+  </aside>
+
+  <aside id="log" class="log card" aria-hidden="true">
+    <div class="eyebrow">Activity log</div>
+    <ol id="logList"></ol>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="tip" class="tip" role="tooltip" aria-hidden="true"></div>
+
+  <footer class="foot mono">
+    For demo purposes only. All data is fictional and does not represent any organization. · Built by Aby Rao
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/score.js"></script>
+  <script src="js/generate.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
