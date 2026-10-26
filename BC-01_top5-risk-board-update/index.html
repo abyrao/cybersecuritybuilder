@@ -3,56 +3,69 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Top 5 Risk Board Update · BC-01</title>
+  <title>Top 5 Risk Board · BC-01</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="thread" aria-hidden="true"></div>
-
-  <header class="top">
-    <div class="meta mono">
-      <span>BC-01</span><span class="dot">·</span><span id="quarterNow">Q3 2026</span><span class="dot">·</span><span>Board of directors</span>
+  <header class="bar">
+    <div class="brand">
+      <span class="badge mono">BC-01</span>
+      <span class="brand-name">Top 5 Risk Board</span>
+      <span class="pill mono" id="quarterNow" data-tip="Current reporting quarter">Q3 2026</span>
     </div>
-    <div class="controls">
-      <button id="aboutBtn" class="ghost mono">About this build</button>
-      <button id="logBtn" class="ghost mono">Activity log</button>
-      <button id="presenterBtn" class="ghost mono" aria-pressed="false">Presenter mode</button>
-      <button id="resetBtn" class="ghost mono">Reset demo</button>
+    <div class="tools">
+      <button id="aboutBtn" class="tool" data-tip="Checks, guardrails, and the AI off switch">About</button>
+      <button id="logBtn" class="tool" data-tip="Every action taken in this session">Log</button>
+      <button id="presenterBtn" class="tool" aria-pressed="false" data-tip="Larger view for the room (hides About and Log)">Present</button>
+      <button id="resetBtn" class="tool" data-tip="Start the demo over">Reset</button>
     </div>
   </header>
 
-  <main>
-    <h1 id="question">What are our top five cyber risks this quarter?</h1>
+  <main class="layout">
+    <section class="head">
+      <div>
+        <h1 id="question">Top five cyber risks, Q3 2026</h1>
+        <p id="subhead" class="subhead"></p>
+      </div>
+      <nav class="seg" role="tablist" aria-label="Time period">
+        <span class="seg-ind" aria-hidden="true"></span>
+        <button class="seg-btn on" data-view="now" role="tab" data-tip="Shortcut: 1">This quarter</button>
+        <button class="seg-btn" data-view="lastq" role="tab" data-tip="Compare with Q2 2026 · Shortcut: 2">Last quarter</button>
+        <button class="seg-btn" data-view="lasty" role="tab" data-tip="Compare with Q3 2025 · Shortcut: 3">Last year</button>
+        <button class="seg-btn" data-view="five" role="tab" data-tip="Animated five-year ranking · Shortcut: 4">5 years</button>
+      </nav>
+    </section>
 
-    <nav class="views" role="tablist" aria-label="Time period">
-      <button class="view on" data-view="now" role="tab">This quarter</button>
-      <button class="view" data-view="lastq" role="tab">vs last quarter</button>
-      <button class="view" data-view="lasty" role="tab">vs last year</button>
-      <button class="view" data-view="five" role="tab">Five-year story</button>
-    </nav>
+    <section id="stage" class="card stage" aria-live="polite"></section>
 
-    <section id="stage" class="stage" aria-live="polite"></section>
-
-    <aside id="summary" class="summary">
-      <div class="summary-head mono"><span>What changed and why</span><span class="tag">simulated AI</span></div>
-      <p id="summaryText"></p>
+    <aside class="side">
+      <div id="kpis" class="kpis"></div>
+      <div class="card ai">
+        <div class="ai-head">
+          <span class="eyebrow">What changed</span>
+          <span class="tag mono" data-tip="Written by simulated AI from the data on screen. Turn it off in About.">AI · simulated</span>
+        </div>
+        <ul id="summary" class="ai-list"></ul>
+      </div>
     </aside>
   </main>
 
   <aside id="drawer" class="drawer" aria-hidden="true">
-    <button class="close ghost mono" data-close="drawer">Close</button>
+    <button class="tool close" data-close="drawer">Close</button>
     <div id="drawerBody"></div>
   </aside>
 
   <aside id="about" class="drawer" aria-hidden="true">
-    <button class="close ghost mono" data-close="about">Close</button>
+    <button class="tool close" data-close="about">Close</button>
     <div id="aboutBody"></div>
   </aside>
 
-  <aside id="log" class="log" aria-hidden="true">
-    <div class="mono log-head">Activity log</div>
+  <aside id="log" class="log card" aria-hidden="true">
+    <div class="eyebrow">Activity log</div>
     <ol id="logList"></ol>
   </aside>
+
+  <div id="tip" class="tip" role="tooltip" aria-hidden="true"></div>
 
   <footer class="foot mono">
     For demo purposes only. All data is fictional and does not represent any organization. · Built by Aby Rao
