@@ -83,7 +83,7 @@ Headline finding:
 * **Scribely's own pages disagree.** Its trust center says "We never train on your data." Its privacy policy, updated Aug 2026, says inputs may be used to improve models unless an admin opts out. The requester ticked "No training." The form keeps both, flags the conflict, and scores the public evidence until a reviewer resolves it.
 
 Supporting findings:
-* **The meter moves with each answer.** Switching Scribely to the enterprise plan with training contractually off drops it from High (57) to Medium (42) and changes the review path.
+* **A plan choice isn't a commitment.** Picking Scribely's enterprise plan with training off shows a projected Medium (42) as a dotted marker, but the score stays High (57) until the vendor signs a no-training clause. Once the clause is recorded, the score drops to Medium and the review path changes.
 * **Reassessment catches drift.** Since LedgerLens AI was approved, it switched model providers, added a subprocessor in a new region, began training on de-identified data, and let its SOC 2 report lapse. Risk rises from 38 to 63, and the form re-asks only the 4 changed items.
 * **Some uses are high-risk by definition.** HireSignal ranks job candidates, so it goes to the committee and needs a bias audit, no matter its score.
 * **Low risk moves fast.** DocuDraft is fast-tracked with self-attestation in one step.
@@ -93,7 +93,7 @@ Supporting findings:
 1. Type "Scribely" → watch the public recon fill the form, with sources.
 2. Open the red conflict card → see the two quotes side by side.
 3. **Your use:** choose customer PII and calendar access; the meter climbs to High.
-4. Change the plan to enterprise with training off → the meter drops to Medium; **Why?** shows each point.
+4. Change the plan to enterprise with training off → a dotted "projected 42" marker appears, but the meter stays at 57 → **Record signed clause** (analyst) → the meter drops to Medium; **Why?** shows each point.
 5. **Route** → reviewers and evidence list → switch to the analyst → **Approve with conditions**.
 6. Type "LedgerLens AI" → reassessment banner → "4 changes since Sep 2025" → risk 38 → 63.
 7. Type "PromptPal" → blocked, with the approved alternative → **Register**.
@@ -112,6 +112,7 @@ People approve:
 * **An analyst decides** every Medium and higher request: approve, approve with conditions, or reject, with a written reason.
 * **The committee decides** High, Critical, and any use that affects decisions about people.
 * **Conflicts must be resolved** before approval.
+* **Contract terms count only when signed.** What-if changes and plan choices show a projected score; the real score changes only when an analyst records the signed term (for example, a no-training clause).
 * **No automatic approval** above Low. Low is fast-tracked with the requester's attestation, and the analyst can still reopen it.
 
 **9. How will I know it's right?** *(assumed)*
@@ -120,7 +121,7 @@ People approve:
 |---|---|---|
 | K1 | DocuDraft with internal data, SSO, assistive | Score 3, Low, fast track |
 | K2 | Scribely as requested | Score 57, High |
-| K3 | Scribely with training contractually off | Score 42, Medium |
+| K3 | Scribely on the enterprise plan, clause not yet signed | Stays 57, High, with a projected 42 shown · after the signed clause is recorded: 42, Medium |
 | K4 | Scribely trust center vs privacy policy | Conflict flagged; approval blocked until resolved |
 | K5 | Requester says "no training", public source says opt-out | Public evidence scored until a reviewer resolves it |
 | K6 | HireSignal | Committee required, bias audit in evidence list, whatever the score |
@@ -158,7 +159,7 @@ A left stepper shows the steps. A **live risk meter** stays pinned on the right 
 | **Start** | Which vendor? | One search box with autocomplete; a short "what will you use it for?" line | Recognizes register vendors (reassessment) and blocklisted ones (prohibited) |
 | **Recon** | What does the public record say? | Radar sweep animation as 9 source tiles light up; fact cards fill in with source, date, confidence | Confirm or correct each fact; open sources; conflict cards in red |
 | **Your use** | How will we use it? | 5 visual choice groups (data, use, connection, users, owner), pre-filled where known | Each change moves the meter |
-| **Risk** | How risky is this, and why? | Gauge, factor waterfall (each factor's points), tier and path | **What-if** toggles (remove PII, enterprise tenant, training off, read-only); **Why?** on every factor |
+| **Risk** | How risky is this, and why? | Gauge, factor waterfall (each factor's points), tier and path | **What-if** toggles (remove PII, enterprise tenant, training off, read-only) show a projected score as a dotted marker; **Why?** on every factor |
 | **Route** | Who reviews, and what do they need? | Path card: Fast track · Standard · Full review · Committee · Prohibited; reviewer avatars; evidence checklist; target time | AI reviewer summary (simulated); conditions suggested |
 | **Decision** | Approve? | Summary with open conflicts | Analyst or committee persona: Approve · With conditions · Reject, reason required |
 | **Register** | What do we own? | Portfolio of AI vendors by tier; reassessment calendar | Open any vendor; start a reassessment |
@@ -194,7 +195,7 @@ Hard rules override the score:
 
 Worked scores (the known answers):
 * **DocuDraft:** internal 10 + no training 0 + assistive 0 + SSO 3 + SOC 2 −5 + ISO 42001 −5 = **3, Low**.
-* **Scribely:** customer PII 25 + trains with opt-out 15 + content shared 5 + calendar access 12 + SOC 2 −5 + 600 users 5 = **57, High**. With training off: **42, Medium**.
+* **Scribely:** customer PII 25 + trains with opt-out 15 + content shared 5 + calendar access 12 + SOC 2 −5 + 600 users 5 = **57, High**. With a signed no-training clause: **42, Medium**.
 * **LedgerLens AI (Sep 2025):** regulated 30 + retention 5 + assistive 0 + API 8 + SOC 2 −5 = **38, Medium**. **Today:** regulated 30 + trains with opt-out 15 + assistive 0 + API 8 + no current attestation 10 = **63, High**.
 * **HireSignal:** customer PII 25 + retention 5 + decisions about people 25 + API 8 + SOC 2 −5 = **58**, High by score and by rule.
 
@@ -268,5 +269,5 @@ Assessment schema:
 ## Open questions for Aby
 
 1. ~~"Sifa flow"~~ Resolved Oct 26: it means the intake workflow (Start → Recon → Use → Risk → Route → Decision → Register).
-2. Should Scribely's corrected answer stay Medium only after the vendor signs a no-training clause, or as soon as the requester picks the enterprise plan?
+2. ~~Scribely's drop to Medium~~ Resolved Oct 26: it stays High until the vendor signs a no-training clause. Choosing the plan only shows a projection.
 3. Use your organization's real tier thresholds and review intervals, or keep these?
