@@ -47,7 +47,7 @@ Five fictional AI vendors, each with a set of simulated public sources. Fictiona
 | Vendor | What it does | Case | Expected outcome |
 |---|---|---|---|
 | **Scribely** | AI meeting notes for sales calls | New | High (57) · headline contradiction |
-| **LedgerLens AI** | Invoice and statement extraction for Finance | Reassessment (approved Sep 2025) | Medium 38 → High 63 |
+| **LedgerLens AI** | Invoice and statement extraction for Finance | Reassessment (approved Sep 2025) | Medium 28 → High 53 |
 | **HireSignal** | AI candidate screening and ranking | New | High, committee required (decisions about people) |
 | **DocuDraft** | Writing assistant on an enterprise tenant | New | Low (3) · fast track |
 | **PromptPal** | Consumer AI chatbot | New | Prohibited (on the committee's blocklist from JA-01) |
@@ -72,7 +72,8 @@ Internal data:
 * **Sanctioned alternatives:** approved tools to suggest when a request is blocked or overlaps.
 
 **5. What business context does it add that public sources don't know?**
-* **What data we'd send:** none, internal, customer PII, or regulated (payroll, financial, health).
+* **What data we'd send:** none, internal, confidential business, customer or employee PII, or regulated personal data.
+* **Is it a critical activity?** Would a failure significantly affect customers, financial results, or operations?
 * **How we'd use it:** assistive, content shared outside, actions in our systems, or decisions about people.
 * **How it connects:** web only, SSO, API or data sync, browser extension, mailbox or drive access.
 * **Who and how many:** business owner, department, number of users.
@@ -84,7 +85,7 @@ Headline finding:
 
 Supporting findings:
 * **A plan choice isn't a commitment.** Picking Scribely's enterprise plan with training off shows a projected Medium (42) as a dotted marker, but the score stays High (57) until the vendor signs a no-training clause. Once the clause is recorded, the score drops to Medium and the review path changes.
-* **Reassessment catches drift.** Since LedgerLens AI was approved, it switched model providers, added a subprocessor in a new region, began training on de-identified data, and let its SOC 2 report lapse. Risk rises from 38 to 63, and the form re-asks only the 4 changed items.
+* **Reassessment catches drift.** Since LedgerLens AI was approved, it switched model providers, added a subprocessor in a new region, began training on de-identified data, and let its SOC 2 report lapse. Risk rises from 28 to 53, and the form re-asks only the 4 changed items.
 * **Some uses are high-risk by definition.** HireSignal ranks job candidates, so it goes to the committee and needs a bias audit, no matter its score.
 * **Low risk moves fast.** DocuDraft is fast-tracked with self-attestation in one step.
 * **The blocklist applies at intake.** PromptPal is stopped on the first screen, and the form suggests the approved alternative.
@@ -95,7 +96,7 @@ Supporting findings:
 3. **Your use:** choose customer PII and calendar access; the meter climbs to High.
 4. Change the plan to enterprise with training off → a dotted "projected 42" marker appears, but the meter stays at 57 → **Record signed clause** (analyst) → the meter drops to Medium; **Why?** shows each point.
 5. **Route** → reviewers and evidence list → switch to the analyst → **Approve with conditions**.
-6. Type "LedgerLens AI" → reassessment banner → "4 changes since Sep 2025" → risk 38 → 63.
+6. Type "LedgerLens AI" → reassessment banner → "4 changes since Sep 2025" → risk 28 → 53.
 7. Type "PromptPal" → blocked, with the approved alternative → **Register**.
 
 **8. What does the AI do, and where must a person approve?** *(assumed)*
@@ -126,7 +127,7 @@ People approve:
 | K5 | Requester says "no training", public source says opt-out | Public evidence scored until a reviewer resolves it |
 | K6 | HireSignal | Committee required, bias audit in evidence list, whatever the score |
 | K7 | PromptPal | Prohibited at intake, alternative suggested |
-| K8 | LedgerLens AI reassessment | Exactly 4 changes; 38 → 63; only changed items re-asked |
+| K8 | LedgerLens AI reassessment | Exactly 4 changes; 28 → 53; only changed items re-asked |
 | K9 | Any fact older than 12 months | Marked stale, can't count as current evidence |
 | K10 | Counts of 0 and 1 | Correct singular and plural |
 
@@ -158,7 +159,7 @@ A left stepper shows the steps. A **live risk meter** stays pinned on the right 
 |---|---|---|---|
 | **Start** | Which vendor? | One search box with autocomplete; a short "what will you use it for?" line | Recognizes register vendors (reassessment) and blocklisted ones (prohibited) |
 | **Recon** | What does the public record say? | Radar sweep animation as 9 source tiles light up; fact cards fill in with source, date, confidence | Confirm or correct each fact; open sources; conflict cards in red |
-| **Your use** | How will we use it? | 5 visual choice groups (data, use, connection, users, owner), pre-filled where known | Each change moves the meter |
+| **Your use** | How will we use it? | 6 visual choice groups (data, use, connection, critical activity, users, owner), pre-filled where known | Each change moves the meter |
 | **Risk** | How risky is this, and why? | Gauge, factor waterfall (each factor's points), tier and path | **What-if** toggles (remove PII, enterprise tenant, training off, read-only) show a projected score as a dotted marker; **Why?** on every factor |
 | **Route** | Who reviews, and what do they need? | Path card: Fast track · Standard · Full review · Committee · Prohibited; reviewer avatars; evidence checklist; target time | AI reviewer summary (simulated); conditions suggested |
 | **Decision** | Approve? | Summary with open conflicts | Analyst or committee persona: Approve · With conditions · Reject, reason required |
@@ -166,44 +167,75 @@ A left stepper shows the steps. A **live risk meter** stays pinned on the right 
 
 Global: persona switcher (requester, analyst, committee chair), Checks panel, activity log, reset, presenter mode, "simulated" tag on every AI output, footer on every screen.
 
-### Risk score
+### Risk tiers
 
-Points add up from 0 to 100. Tier sets the path.
+The tiers combine three public sources. No organization's internal thresholds are used.
+
+| Source | What it contributes |
+|---|---|
+| US interagency guidance on third-party relationships (FRB, FDIC, OCC, June 2023) | Due diligence and monitoring scale with risk. "Critical activities" (significant customer, financial, or operational impact if the vendor fails) get the most rigorous oversight. |
+| Common vendor tiering practice (four tiers: Low, Medium, High, Critical) | Tier on inherent risk: data and system access, regulatory exposure, business criticality, replaceability. Reassess on a cycle and on trigger events. |
+| EU AI Act risk categories (Regulation 2024/1689) | Prohibited practices; high-risk uses such as employment (CV screening, candidate ranking); transparency duties for AI that talks to people or generates content. |
+| NIST AI RMF (GOVERN 6) | Policies for AI risk from third-party software and data, including fourth-party model providers. |
+
+A vendor's tier is the **higher of** its score tier and any floor rule below.
+
+#### 1. Score
+
+Points add up from 0 to 100.
 
 | Factor | Options and points |
 |---|---|
-| Data we send | None 0 · Internal 10 · Customer PII 25 · Regulated (payroll, financial, health) 30 |
+| Data we send | None 0 · Internal 10 · Confidential business (financials, contracts) 20 · Customer or employee PII 25 · Regulated personal data (health, cardholder, payroll, government ID) 30 |
 | Vendor's use of our data | No training, zero retention 0 · Retention up to 30 days 5 · Trains, opt-out available 15 · Trains, no opt-out 25 |
 | AI role | Assistive 0 · Content shared outside 5 · Takes actions in our systems 15 · Affects decisions about people 25 |
 | Connection | Web only 0 · SSO 3 · API or data sync 8 · Browser extension, mailbox, drive, or calendar access 12 |
 | Vendor posture | Current SOC 2 Type II −5 · ISO 42001 −5 · No current attestation +10 · Incident in the last 24 months +10 · Undisclosed model provider +5 |
 | Scale | More than 500 users +5 |
 
-Tiers: Low 0–24 · Medium 25–49 · High 50–69 · Critical 70+.
+| Score | Tier |
+|---|---|
+| 0–24 | Low |
+| 25–49 | Medium |
+| 50–69 | High |
+| 70–100 | Critical |
 
-Hard rules override the score:
-* On the committee blocklist → **Prohibited**.
-* Affects decisions about people → at least **High**, committee required, bias audit in evidence.
-* Any unresolved conflict → can't be approved.
+#### 2. Floor rules (override a lower score)
 
-| Tier | Path | Evidence | Reviewers | Reassess |
-|---|---|---|---|---|
-| Low | Fast track | Requester attestation | None (analyst can reopen) | 24 months |
-| Medium | Standard | AI questionnaire (short), SOC 2 or ISO 27001 | Security analyst | 12 months |
-| High | Full review | Full questionnaire, SOC 2 Type II, DPA, AI model details | Security, privacy, legal | 6 months |
-| Critical | Committee | Everything above plus pen test summary and AI evaluation results | AI Governance Committee | 3 months |
+| Condition | Minimum tier | Basis |
+|---|---|---|
+| On the committee blocklist, or an EU AI Act prohibited practice | **Prohibited** | EU AI Act; committee decision (JA-01) |
+| Supports a critical activity: failure would significantly affect customers, financial results, or operations | **Critical** | Interagency guidance, "critical activities" |
+| Takes actions in production or customer-facing systems | **High** | Common tiering: system access |
+| Affects decisions about people (hiring, promotion, termination, credit) | **High**, committee required, bias audit in evidence | EU AI Act high-risk (employment); NYC Local Law 144 for hiring tools |
+| Regulated personal data | **High** | Common tiering: sensitive data and regulatory exposure |
+| Trains on our data with no opt-out | **High** | NIST AI RMF GOVERN 6: third-party data risk |
+| Customer or employee PII, or AI content shown to customers | **Medium** | Common tiering; EU AI Act transparency duties |
+| Any unresolved conflict between sources | Can't be approved | Judgment and accountability guardrail |
 
-Worked scores (the known answers):
-* **DocuDraft:** internal 10 + no training 0 + assistive 0 + SSO 3 + SOC 2 −5 + ISO 42001 −5 = **3, Low**.
-* **Scribely:** customer PII 25 + trains with opt-out 15 + content shared 5 + calendar access 12 + SOC 2 −5 + 600 users 5 = **57, High**. With a signed no-training clause: **42, Medium**.
-* **LedgerLens AI (Sep 2025):** regulated 30 + retention 5 + assistive 0 + API 8 + SOC 2 −5 = **38, Medium**. **Today:** regulated 30 + trains with opt-out 15 + assistive 0 + API 8 + no current attestation 10 = **63, High**.
-* **HireSignal:** customer PII 25 + retention 5 + decisions about people 25 + API 8 + SOC 2 −5 = **58**, High by score and by rule.
+#### 3. What each tier gets
+
+| Tier | Path | Evidence | Reviewers | Full reassessment | Monitoring between reviews |
+|---|---|---|---|---|---|
+| Low | Fast track | Requester attestation | None (analyst can reopen) | Every 3 years or at renewal | Annual attestation |
+| Medium | Standard | Short AI questionnaire; SOC 2 or ISO 27001 | Security analyst | Every 2 years | Annual public recon refresh |
+| High | Full review | Full questionnaire; SOC 2 Type II; DPA; model and training-data details | Security, privacy, legal | Every 12 months | Recon refresh every 6 months |
+| Critical | Committee | All of High plus pen test summary, AI evaluation results, exit plan | AI Governance Committee | Every 12 months | Continuous recon; quarterly check-in |
+
+**Trigger events** start a reassessment right away, whatever the schedule: a model provider change, a privacy policy or terms change on training or retention, a new subprocessor or hosting region, a lapsed attestation, a security incident, or our use expanding to new data or a new connection.
+
+#### Worked scores (the known answers)
+* **DocuDraft:** internal 10 + no training 0 + assistive 0 + SSO 3 + SOC 2 −5 + ISO 42001 −5 = **3, Low**. No floors apply.
+* **Scribely:** customer PII 25 + trains with opt-out 15 + content shared 5 + calendar access 12 + SOC 2 −5 + 600 users 5 = **57, High**. With a signed no-training clause: **42, Medium** (the PII floor keeps it at least Medium).
+* **LedgerLens AI (Sep 2025):** confidential business 20 + retention 5 + assistive 0 + API 8 + SOC 2 −5 = **28, Medium**. **Today:** confidential business 20 + trains with opt-out 15 + assistive 0 + API 8 + no current attestation 10 = **53, High**. A model provider change and a policy change are both trigger events.
+* **HireSignal:** candidate PII 25 + retention 5 + decisions about people 25 + API 8 + SOC 2 −5 = **58, High**. The employment floor sends it to the committee and adds a bias audit.
+* **PromptPal:** **Prohibited** (blocklist floor), whatever the score.
 
 ### Reassessment
 
-* Triggered when the vendor is in the register, or when its next review date passes.
+* Starts when the vendor is in the register, when its review date passes, or on any trigger event.
 * Pre-fills every prior answer.
-* Shows a "since last time" diff: each changed fact with old value, new value, source, and its effect on the score.
+* Shows a "since last time" diff: each changed fact with old value, new value, source, which trigger it hit, and its effect on the score.
 * LedgerLens AI's 4 changes: model provider switched · new subprocessor in a new region · privacy policy now allows training on de-identified data (opt-out) · SOC 2 Type II period ended 14 months ago.
 * Re-asks only questions tied to changed facts.
 
@@ -270,4 +302,4 @@ Assessment schema:
 
 1. ~~"Sifa flow"~~ Resolved Oct 26: it means the intake workflow (Start → Recon → Use → Risk → Route → Decision → Register).
 2. ~~Scribely's drop to Medium~~ Resolved Oct 26: it stays High until the vendor signs a no-training clause. Choosing the plan only shows a projection.
-3. Use your organization's real tier thresholds and review intervals, or keep these?
+3. ~~Tier thresholds~~ Resolved Oct 26: built from public frameworks (interagency guidance, common tiering practice, EU AI Act, NIST AI RMF). See Risk tiers.
