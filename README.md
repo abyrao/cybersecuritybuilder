@@ -14,4 +14,4 @@ Each build lives in its own folder, named by build ID. Every prototype runs offl
 | BC-02 | [Cloud vulnerability and misconfiguration dashboard, by business unit](BC-02_cloud-vuln-misconfig-dashboard/) | 5 · Neon Grid | Prototype built |
 | OC-01 | [SOC 2 audit evidence collector](OC-01_soc2-evidence-collector/) | 3 · Glacier | Prototype built |
 | JA-01 | [Shadow AI inventory and response](JA-01_shadow-ai-inventory/) | 1 · Paper & Signal | Requirements ready |
-| JA-02 | [AI vendor intake and risk triage](JA-02_ai-vendor-intake/) | 2 · Midnight Ops | Requirements ready |
+| JA-02 | [AI vendor intake and risk triage](JA-02_ai-vendor-intake/) | 2 · Midnight Ops | Prototype built |

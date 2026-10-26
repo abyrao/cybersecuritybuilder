@@ -2,7 +2,7 @@
 
 **Build type:** Workflow · **Mindset shift:** Judgment and accountability · **Owner:** Aby Rao
 **Visual scheme:** 2 · Midnight Ops (drawn at random from schemes no build has used)
-**Status:** Requirements ready · Prototype not yet built
+**Status:** Prototype built (see README.md)
 
 Requirements captured from Aby's voice notes on Oct 26, 2026, mapped to the ten build questions in the master template (`claude/Builder_Prototype_Template.md` in the project). Items marked *(assumed)* were filled in by Claude and need Aby's confirmation.
 
