@@ -4,7 +4,7 @@ One place for internal auditors to collect, review, and report SOC 2 evidence. I
 
 **For demo purposes only. All data is fictional and does not represent any organization.** Built by Aby Rao.
 
-**Visual scheme:** 1 · Paper & Signal (warm paper, ink, orange accent · Space Grotesk + IBM Plex Mono)
+**Visual scheme:** 3 · Glacier (cool white, slate ink, blue accent, teal second · Manrope + IBM Plex Mono)
 
 ## How to open
 
@@ -42,5 +42,5 @@ Every view, the drawer, the workflow actions, and presenter mode were checked at
 | `css/styles.css` | Visual style, including print styles |
 | `js/data.js` | Fictional data: 41 controls, 101 evidence items, people, sources, burndown |
 | `js/app.js` | Views, charts, drawer workflow, simulated AI, CSV export, activity log |
-| `assets/fonts/` | Space Grotesk and IBM Plex Mono (SIL Open Font License) |
+| `assets/fonts/` | Manrope and IBM Plex Mono (SIL Open Font License) |
 | `REQUIREMENTS.md` | Build requirements this prototype was made from |

@@ -1,4 +1,4 @@
-// OC-01 · SOC 2 Audit Evidence Collector · prototype logic (visual scheme 1 · Paper & Signal)
+// OC-01 · SOC 2 Audit Evidence Collector · prototype logic (visual scheme 3 · Glacier)
 (function () {
   const D = window.OC01, A = D.AUDIT, NS = "http://www.w3.org/2000/svg";
   const $ = id => document.getElementById(id);
@@ -9,13 +9,13 @@
   const evById = id => EV.find(e => e.id === id);
 
   const ST = {
-    accepted: { label: "Accepted", color: "#4E7A3A" }, exception: { label: "Exception", color: "#C2362B" },
-    review: { label: "In review", color: "#3B6E8F" }, collected: { label: "Collected", color: "#8E5BA8" },
-    requested: { label: "Requested", color: "#B8901E" }, open: { label: "Not requested", color: "#CFC9BC" }
+    accepted: { label: "Accepted", color: "#16A34A" }, exception: { label: "Exception", color: "#DC2626" },
+    review: { label: "In review", color: "#8B5CF6" }, collected: { label: "Collected", color: "#14B8A6" },
+    requested: { label: "Requested", color: "#F59E0B" }, open: { label: "Not requested", color: "#CBD5E1" }
   };
   const ORDER = ["accepted", "exception", "review", "collected", "requested", "open"];
   const WORST = ["exception", "open", "requested", "collected", "review", "accepted"];
-  const COL = { ink: "#1A1A1A", muted: "#6E695F", dim: "#A8A39A", line: "#E7E2D7", accent: "#FF5A1F", second: "#3B6E8F", bad: "#C2362B", good: "#4E7A3A" };
+  const COL = { ink: "#0F172A", muted: "#64748B", dim: "#94A3B8", line: "#E2E8F0", accent: "#2563EB", second: "#14B8A6", bad: "#DC2626", good: "#16A34A" };
   const VIEWS = {
     overview: () => ({ h: "Are we on track for fieldwork?", s: A.name + " · fieldwork " + fmt(A.fieldStart) + " – " + fmt(A.fieldEnd) + " · today " + fmt(A.today) }),
     controls: () => ({ h: "Where does each control stand?", s: pl(D.controls.length, "control", "controls") + " · click a tile for its evidence" }),
@@ -216,7 +216,7 @@
       el("svg:text", { x: X(d), y: H - 10, "text-anchor": "middle", class: "mono", "font-size": 11, fill: COL.muted, text: fmt(d) }, svg);
     }
     // fieldwork end
-    el("svg:rect", { x: X(A.fieldEnd), y: T, width: Math.max(0, X(end) - X(A.fieldEnd)), height: H - T - B, fill: "rgba(194,54,43,.05)" }, svg);
+    el("svg:rect", { x: X(A.fieldEnd), y: T, width: Math.max(0, X(end) - X(A.fieldEnd)), height: H - T - B, fill: "rgba(220, 38, 38,.05)" }, svg);
     el("svg:line", { x1: X(A.fieldEnd), x2: X(A.fieldEnd), y1: T, y2: H - B, stroke: COL.bad, "stroke-dasharray": "4 4" }, svg);
     el("svg:text", { x: X(A.fieldEnd) - 6, y: T + 12, "text-anchor": "end", class: "mono", "font-size": 11, fill: COL.bad, text: "Fieldwork ends " + fmt(A.fieldEnd) }, svg);
     // plan
@@ -224,7 +224,7 @@
     // actual (with live point for today)
     const pts = D.burn.map(b => [X(b.date), Y(b.open)]);
     pts[pts.length - 1] = [X(A.today), Y(m.open)];
-    el("svg:polygon", { points: pts.map(q => q.join(",")).join(" ") + " " + X(A.today) + "," + Y(0) + " " + X(A.fieldStart) + "," + Y(0), fill: "rgba(26,26,26,.06)" }, svg);
+    el("svg:polygon", { points: pts.map(q => q.join(",")).join(" ") + " " + X(A.today) + "," + Y(0) + " " + X(A.fieldStart) + "," + Y(0), fill: "rgba(15, 23, 42,.06)" }, svg);
     el("svg:polyline", { points: pts.map(q => q.join(",")).join(" "), fill: "none", stroke: COL.ink, "stroke-width": 3.5, "stroke-linejoin": "round", class: "draw" }, svg);
     // projection
     el("svg:line", { x1: X(A.today), y1: Y(m.open), x2: X(m.finish), y2: Y(0), stroke: COL.accent, "stroke-width": 3, "stroke-dasharray": "2 7", "stroke-linecap": "round" }, svg);
@@ -314,7 +314,7 @@
           const st = ctrlStatus(c), evs = evOf(c), cc = counts(evs);
           const t = el("button", { class: "tile", style: "border-left-color:" + ST[st].color + ";animation-delay:" + (k++ * .015) + "s",
             "data-tip": c.title + " · owner " + D.PEOPLE[c.owner].name + " · " + (cc.accepted + cc.exception) + "/" + evs.length + " closed" }, tiles);
-          t.innerHTML = "<div class='id'><span>" + c.id + "</span>" + (st === "exception" ? "<span style='color:var(--s-exception)'>● Exception</span>" : evs.some(overdue) ? "<span style='color:#8A6A10'>● Overdue</span>" : "") + "</div>" +
+          t.innerHTML = "<div class='id'><span>" + c.id + "</span>" + (st === "exception" ? "<span style='color:var(--s-exception)'>● Exception</span>" : evs.some(overdue) ? "<span style='color:#B45309'>● Overdue</span>" : "") + "</div>" +
             "<div class='tt'>" + c.title + "</div><div class='mini'>" + ORDER.filter(s => cc[s]).map(s => "<span style='width:" + (cc[s] / evs.length * 100) + "%;background:" + ST[s].color + "'></span>").join("") + "</div>";
           t.addEventListener("click", () => openControl(c.id));
         });

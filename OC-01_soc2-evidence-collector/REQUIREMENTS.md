@@ -1,7 +1,7 @@
 # OC-01 · SOC 2 Audit Evidence Collector
 
 **Build type:** Workflow · **Mindset shift:** Ownership and craft · **Owner:** Aby Rao
-**Visual scheme:** 1 · Paper & Signal (drawn at random; the previous build used 8)
+**Visual scheme:** 3 · Glacier (redrawn at random on request, excluding 1 and 8)
 **Status:** Prototype built (see README.md)
 
 Requirements captured from Aby's voice notes on Oct 26, 2026, mapped to the ten build questions in the master template (`claude/Builder_Prototype_Template.md` in the project).
