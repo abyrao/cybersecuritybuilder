@@ -18,8 +18,8 @@
   const COL = { ink: "#1A1A1A", muted: "#6E695F", dim: "#A8A39A", line: "#E7E2D7", accent: "#FF5A1F", second: "#3B6E8F", bad: "#C2362B", good: "#4E7A3A" };
   const VIEWS = {
     overview: () => ({ h: "Are we on track for fieldwork?", s: A.name + " · fieldwork " + fmt(A.fieldStart) + " – " + fmt(A.fieldEnd) + " · today " + fmt(A.today) }),
-    controls: () => ({ h: "Where does each control stand?", s: D.controls.length + " controls · click a tile for its evidence" }),
-    evidence: () => ({ h: "What have we collected?", s: EV.length + " items · " + EV.filter(e => e.by && e.by.startsWith("Auto")).length + " collected automatically" }),
+    controls: () => ({ h: "Where does each control stand?", s: pl(D.controls.length, "control", "controls") + " · click a tile for its evidence" }),
+    evidence: () => ({ h: "What have we collected?", s: pl(EV.length, "item", "items") + " · " + EV.filter(e => e.by && e.by.startsWith("Auto")).length + " collected automatically" }),
     report: () => ({ h: "Audit status, ready to share", s: "Export or print for the audit committee" })
   };
   const state = { view: "overview", status: "all", q: "", evf: "all", evq: "", ai: true, openEv: null, confirm: null, busy: null, drawerCtrl: null };
@@ -38,6 +38,7 @@
   function fmt(s) { return D.day(s).toLocaleDateString("en-US", { month: "short", day: "numeric" }); }
   function fmtY(s) { return D.day(s).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); }
   const days = (a, b) => Math.round((D.day(b) - D.day(a)) / 864e5);
+  const pl = (n, one, many) => n + " " + (n === 1 ? one : many);
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   function stamp() { const d = new Date(); return [d.getHours(), d.getMinutes(), d.getSeconds()].map(v => String(v).padStart(2, "0")).join(":"); }
   function log(msg) { $("logList").prepend(el("li", { html: "<span>" + stamp() + "</span>" + esc(msg) })); }
@@ -130,9 +131,9 @@
     const reuse = EV.filter(e => e.name === "Q2 user access review.csv").length;
     const stale = EV.filter(e => e.stale && e.status !== "accepted").length;
     const out = [];
-    if (rootN >= 2) out.push({ n: rootN, t: rootN + " exceptions, 1 root cause", d: "Contractors offboarded outside Workday", tip: "Why: the late-removal sample (CC6.2) and the admin-role finding (CC6.3) both involve contractors who never had a Workday record, so no termination event reached Okta or AWS.", go: () => { state.status = "exception"; setView("controls"); } });
-    if (reuse > 1) out.push({ n: reuse, t: "1 export covers " + reuse + " controls", d: "Q2 Okta access review · ~6 hrs saved", tip: "Why: the same Q2 user access review file satisfies CC6.1, CC6.3, and privileged review. Collected once, hash-matched, and linked to each control.", go: () => { state.evf = "reused"; setView("evidence"); } });
-    if (stale) out.push({ n: stale, t: stale + " items predate the period", d: "Dated before Oct 1, 2025", tip: "Why: these files are dated before the audit period starts, so they can't show the control operated during the period. Ask owners for current versions.", go: () => { state.evf = "stale"; setView("evidence"); } });
+    if (rootN >= 2) out.push({ n: rootN, t: pl(rootN, "exception", "exceptions") + ", 1 root cause", d: "Contractors offboarded outside Workday", tip: "Why: the late-removal sample (CC6.2) and the admin-role finding (CC6.3) both involve contractors who never had a Workday record, so no termination event reached Okta or AWS.", go: () => { state.status = "exception"; setView("controls"); } });
+    if (reuse > 1) out.push({ n: reuse, t: "1 export covers " + pl(reuse, "control", "controls"), d: "Q2 Okta access review · ~6 hrs saved", tip: "Why: the same Q2 user access review file satisfies CC6.1, CC6.3, and privileged review. Collected once, hash-matched, and linked to each control.", go: () => { state.evf = "reused"; setView("evidence"); } });
+    if (stale) out.push({ n: stale, t: pl(stale, "item predates", "items predate") + " the period", d: "Dated before Oct 1, 2025", tip: "Why: these files are dated before the audit period starts, so they can't show the control operated during the period. Ask owners for current versions.", go: () => { state.evf = "stale"; setView("evidence"); } });
     return out;
   }
 
@@ -176,8 +177,8 @@
     const k = el("div", { class: "kpis" }, right);
     kpi(k, "Ready", m.pct + "%", m.done + " of " + EV.length + " closed", m.pct >= 80 ? "good" : "", "Accepted or exception, out of all evidence items", 0);
     kpi(k, "Finish", fmt(m.finish), m.late > 0 ? m.late + (m.late === 1 ? " day" : " days") + " late" : "On time", m.late > 0 ? "accent" : "good", "Projected completion at the current pace vs. the fieldwork end date", 1);
-    kpi(k, "Overdue", m.overdue.length, "owner requests", m.overdue.length ? "bad" : "good", "Requests past their due date", 2);
-    kpi(k, "Exceptions", m.c.exception, "need responses", m.c.exception ? "bad" : "good", "Evidence showing the control did not operate as designed", 3);
+    kpi(k, "Overdue", m.overdue.length, m.overdue.length === 1 ? "owner request" : "owner requests", m.overdue.length ? "bad" : "good", "Requests past their due date", 2);
+    kpi(k, "Exceptions", m.c.exception, m.c.exception === 0 ? "all clear" : m.c.exception === 1 ? "needs a response" : "need responses", m.c.exception ? "bad" : "good", "Evidence showing the control did not operate as designed", 3);
 
     const ai = el("div", { class: "card pad" }, right);
     cardHead(ai, "AI findings", null, el("span", { class: "tag", "data-tip": "Written by simulated AI from the evidence register. Turn it off in About.", text: "simulated" }));
@@ -384,9 +385,10 @@
     const sum = el("div", { class: "rep-sec", style: "margin-top:0" }, rc);
     el("h4", { html: "Summary <span class='tag' style='margin-left:8px;text-transform:none;letter-spacing:0' data-tip='Drafted by simulated AI from the register. Review before sharing.'>simulated AI</span>" }, sum);
     const ul = el("ul", { style: "margin:0;padding-left:18px;font-size:15px;line-height:1.6" }, sum);
-    (state.ai ? [m.pct + "% of evidence is closed; " + m.c.exception + " exceptions need management responses.",
-      m.overdue.length + " owner requests are overdue, mostly vendor and continuity evidence.",
-      "At the current pace, fieldwork finishes " + fmt(m.finish) + (m.late > 0 ? ", " + m.late + (m.late === 1 ? " day" : " days") + " late. Clearing overdue items closes the gap." : ", on time.")]
+    const lateOwners = [...new Set(m.overdue.map(e => D.PEOPLE[ctrl(e.control).owner].name))];
+    (state.ai ? [m.pct + "% of evidence is closed; " + (m.c.exception === 0 ? "no exceptions so far." : m.c.exception === 1 ? "1 exception needs a management response." : m.c.exception + " exceptions need management responses."),
+      m.overdue.length === 0 ? "No owner requests are overdue." : (m.overdue.length === 1 ? "1 owner request is overdue (" + lateOwners[0] + ")." : m.overdue.length + " owner requests are overdue, from " + (lateOwners.length > 2 ? lateOwners.slice(0, -1).join(", ") + ", and " + lateOwners[lateOwners.length - 1] : lateOwners.join(" and ")) + "."),
+      "At the current pace, fieldwork finishes " + fmt(m.finish) + (m.late > 0 ? ", " + m.late + (m.late === 1 ? " day" : " days") + " late." + (m.overdue.length ? " Clearing overdue items closes the gap." : "") : ", on time.")]
       : ["AI summary is off."]).forEach(t => el("li", { text: t }, ul));
     const tbl = el("div", { class: "rep-sec" }, rc);
     el("h4", { text: "By category" }, tbl);
@@ -431,7 +433,7 @@
     const csv = [cols].concat(rows).map(r => r.map(x => "\"" + String(x).replace(/"/g, "\"\"") + "\"").join(",")).join("\n");
     const a = el("a", { href: URL.createObjectURL(new Blob(["﻿" + csv], { type: "text/csv" })), download: "OC-01_evidence_register_" + A.today + ".csv" });
     document.body.appendChild(a); a.click(); a.remove();
-    log("Exported evidence register (" + EV.length + " rows)"); toast("Evidence register exported");
+    log("Exported evidence register (" + pl(EV.length, "row", "rows") + ")"); toast("Evidence register exported");
   }
 
   // ---------- control drawer ----------
@@ -551,8 +553,8 @@
     el("h3", { text: "Checks" }, body);
     const collected = EV.filter(e => e.collectedOn);
     const cc = counts(EV);
-    [[D.controls.every(c => evOf(c).length > 0), "Every control has evidence", "All " + D.controls.length + " controls have at least one evidence item"],
-     [collected.every(e => e.hash), "Every file has a hash", collected.length + " collected files all carry an integrity hash"],
+    [[D.controls.every(c => evOf(c).length > 0), "Every control has evidence", "All " + pl(D.controls.length, "control has", "controls have") + " at least one evidence item"],
+     [collected.every(e => e.hash), "Every file has a hash", (collected.length === 1 ? "The 1 collected file carries" : "All " + collected.length + " collected files carry") + " an integrity hash"],
      [EV.filter(e => e.stale).every(e => e.status !== "accepted"), "No stale file accepted", "Files dated before the audit period are never in Accepted"],
      [EV.filter(e => e.status === "exception").every(e => e.note), "Every exception has a note", "Exceptions can't be recorded without a description"],
      [ORDER.reduce((a, k) => a + cc[k], 0) === EV.length, "Totals reconcile", "Status counts add up to " + EV.length + " items"]]
