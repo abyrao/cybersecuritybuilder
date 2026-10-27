@@ -2,7 +2,7 @@
 
 **Build type:** Workflow (with a daily dashboard) · **Mindset shift:** Judgment and accountability · **Owner:** Aby Rao
 **Visual scheme:** 1 · Paper & Signal (drawn at random, excluding 3 · Glacier used by OC-01)
-**Status:** Requirements ready · Prototype not yet built
+**Status:** Prototype built (see README.md)
 
 Requirements captured from Aby's voice notes on Oct 26, 2026, mapped to the ten build questions in the master template (`claude/Builder_Prototype_Template.md` in the project). Items marked *(assumed)* were filled in by Claude and need Aby's confirmation.
 
@@ -15,7 +15,7 @@ Most shadow AI programs stop at a list of domains. This one shows the builder ve
 | | Operator | Builder |
 |---|---|---|
 | **Inventory** | Exports one tool's list of "AI domains" | Correlates 10 sources, so it finds AI no single tool sees |
-| **Policy** | A PDF of banned tools | A committee-owned blocklist, versioned, applied as rules every day |
+| **Policy** | A PDF of banned tools | A committee-owned blacklist, versioned, applied as rules every day |
 | **Signal** | Alert on every visit | Risk-scored signal with evidence, confidence, and a "Why?" |
 | **Response** | Emails a spreadsheet to IT | Notifies the person, offers the sanctioned alternative, then removes with approval |
 | **Closure** | Marks the ticket done when the command runs | Confirms the next day that the usage actually stopped, and follows up on what didn't |
@@ -36,7 +36,7 @@ A shadow AI inventory built from SSO, browser, network, endpoint, and expense da
 
 **3. Who uses it, and what do they decide?**
 * **AI governance lead / security analyst:** which signals to act on, and whether to notify, block, or remove.
-* **AI Governance Committee:** owns the blocklist; decides which unreviewed apps to approve or prohibit.
+* **AI Governance Committee:** owns the blacklist; decides which unreviewed apps to approve or prohibit.
 * **Endpoint team:** approves and runs removals through CrowdStrike Falcon (simulated).
 * **Employees and managers:** receive a plain-language notice with the approved alternative.
 
@@ -45,18 +45,18 @@ A shadow AI inventory built from SSO, browser, network, endpoint, and expense da
 
 Security and monitoring sources (10):
 
-| # | Source | Category | What it contributes | Rough volume (30 days) |
+| # | Source (generic name) | Category | What it contributes | AI-related events in the prototype (30 days) |
 |---|---|---|---|---|
-| 1 | Okta | SSO | Sign-ins to AI apps, tenant used | 41,000 sign-ins |
-| 2 | Microsoft Entra ID | SSO / OAuth | Third-party AI app consents and scopes | 1,300 consents |
-| 3 | Chrome Enterprise | Browser | AI site visits, installed AI extensions and permissions | 96,000 visits, 2,900 extension installs |
-| 4 | Zscaler | Secure web gateway | AI traffic, upload volume, blocked requests | 38,000 sessions |
-| 5 | Cisco Umbrella | DNS | Lookups to AI domains, including ones with no other trace | 210,000 lookups |
-| 6 | CrowdStrike Falcon | Endpoint (EDR) | AI software installed and running, host details, online status | 4,600 hosts |
-| 7 | Microsoft Purview | DLP | Sensitive-data uploads to AI destinations, by classification | 1,450 matches |
-| 8 | SAP Concur | Expense | AI subscriptions on expense reports | 120 line items |
-| 9 | Amex corporate card | Card feed | AI merchant charges | 210 charges |
-| 10 | Coupa | Procurement / AP | AI vendor invoices and purchase orders | 18 invoices |
+| 1 | Okta (Identity provider) | SSO | Sign-ins to AI apps, tenant used | 2,528 sign-ins |
+| 2 | Microsoft Entra ID (Cloud directory) | SSO / OAuth | Third-party AI app consents, scopes, tokens | 43 consents and tokens |
+| 3 | Chrome Enterprise (Browser management) | Browser | AI site visits, installed AI extensions and permissions | 2,519 visits and extension reports |
+| 4 | Zscaler (Web gateway) | Secure web gateway | AI traffic, uploads, tenant, meetings joined by AI bots | 1,374 sessions |
+| 5 | Cisco Umbrella (DNS security) | DNS | Lookups to AI domains, including ones with no other trace | 346 lookups |
+| 6 | CrowdStrike Falcon (EDR) | Endpoint | AI software installed and running, host details, online status | 387 detections |
+| 7 | Microsoft Purview (DLP) | Data protection | Sensitive-data uploads to AI destinations, by classification | 361 matches |
+| 8 | SAP Concur (Expense system) | Finance | AI subscriptions on expense reports | 25 line items |
+| 9 | Amex corporate card (Corporate card feed) | Finance | AI merchant charges | 28 charges |
+| 10 | Coupa (Procurement) | Finance | AI vendor invoices and purchase orders | 2 invoices |
 
 Business context sources (not security tools):
 * **Workday:** department, manager, role, executive flag, contractor flag.
@@ -67,13 +67,13 @@ Business context sources (not security tools):
 
 AI app catalog: 64 distinct AI apps detected.
 * 5 sanctioned (real enterprise products on the organization's tenant: Microsoft 365 Copilot, ChatGPT Enterprise, Claude Enterprise, GitHub Copilot Business, Gemini for Workspace).
-* 8 tolerated with limits, 14 blocklisted, 37 unreviewed.
-* Every blocklisted and unreviewed app uses a **fictional name** (for example SheetSage AI, TabGenie AI, NoteHawk, ModelBox, PDFWhiz AI) so the demo never implies a real product is unsafe. *(assumed)*
+* 8 tolerated with limits, 14 blacklisted, 37 unreviewed.
+* Every blacklisted and unreviewed app uses a **fictional name** (for example SheetSage AI, TabGenie AI, NoteHawk, ModelBox, PDFWhiz AI) so the demo never implies a real product is unsafe. *(assumed)*
 
-All 10 source names can switch to generic labels ("your identity provider", "your EDR") with one toggle, per the deck's vendor-neutrality note.
+Sources show generic labels by default ("Identity provider", "EDR"), per the deck's vendor-neutrality note; one toggle shows product names.
 
 **5. What business context does it add that the tools don't know?**
-* **The committee's decisions:** the blocklist turns policy into rules the tools never had.
+* **The committee's decisions:** the blacklist turns policy into rules the tools never had.
 * **Who the person is:** department, manager, executive or admin status, and what data they can reach. The same AI app is low risk for a marketer and critical for someone with payroll access.
 * **What's sanctioned:** each signal offers the approved alternative, and shows unused enterprise seats.
 * **Exceptions:** an approved pilot suppresses a signal until it expires.
@@ -88,17 +88,17 @@ Accountability moment:
 * **Removal isn't done when the command runs.** TabGenie AI removal succeeds on 86 of 87 hosts. One Sales laptop is offline, so it stays "pending" and opens a follow-up. The next day's scan confirms removal on the 86, not on the 87th.
 
 Supporting findings:
-* 41% of today's high-risk signals come from apps that never appear in SSO logs.
+* Every high-risk signal today (11 of 11) comes from an app that never appears in SSO logs.
 * TabGenie AI, a browser extension that can read and change all site data, is on 87 endpoints, including 6 IT admins with privileged access.
 * ModelBox, a local model runner, is on 4 Engineering laptops with production database access.
 * NoteHawk, a meeting note-taker, joined 212 external customer calls after 19 Sales users granted it calendar access in Entra.
 * 163 people use personal accounts of a sanctioned tool while 212 enterprise seats sit unassigned. The fix is a redirect, not a penalty.
 * 46 people expense individual AI subscriptions: about $11,040 a year.
-* After the Oct 19 notices, personal-account signals drop 62% within 5 days.
+* After the Oct 19 notices, personal-account signals drop 57% (5 weekdays after vs the 5 weekdays before).
 
 **7. What will I click during the demo?**
-1. **Sources:** watch 10 sources flow into one inventory; toggle generic names.
-2. **Blocklist:** open BL-03 and see the committee's version, approval date, and rationale.
+1. **Sources:** watch 10 sources flow into one inventory; toggle product names.
+2. **Blacklist:** open BL-03 and see the committee's version, approval date, and rationale.
 3. **Today:** play the 30-day timeline; see the quarter-end spike in Finance.
 4. Open the **SheetSage AI** signal → **Why?** → evidence from three sources.
 5. **Respond:** AI drafts the notice (simulated) → approve → block and notify.
@@ -117,7 +117,7 @@ People approve:
 * **Every notice** before it's sent.
 * **Every block, revoke, or removal**, after a dry run shows exactly which hosts and people are affected.
 * **Two approvers** when a removal touches an executive, an admin, a service account, or more than 25 hosts.
-* **Blocklist changes:** the analyst can only propose; the committee approves and publishes a new version.
+* **Blacklist changes:** the analyst can only propose; the committee approves and publishes a new version.
 * **Revealing names:** signals show employee IDs by default. Revealing a name requires a reason, and the reveal is logged.
 
 **9. How will I know it's right?** *(assumed)*
@@ -126,11 +126,11 @@ Known-answer cases, run live on a **Checks** screen:
 | ID | Case | Expected result |
 |---|---|---|
 | K1 | Sanctioned use: ChatGPT Enterprise via Okta on the enterprise tenant | 0 signals |
-| K2 | Same tool on a personal account | BL-02 signal, Medium |
-| K3 | ModelBox on hosts with production access | Exactly 4 signals, BL-05 |
+| K2 | Same tool on a personal account | BL-02 signal (Low or Medium, by data access) |
+| K3 | ModelBox on hosts with production access | Exactly 4 people, BL-05 |
 | K4 | Legal's ClauseBot pilot, exception EX-12 valid to Dec 31, 2026 | Suppressed; counted as "suppressed by exception" |
 | K5 | Marketing's ImageForge AI (BL-09), exception EX-09 expired Oct 25, 2026 | Suppressed through Oct 25, signals resume Oct 26 |
-| K6 | Rule retired in blocklist v3.2 | No new signals after Oct 14; earlier signals kept |
+| K6 | Rule retired in blacklist v3.2 | No new signals after Oct 14; earlier signals kept |
 | K7 | Removal attempted without approval | Blocked, logged |
 | K8 | TabGenie AI removal on 87 hosts including 6 admins | Requires two approvers |
 | K9 | Removal on an offline host | Stays "pending", never "verified" |
@@ -141,7 +141,7 @@ Known-answer cases, run live on a **Checks** screen:
 * Capture prompt or file contents. It uses metadata and DLP classifications only.
 * Score or rank employees for performance, or show names by default.
 * Remove or block anything automatically without a person's approval.
-* Let analysts edit the committee's blocklist directly.
+* Let analysts edit the committee's blacklist directly.
 * Replace the AI vendor intake process (that's JA-02).
 
 ---
@@ -150,12 +150,12 @@ Known-answer cases, run live on a **Checks** screen:
 
 ### Screens
 
-One question per screen. Left rail labels: **Sources · Blocklist · Today · Inventory · Respond · Outcomes · Log · Checks**.
+One question per screen. Left rail labels: **Sources · Blacklist · Today · Inventory · Respond · Outcomes · Log · Checks**.
 
 | Screen | Question | Main visual | Key interactions |
 |---|---|---|---|
-| **Sources** | What can we see? | Animated flow: 10 source tiles stream particles into a central "Inventory" node; counts tick up | Freshness badge per source; coverage gaps (for example "Contractor devices: no browser telemetry"); generic-names toggle |
-| **Blocklist** | What did the committee decide? | Rule cards grouped by type (App, Usage, Extension, Endpoint, OAuth, Spend), colored by severity | Rule detail: condition, rationale, policy reference, playbook, version history; **Propose change** goes to a committee queue, never applied directly |
+| **Sources** | What can we see? | Animated flow: 10 source tiles stream particles into a central "Inventory" node; counts tick up | Freshness badge per source; coverage gaps (for example "Contractor devices: no browser telemetry"); product-names toggle |
+| **Blacklist** | What did the committee decide? | Rule cards grouped by type (App, Usage, Extension, Endpoint, OAuth, Spend), colored by severity | Rule detail: condition, rationale, policy reference, playbook, version history; **Propose change** goes to a committee queue, never applied directly |
 | **Today** | What's happening today? | KPI tiles (signals, high risk, new apps, people) · department × day heatmap · stacked area by rule · source contribution bar | Date scrubber over 30 days; **Play** animates day by day; Q3 close band shaded; click a cell to filter |
 | **Signal drawer** | Why is this flagged? | Evidence timeline with one lane per source; risk factor bars | **Why?**, exception check, recommended action, open in Respond |
 | **Inventory** | What AI is in use? | Bubble chart of 64 apps: x = risk, y = people, size = events, color = status | Filter by status; unreviewed app → **Send to committee** (queued) |
@@ -166,7 +166,7 @@ One question per screen. Left rail labels: **Sources · Blocklist · Today · In
 
 Global: reset button, presenter mode (bigger type, hides the rail), "simulated" tag on every AI output, footer always visible.
 
-### Blocklist v3.2 (AI Governance Committee, approved Oct 14, 2026)
+### Blacklist v3.2 (AI Governance Committee, approved Oct 14, 2026)
 
 | ID | Type | Rule | Severity | Playbook | Grace |
 |---|---|---|---|---|---|
@@ -189,8 +189,8 @@ Version history: v3.0 (Jul 8), v3.1 (Aug 26), v3.2 (Oct 14: added BL-11, retired
 
 `risk = severity weight × data access multiplier × corroboration × calendar multiplier`, capped at 100.
 
-* Severity weight: Critical 40, High 25, Medium 12, Low 5.
-* Data access multiplier: none 1.0, internal 1.2, customer or financial 1.6, payroll or production 2.0.
+* Severity weight: Critical 50, High 35, Medium 20, Low 8.
+* Data access multiplier: none 1.0, internal 1.2, customer or financial 1.6, payroll, production, or privileged (IT admin) 2.0.
 * Corroboration: 1 source 0.6, 2 sources 0.85, 3 or more sources 1.0. A single-source signal is never shown as "high confidence."
 * Calendar multiplier: 1.25 during Q3 close for Finance, otherwise 1.0.
 * Bands: Critical ≥ 75, High 50 – 74, Medium 25 – 49, Low < 25.
@@ -217,6 +217,8 @@ Every score's **Why?** lists each factor and its value.
 
 ## Data and code structure
 
+**As built (Oct 26):** the prototype keeps the same responsibilities in fewer files, all plain scripts so `index.html` works from disk: `js/data.js` (sources, departments, apps, rules, versions, exceptions, personas), `js/engine.js` (seeded generator, rule matching by blacklist version, exceptions, correlation, scoring), `js/respond.js` (notices, approvals, simulated EDR removal, next-day scan), and `js/app.js` (views). The planned split below is the target when real connectors replace the generator.
+
 Built so each mock module can be swapped for a real connector later.
 
 ```
@@ -230,7 +232,7 @@ JA-01_shadow-ai-inventory/
   data/
     sources.json           10 sources + business context sources
     apps.json              64 AI apps, status, category
-    blocklist.json         rules, versions, approvals
+    blacklist.json         rules, versions, approvals
     exceptions.json
     people.json            fictional employees (IDs, dept, role, flags, data tier)
     hosts.json             endpoints from Falcon
@@ -238,7 +240,7 @@ JA-01_shadow-ai-inventory/
     generate.js            seeded generator for 30 days of events (same output every run)
     normalize.js           source events → common event schema
     classify.js            simulated AI: is this AI? confidence
-    rules.js               evaluate(blocklistVersion, events, context) → signals
+    rules.js               evaluate(blacklistVersion, events, context) → signals
     score.js               score(signal, context) → { risk, band, factors[] }
     correlate.js           merge events into one signal per person + app + rule
     respond.js             response ladder state machine, approvals
@@ -277,7 +279,7 @@ Signal schema:
   "personId": "E-10482",
   "appId": "APP-sheetsage",
   "ruleId": "BL-03",
-  "blocklistVersion": "3.2",
+  "blacklistVersion": "3.2",
   "eventIds": ["EV-000123", "EV-000131"],
   "sources": ["concur", "chrome", "purview"],
   "risk": 100,
@@ -312,8 +314,8 @@ export async function scan(hostIds) { /* → [{ hostId, present: boolean }] */ }
 
 ---
 
-## Open questions for Aby
+## Decisions (Oct 26, 2026)
 
-1. Use "blocklist" in the UI, or keep "blacklist"? The requirements use "blocklist".
-2. Is JA-02 (AI vendor intake) the right hand-off for unreviewed apps, or should Inventory end at "Send to committee"?
-3. Keep real product names for the 10 sources by default, with generic names as the toggle, or the reverse?
+1. The interface says **Blacklist**, as the AI Governance Committee calls it.
+2. **Send to committee** on an unreviewed app hands off to the JA-02 AI vendor intake.
+3. Sources show **generic names** by default ("Identity provider", "EDR"); a toggle shows product names.

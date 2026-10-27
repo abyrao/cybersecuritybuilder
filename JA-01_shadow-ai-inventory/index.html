@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shadow AI Inventory · JA-01</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <span class="badge mono">JA-01</span>
+      <span class="brand-name">Shadow AI Inventory</span>
+    </div>
+    <div class="datepill" data-tip="The demo's fictional 'today'">Mon Oct 26, 2026 · 30 days of data</div>
+    <div class="tools">
+      <label class="persona" data-tip="Switch people to see who can approve notices and removals">
+        <span class="lbl">Viewing as</span>
+        <select id="persona" aria-label="Viewing as"></select>
+      </label>
+      <button id="namesBtn" class="tool" aria-pressed="false" data-tip="Show product names instead of generic tool names">Product names</button>
+      <button id="presenterBtn" class="tool" aria-pressed="false" data-tip="Larger view for the room">Present</button>
+      <button id="resetBtn" class="tool" data-tip="Restore the starting data">Reset</button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <nav id="rail" class="rail" aria-label="Views"></nav>
+    <main id="view" class="view"></main>
+  </div>
+
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <button class="tool close" data-close="drawer">Close</button>
+    <div id="drawerBody"></div>
+  </aside>
+
+  <aside id="log" class="log card" aria-hidden="true">
+    <div class="eyebrow">Activity log</div>
+    <ol id="logList"></ol>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="tip" class="tip" role="tooltip" aria-hidden="true"></div>
+
+  <footer class="foot mono">
+    For demo purposes only. All data is fictional and does not represent any organization. · Built by Aby Rao
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/respond.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
