@@ -2,7 +2,7 @@
 
 **Build type:** Assistant with a learning game and a program dashboard · **Mindset shift:** Judgment and accountability · **Owner:** Aby Rao
 **Visual scheme:** 11 · Confetti Grid. This is a new light scheme with a patterned background, added to the template because all ten schemes are already in use. See **Visual scheme 11** below.
-**Status:** Requirements drafted
+**Status:** Prototype built (see README.md)
 
 Requirements captured from Aby's notes on Oct 28, 2026, mapped to the ten build questions in the master template (`claude/Builder_Prototype_Template.md` in the project). Items marked *(assumed)* were filled in by Claude and need Aby's confirmation.
 
@@ -297,6 +297,16 @@ A new light scheme for builds after all ten originals are used. It's added to th
 | `data/` | Source JSON and expected results |
 
 ---
+
+## Build decisions
+
+The prototype was built with these defaults for the open questions below. Each is easy to change.
+
+* Self-checks earn 10 points each, for new checks only, up to 5 a day; points go to the employee persona only.
+* Passing is 10 of 12 correct; Data Guardian separately rewards the three restricted-data questions.
+* The team challenge stays and shows department completion only.
+* The v2.2 clarification is treated as not material: no one has to attest again.
+* Fast-forward appears only in presenter mode.
 
 ## Open questions for Aby
 

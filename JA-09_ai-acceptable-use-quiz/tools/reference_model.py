@@ -312,7 +312,7 @@ def program():
     sc_tot = Counter(); sc_rule = Counter(); sc_tool = defaultdict(Counter); sc_dept = defaultdict(Counter)
     for dep, name, hc in DEPTS:
         attempts = round(hc * COMPLETION[dep])
-        rates = [q_rate(dep, q) for q in QUIZ]
+        rates = [round(q_rate(dep, q), 3) for q in QUIZ]   # the published rates in program.json
         avg = sum(rates) / len(rates)
         passed = round(attempts * pass_prob(rates, SCORING["pass_correct"]))
         for q, r in zip(QUIZ, rates):
