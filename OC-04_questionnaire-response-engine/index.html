@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Response Engine · OC-04</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <span class="badge">OC-04</span>
+      <span class="brand-name">Response Engine</span>
+    </div>
+    <nav class="seg" role="tablist" aria-label="Views">
+      <button class="seg-btn on" data-view="funnel" role="tab" data-tip="Where is the work right now? · 1">Funnel</button>
+      <button class="seg-btn" data-view="intake" role="tab" data-tip="What came in, and for whom? · 2">Intake</button>
+      <button class="seg-btn" data-view="answers" role="tab" data-tip="How was each question answered? · 3">Answers</button>
+      <button class="seg-btn" data-view="bank" role="tab" data-tip="Is the response bank current? · 4">Bank</button>
+      <button class="seg-btn" data-view="review" role="tab" data-tip="What needs a person? · 5">Review</button>
+      <button class="seg-btn" data-view="output" role="tab" data-tip="What goes out, and what did the bank learn? · 6">Output</button>
+    </nav>
+    <div class="tools">
+      <label class="persona" data-tip="Switch people to see who can approve answers, bank changes, and legal-locked text">
+        <span class="lbl">Viewing as</span>
+        <select id="persona" aria-label="Viewing as"></select>
+      </label>
+      <button id="checksBtn" class="tool" data-tip="Known-answer checks and guardrails">Checks</button>
+      <button id="logBtn" class="tool" data-tip="Every automated and human action in this session">Log</button>
+      <button id="presenterBtn" class="tool" aria-pressed="false" data-tip="Larger text for the room">Present</button>
+      <button id="resetBtn" class="tool" data-tip="Restore the starting data and replay the funnel">Reset</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section id="view" class="view"></section>
+  </main>
+
+  <div id="scrim" class="scrim" aria-hidden="true"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true" aria-label="Details">
+    <button class="btn ghost sm close" data-close="drawer">Close</button>
+    <div id="drawerBody"></div>
+  </aside>
+
+  <aside id="log" class="log" aria-hidden="true" aria-label="Activity log">
+    <div class="log-head">
+      <span class="eyebrow">Activity log</span>
+      <button class="btn ghost sm" data-close="log">Close</button>
+    </div>
+    <ol id="logList"></ol>
+  </aside>
+
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="tip" class="tip" role="tooltip" aria-hidden="true"></div>
+
+  <footer class="foot">
+    For demo purposes only. All data is fictional and does not represent any organization. · Built by Aby Rao
+  </footer>
+
+  <script src="data/bank.js"></script>
+  <script src="data/sources.js"></script>
+  <script src="data/questionnaires.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/funnel.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
