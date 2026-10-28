@@ -14,7 +14,7 @@ Each build lives in its own folder, named by build ID. Every prototype runs offl
 | BC-02 | [Cloud vulnerability and misconfiguration dashboard, by business unit](BC-02_cloud-vuln-misconfig-dashboard/) | 5 · Neon Grid | Prototype built |
 | BC-03 | [RTO and RPO tabletop simulator](BC-03_rto-rpo-simulator/) | 9 · Plum & Gold | Prototype built |
 | BC-04 | [Ransomware impact brief for executives](BC-04_ransomware-impact-brief/) | 3 · Glacier | Prototype built |
-| BC-05 | [Patch delay cost calculator for internet-facing systems](BC-05_patch-delay-cost-calculator/) | 4 · Forest Ledger | Requirements drafted |
+| BC-05 | [Patch delay cost calculator for internet-facing systems](BC-05_patch-delay-cost-calculator/) | 4 · Forest Ledger | Prototype built |
 | OC-01 | [SOC 2 audit evidence collector](OC-01_soc2-evidence-collector/) | 3 · Glacier | Prototype built |
 | OC-02 | [Cloud storage and firewall drift checker (CIS baseline)](OC-02_storage-firewall-drift-checker/) | 4 · Forest Ledger | Prototype built |
 | OC-03 | [Vulnerability enhancer](OC-03_vulnerability-enhancer/) | 6 · Terracotta Studio | Prototype built |

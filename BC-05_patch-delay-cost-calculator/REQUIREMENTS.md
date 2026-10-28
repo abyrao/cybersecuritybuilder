@@ -2,7 +2,7 @@
 
 **Build type:** Simulator · **Mindset shift:** Business communication · **Owner:** Aby Rao
 **Visual scheme:** 4 · Forest Ledger (drawn at random, excluding OC-04's Monochrome Swiss, the previous build)
-**Status:** Requirements drafted
+**Status:** Prototype built (see README.md)
 
 Requirements captured from Aby's notes on Oct 28, 2026, mapped to the ten build questions in the master template (`claude/Builder_Prototype_Template.md` in the project). Items marked *(assumed)* were filled in by Claude and need Aby's confirmation.
 
@@ -245,6 +245,16 @@ Run live in the **Checks** panel; each shows expected, actual, pass or fail.
 | `data/` | Source JSON and expected results |
 
 ---
+
+## Build decisions
+
+The prototype was built with these defaults for the open questions below. Each is easy to change.
+
+* Rates and per-record costs stay fictional and are labeled as estimates; no public benchmark is cited.
+* The health plan setting is kept.
+* Single numbers are shown, with the low–high range on the Forecast view (on by default).
+* The demo opens on Edge; the Calculator is one click away with F-0142 loaded.
+* Treemap tiles grow with cost if exploited to the power 0.4, so the smallest systems stay readable.
 
 ## Open questions for Aby
 
