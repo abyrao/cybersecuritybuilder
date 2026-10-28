@@ -1,0 +1,9 @@
+approved_sources:
+  - id: siem-alerts
+    path: siem://alerts/
+    owner: Security Operations
+    personal_data: user identifiers
+  - id: directory
+    path: ldap://directory/
+    owner: Identity team
+    personal_data: user identifiers

@@ -1,0 +1,7 @@
+# Approved data sources (signed off by the HR Policy Office and Privacy)
+approved_sources:
+  - id: hr-policies-2026
+    path: s3://hr-share/policies/
+    owner: HR Policy Office
+    classification: internal
+    personal_data: none

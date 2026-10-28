@@ -1,0 +1,14 @@
+app: policypal
+version: 1.1.0
+model:
+  name: internal-llm-v3
+  temperature: 0.7
+  max_output_tokens: 800
+retrieval:
+  index: hr-policies-idx
+  top_k: 8
+limits:
+  max_input_chars: null
+logging:
+  level: INFO
+  log_prompts: redacted

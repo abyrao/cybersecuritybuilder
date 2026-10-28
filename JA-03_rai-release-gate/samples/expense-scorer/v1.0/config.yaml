@@ -1,0 +1,6 @@
+app: expense-scorer
+version: 1.0.0
+model:
+  type: gradient_boosting
+  threshold: 0.62
+features: [amount, category, merchant_risk, days_to_submit, work_location, receipt_present]

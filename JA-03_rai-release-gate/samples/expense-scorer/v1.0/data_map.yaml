@@ -1,0 +1,5 @@
+approved_sources:
+  - id: expenses-2025
+    path: s3://finance-share/expenses/2025/
+    owner: Finance Systems
+    personal_data: employee ID

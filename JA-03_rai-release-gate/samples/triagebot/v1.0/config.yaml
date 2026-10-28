@@ -1,0 +1,8 @@
+app: triagebot
+version: 1.0.0
+model:
+  name: internal-llm-v3
+  temperature: 0.2
+tools: [lookup_user, disable_account, create_ticket]
+limits:
+  max_tool_calls_per_alert: null
