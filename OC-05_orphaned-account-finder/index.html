@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orphaned Account Finder</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20V10a6 6 0 0 1 12 0v10l-2-1.5L14 20l-2-1.5L10 20l-2-1.5z"/><circle cx="9.5" cy="10" r=".6" fill="currentColor"/><circle cx="14.5" cy="10" r=".6" fill="currentColor"/></svg>
+    </div>
+    <div>
+      <div class="brand-title">Orphan Finder</div>
+      <div class="brand-sub">OC-05 · Harborline HCM</div>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button class="tab active" data-view="map" role="tab"><kbd>1</kbd>Ghost Map</button>
+    <button class="tab" data-view="departure" role="tab"><kbd>2</kbd>Departure</button>
+    <button class="tab" data-view="radius" role="tab"><kbd>3</kbd>Blast Radius</button>
+    <button class="tab" data-view="review" role="tab"><kbd>4</kbd>Review <span class="count" id="reviewCount">0</span></button>
+    <button class="tab" data-view="leaks" role="tab"><kbd>5</kbd>Leaks</button>
+    <button class="tab" data-view="runs" role="tab"><kbd>6</kbd>Runs</button>
+  </nav>
+  <div class="spacer"></div>
+  <div class="tools">
+    <div class="seg" id="namesSeg" data-tip="Show tool names as generic roles or as the real products.">
+      <button data-names="generic" class="on">Generic</button><button data-names="real">Real</button>
+    </div>
+    <div class="persona" data-tip="Who is using the finder. Approvals check the role.">
+      <label for="persona">Viewing as</label>
+      <select id="persona"></select>
+    </div>
+    <button class="btn" id="btnChecks" data-tip="Known-answer checks, run live against the engine.">Checks <span class="count" id="checkCount">–</span></button>
+    <button class="btn" id="btnLog" data-tip="Every run, approval and action, with who did it.">Log <span class="count" id="logCount">0</span></button>
+    <button class="btn icon" id="btnPresenter" aria-label="Presenter mode" data-tip="Presenter mode: larger type (P).">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+    </button>
+    <button class="btn" id="btnReset" data-tip="Start over: clears approvals, actions, fixes and the log.">Reset</button>
+  </div>
+</header>
+
+<main>
+  <section class="view active" id="view-map">
+    <div class="view-head"><div class="titles"><h1>Who left, and what did they leave behind?</h1><div class="sub" id="mapSub"></div></div></div>
+    <div class="view-body">
+      <div class="card map-card" id="mapCard"></div>
+      <aside class="side">
+        <div class="card hero" id="mapHero"></div>
+        <div class="card" style="flex:1;display:flex;flex-direction:column;min-height:0">
+          <div class="card-h">Brightest <span class="sub">highest risk first</span></div>
+          <ul class="list scroll" id="brightList" style="flex:1"></ul>
+        </div>
+        <div class="card sel-card" id="mapSel"></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="view" id="view-departure">
+    <div class="view-head">
+      <div class="titles"><h1>How did one exit actually go?</h1><div class="sub" id="depSub"></div></div>
+      <div class="picker"><label for="depPick" class="faint">Show</label><select id="depPick"></select></div>
+    </div>
+    <div class="dep-tiles" id="depTiles"></div>
+    <div class="card chart-card">
+      <div class="card-h" id="depChartH"></div>
+      <div class="chart" id="depChart"></div>
+    </div>
+  </section>
+
+  <section class="view" id="view-radius">
+    <div class="view-head">
+      <div class="titles"><h1>What can this account reach?</h1><div class="sub" id="radSub"></div></div>
+      <div class="picker"><label for="radPick" class="faint">Account</label><select id="radPick"></select></div>
+    </div>
+    <div class="rad-wrap">
+      <div class="card rad-card" id="radCard"></div>
+      <aside class="rad-side" id="radSide"></aside>
+    </div>
+  </section>
+
+  <section class="view" id="view-review">
+    <div class="view-head"><div class="titles"><h1>What do we do about it?</h1><div class="sub" id="revSub"></div></div></div>
+    <div class="rev-wrap">
+      <div class="card queue">
+        <div class="filters" id="revFilters"></div>
+        <ul class="list scroll" id="revList"></ul>
+      </div>
+      <div class="deck-col">
+        <div class="card batch-bar" id="batchBar"></div>
+        <div class="deck" id="deck"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="view-leaks">
+    <div class="view-head"><div class="titles"><h1>Why do orphans keep appearing?</h1><div class="sub" id="leakSub"></div></div></div>
+    <div class="leak-wrap">
+      <div class="card pipe-card">
+        <div class="card-h">From HR to every system <span class="sub">live orphaned person accounts by source</span></div>
+        <div class="chart" id="pipeChart"></div>
+      </div>
+      <aside class="leak-side">
+        <div class="card chart-card" style="flex:1;min-height:230px">
+          <div class="card-h">Days to remove <span class="sub" data-tip="Median days from termination to removal, for accounts already removed.">median</span></div>
+          <div class="chart" id="medChart"></div>
+        </div>
+        <div id="fixList" style="display:flex;flex-direction:column;gap:12px"></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="view" id="view-runs">
+    <div class="view-head">
+      <div class="titles"><h1>Is it getting better?</h1><div class="sub" id="runSub"></div></div>
+      <div class="picker">
+        <div class="seg" id="dataSeg" data-tip="Seeded: the demo data. All clean: every leaver removed on time, to prove the finder reports nothing when nothing is wrong.">
+          <button data-ds="seed" class="on">Seeded</button><button data-ds="clean">All clean</button>
+        </div>
+        <button class="btn primary" id="btnRunNow" data-tip="Run the finder now (simulated). Confirms approved actions actually took effect.">Run now</button>
+      </div>
+    </div>
+    <div class="run-tiles" id="runTiles"></div>
+    <div class="run-grid">
+      <div class="card"><div class="card-h">Open orphans <span class="sub">weekly, since daily runs began</span></div><div class="chart" id="trendChart"></div></div>
+      <div class="card"><div class="card-h">New orphans found <span class="sub">per day, last 12 weeks</span></div><div class="chart" id="calChart"></div></div>
+      <div class="card"><div class="card-h">Sources <span class="sub" id="srcSub"></span></div><div class="scroll" style="flex:1;padding:0 8px 8px"><table class="src-table" id="srcTable"></table></div></div>
+      <div class="card"><div class="card-h">Match rules <span class="sub">what changed, and why</span></div><ul class="rules scroll" id="rulesList" style="flex:1"></ul></div>
+    </div>
+  </section>
+</main>
+
+<aside class="drawer" id="logDrawer" aria-label="Activity log">
+  <div class="drawer-h">Activity log <span class="spacer"></span><button class="btn sm" id="btnLogClose">Close</button></div>
+  <ul class="log-list" id="logList"></ul>
+</aside>
+<div id="modalRoot"></div>
+<div class="tip" id="tip" role="tooltip"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<footer>For demo purposes only. All data is fictional and does not represent any organization. · Built by Aby Rao</footer>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/checks.js"></script>
+<script src="js/core.js"></script>
+<script src="js/view-map.js"></script>
+<script src="js/view-departure.js"></script>
+<script src="js/view-radius.js"></script>
+<script src="js/view-review.js"></script>
+<script src="js/view-leaks.js"></script>
+<script src="js/view-runs.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

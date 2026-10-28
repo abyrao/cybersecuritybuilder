@@ -2,7 +2,7 @@
 
 **Build type:** Script (with a review workflow) · **Mindset shift:** Ownership and craft · **Owner:** Aby Rao
 **Visual scheme:** 9 · Plum & Gold (all ten schemes are in use; drawn at random from the least-used, excluding the two most recent builds' schemes)
-**Status:** Requirements ready · Prototype not yet built
+**Status:** Prototype built · numbers below match the seeded build (updated Oct 28, 2026)
 
 Requirements from Aby's brief on Oct 28, 2026, mapped to the ten build questions in the master template (`claude/Builder_Prototype_Template.md` in the project). Aby confirmed the open decisions on Oct 28, 2026 (see Decisions). Items still marked *(assumed)* are seed values and weights the prototype may tune.
 
@@ -81,7 +81,7 @@ Six trap records the finder must handle correctly: a rehire, a contractor conver
 * Which systems are connected to the HR feed and which are behind SSO.
 
 **6. What should the demo reveal?**
-* **Headline: the riskiest orphan isn't a person.** `svc-fpa-sync` loads general ledger actuals into the financial planning application every night and can write forecast versions. Its owner, a finance systems engineer, left 41 days ago. Its password is 790 days old, and it signed in 3 days ago, because the nightly load still needs it. Deleting it would stop the load before the Q4 forecast review on Nov 5; leaving it means nobody owns an account that can change the forecast the board sees. The right action is reassign and rotate.
+* **Headline: the riskiest orphan isn't a person.** `svc-fpa-sync` loads general ledger actuals into the financial planning application every Sunday night and can write forecast versions. Its owner, a finance systems engineer, left 41 days ago. Its password is 790 days old, and it signed in 3 days ago, because the weekly load still needs it. Deleting it would stop Sunday's load before the Q4 forecast review on Nov 5; leaving it means nobody owns an account that can change the forecast the board sees. The right action is reassign and rotate.
 * A former Larkspur system administrator, involuntarily terminated 58 days ago, is still enabled with domain admin rights in a domain the corp domain trusts.
 * 9 of 47 person orphans are in the finance app, which isn't behind SSO. One former accounts payable clerk can still create and approve vendor payments.
 * A former sales lead exported a customer report from the CRM 5 days after termination.
@@ -91,10 +91,10 @@ Six trap records the finder must handle correctly: a rehire, a contractor conver
 1. Open the **Ghost Map**; watch terminations fade in and live tethers light up.
 2. Click the brightest ghost: `svc-fpa-sync`.
 3. Open **Blast Radius**; see the general ledger, the forecast model, and the Nov 5 board review.
-4. Click **Why?** on the score of 96.
+4. Click **Why?** on the score of 94.
 5. In **Review**, choose **Reassign**, pick the new owner, approve as analyst, then as system owner; watch the credential rotate (simulated).
-6. Press **Approve batch** on 31 standard orphans.
-7. Open **Leaks**; see the two systems behind 36% of orphans and accept the upstream fix.
+6. **Review batch** → approve 36 low-risk accounts → **Run now**: 36 verified, one finance account comes back "Not removed".
+7. Open **Leaks**; see the two systems behind 36% of orphans, switch to the Deputy CISO, and accept both upstream fixes. **Runs** shows the projected drop.
 
 **8. What does the AI do, and where must a person approve?**
 * **Simulated AI:** suggests name matches when IDs are missing (with confidence); proposes a new owner for orphaned service accounts from group membership and recent use; writes a plain-language "Why?" for each score; drafts the upstream fix proposal.
@@ -120,9 +120,9 @@ A light, editorial interface in Plum & Gold. Plum for structure; gold reserved f
 | **Ghost Map** (home) | Who left, and what did they leave behind? | The org as a constellation of departments. Terminated people appear as translucent ghost nodes; each live account is a glowing tether from the ghost to the system it lives in. Tether thickness = privilege; glow = days since termination. Service-account ghosts are drawn as gears. One counter: **81 accounts outlived their owners.** |
 | **Departure** | How did one exit actually go? | Swimlanes from the termination date, one per system. Each lane ends when the account was disabled; lanes still open keep growing in gold, labeled "still open, 58 days". |
 | **Blast Radius** | What can this account reach? | Concentric rings: account → groups and roles → apps and data → business processes (board forecast, vendor payments, customer records, production cloud), with counts in business terms ("FY27 operating plan", "12 forecast versions", "38,000 customer records"). |
-| **Review** | What do we do about it? | A card deck. Each card: who, where, score, top reason, proposed action. Keys **D** disable, **R** reassign, **K** keep with reason, **Enter** approve. Low-risk cards group into one batch. Two-person cards show both approval slots. |
+| **Review** | What do we do about it? | A card deck. Each card: who, where, score, top reason, proposed action. Keys **D** disable, **R** reassign, **O** find owner, **K** keep with reason, **C** confirm match, **Enter** approve. Low-risk cards group into one batch. Two-person cards show both approval slots. |
 | **Leaks** | Why do orphans keep appearing? | A pipe diagram from HR to each system; systems the HR feed or SSO doesn't reach drip orphans into a basin. Bar chart of median days to remove by system. The upstream fix, drafted by the simulated AI, with an **Accept fix** button. |
-| **Runs** | Is it getting better? | Daily run calendar, 12-week trend of open orphans and exposure days, next run countdown, and the match-rule log (what changed and why). |
+| **Runs** | Is it getting better? | Daily finds calendar, 12-week trend of open orphans (with a projection once a fix is accepted), exposure days, next run countdown, sources, and the match-rule log (what changed and why). |
 
 Always present: generic/real tool names toggle, **Reset**, **Presenter** mode, activity log drawer, and the required footer.
 
@@ -135,7 +135,7 @@ Motion: ghosts fade in on load; tethers pulse once when lit; a tether snaps and 
 * **FR-1 Aggregate:** load all eleven sources; show per-source counts, last pull time, and whether the source is on the HR feed and behind SSO.
 * **FR-2 Match:** employee ID first, then email or UPN, then name (simulated AI, with confidence). Below 85% confidence goes to review, never to removal. Rehires and conversions match on the newest employee record.
 * **FR-3 Classify:** orphaned person account, orphaned service account, unowned account, or excluded (with reason). Excluded records stay visible with their reason.
-* **FR-4 Score (0–100) with "Why?":** privilege (up to 35), business reach (up to 25), days since termination (up to 15), activity after termination (15), credential older than 365 days (5), involuntary termination (5). *(weights assumed)*
+* **FR-4 Score (0–100) with "Why?":** privilege (up to 40), business reach (up to 25), days open (1 point per 3 days, up to 15), late activity after the owner left (10), credential older than 365 days (5), involuntary exit (5). *(weights tuned in the build so the planning service account ranks first and the Larkspur admin scores 90)*
 * **FR-5 Ghost Map, Departure, Blast Radius:** as described above; every node, lane, and ring opens its detail.
 * **FR-6 Review and approve:** card deck, keyboard actions, batch approval for standard orphans, two-person approval for privileged, executive, and service accounts. Rejections need a reason.
 * **FR-7 Act (simulated):** disable, remove from groups, revoke sessions and access keys, move to a disabled container, schedule deletion after a 30-day hold. Service accounts: assign new owner and rotate credential through the vault (simulated). Legal hold: disable only.
@@ -150,7 +150,7 @@ Motion: ghosts fade in on load; tethers pulse once when lit; a tether snaps and 
 
 | # | Case | Expected |
 |---|---|---|
-| 1 | `svc-fpa-sync`, owner terminated Sep 17, used Oct 25 | Orphaned service account, score 96; default **Reassign + rotate**; delete disabled ("used in the last 7 days"); two approvals required |
+| 1 | `svc-fpa-sync`, owner terminated Sep 17, used Oct 25 | Orphaned service account, score 94; default **Reassign + rotate**; delete disabled ("used in the last 7 days"); two approvals required |
 | 2 | Larkspur system administrator, involuntary, Aug 31 | Score ≥ 90; domain admin shown in Blast Radius; two approvals |
 | 3 | Former accounts payable clerk, finance app | Flag reads "can create and approve vendor payments" |
 | 4 | Former sales lead, CRM report export 5 days after termination | **Investigate** badge and security operations hand-off |
@@ -174,3 +174,15 @@ Motion: ghosts fade in on load; tethers pulse once when lit; a tether snaps and 
 3. Deletion follows a 30-day hold after disable.
 4. Inactive accounts of current employees (no sign-in for 90+ days) are out of scope.
 5. Generic tool names by default, with a real-name toggle as in JA-01.
+
+## Build results (Oct 28, 2026)
+
+| Measure | Seeded result |
+|---|---|
+| Flagged | 81: 47 person accounts (29 people) · 11 service accounts (4 in use) · 23 unowned |
+| Excluded with a reason | 5: rehired, converted, name twin, leave of absence, shared mailbox |
+| Batch-eligible | 36 low-risk person accounts; 23 accounts need two approvals |
+| Top scores | `svc-fpa-sync` 94 · `admin2` (unowned, Larkspur) 92 · `jwhitford-adm` 90 |
+| Leak sources | 17 of 47 from Larkspur (8) and the finance app (9); medians 47 and 34 days vs same day elsewhere |
+| Exposure | 7,305 days open across all 81 flagged accounts |
+| Known-answer checks | 12 of 12 pass (K1–K10 plus totals and leak sources), in the browser and with `node tools/run-checks.js` |
