@@ -4,7 +4,7 @@
 **Visual scheme:** 10 · Monochrome Swiss (the only scheme no build had used)
 **Status:** Prototype built · numbers below match the seeded build (updated Oct 28, 2026)
 
-Requirements from Aby's brief on Oct 28, 2026, mapped to the ten build questions in the master template (`claude/Builder_Prototype_Template.md` in the project). Items marked *(assumed)* were filled in by Claude and need Aby's confirmation.
+Requirements from Aby's brief on Oct 28, 2026, mapped to the ten build questions in the master template (`claude/Builder_Prototype_Template.md` in the project). Assumptions Claude filled in were confirmed by Aby on Oct 28, 2026.
 
 ---
 
@@ -107,9 +107,9 @@ Evidence expiring within 60 days: SOC 2 Type II (Nov 30), cyber insurance certif
 * No email or portal submission to customers.
 * Not a replacement for the GRC platform; it wraps existing sources.
 
-## Assumptions *(assumed)*
+## Assumptions (confirmed Oct 28, 2026)
 
-* Auto-answer threshold 85; review band 60–84; AI draft below 60. *(Open question in the requirements doc: keep 85 or go stricter.)*
+* Auto-answer threshold 85; review band 60–84; AI draft below 60.
 * Expiry window 60 days; effort 4.5 minutes per question by hand.
 * Every bank change needs the security lead; legal-locked text needs Counsel; analysts approve answers and send.
 * Exceptions average about 28 per questionnaire (83 across 3), not 20 as first estimated.
