@@ -2,7 +2,7 @@
 
 **Build type:** Simulator with a one-page report · **Mindset shift:** Business communication · **Owner:** Aby Rao
 **Visual scheme:** 3 · Glacier (all ten schemes are now in use; drawn at random, excluding JA-03's Graphite & Lime and BC-03's Plum & Gold)
-**Status:** Requirements ready · Prototype not yet built
+**Status:** Prototype built
 
 Requirements captured from Aby's notes on Oct 28, 2026, mapped to the ten build questions in the master template (`claude/Builder_Prototype_Template.md` in the project). Items marked *(assumed)* were filled in by Claude and need Aby's confirmation.
 

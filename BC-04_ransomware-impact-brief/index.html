@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ransomware Impact Brief</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6z"/><path d="M9.5 12.5l2 2 3.5-4"/></svg>
+    </div>
+    <div class="brand-text">
+      <div class="brand-title">Ransomware Impact</div>
+      <div class="brand-sub">BC-04 · Executive brief</div>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Views">
+    <button class="tab active" data-view="jewels" role="tab" aria-selected="true"><kbd>1</kbd>Jewels</button>
+    <button class="tab" data-view="attack" role="tab" aria-selected="false"><kbd>2</kbd>Attack</button>
+    <button class="tab" data-view="impact" role="tab" aria-selected="false"><kbd>3</kbd>Impact</button>
+    <button class="tab" data-view="data" role="tab" aria-selected="false"><kbd>4</kbd>Data</button>
+    <button class="tab" data-view="decide" role="tab" aria-selected="false"><kbd>5</kbd>Decide</button>
+  </nav>
+  <div class="spacer"></div>
+  <div class="tools">
+    <div class="persona" data-tip="Who is using the simulator. Approvals check this.">
+      <label for="persona">Viewing as</label>
+      <select id="persona"></select>
+    </div>
+    <button class="btn" id="btnChecks" data-tip="Known-answer checks K1 to K12, run live against the engine.">Checks <span class="badge-count" id="checkCount">–</span></button>
+    <button class="btn" id="btnLog" data-tip="Every run, decision and approval, with who did it.">Log <span class="badge-count" id="logCount">0</span></button>
+    <button class="btn icon" id="btnPresenter" aria-label="Presenter mode" data-tip="Presenter mode: larger type (P).">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+    </button>
+    <button class="btn" id="btnReset" data-tip="Start over: clears the run, decisions, approvals and the log.">Reset</button>
+  </div>
+</header>
+
+<div class="hero-strip" id="heroStrip">
+  <div class="hero-empty" id="heroEmpty">
+    <span class="pulse-dot"></span>
+    <span>Pick a scenario on <button class="linkish" data-goto="attack">Attack</button> and press <b>Run</b> to see the three numbers.</span>
+  </div>
+  <div class="hero-items hidden" id="heroItems">
+    <div class="hero-scn" id="heroScn"></div>
+    <button class="hero-item" data-goto="impact" id="heroHours" data-tip="">
+      <span class="h-label">Hours down</span><span class="h-value" id="hvHours">0</span><span class="h-sub" id="hsHours"></span>
+    </button>
+    <button class="hero-item" data-goto="data" id="heroCust" data-tip="">
+      <span class="h-label">Customers affected</span><span class="h-value" id="hvCust">0</span><span class="h-sub" id="hsCust"></span>
+    </button>
+    <button class="hero-item accent" data-goto="impact" id="heroRev" data-tip="">
+      <span class="h-label">Revenue at risk</span><span class="h-value" id="hvRev">$0</span><span class="h-sub" id="hsRev"></span>
+    </button>
+  </div>
+</div>
+
+<main id="main">
+  <!-- 1 JEWELS -->
+  <section class="view active" id="view-jewels" role="tabpanel">
+    <div class="view-head">
+      <div>
+        <h1>What keeps us in business?</h1>
+        <div class="sub">12 crown jewels, the data they hold, and what an hour without them costs.</div>
+      </div>
+      <div class="spacer"></div>
+      <div class="filters" id="classFilters" role="group" aria-label="Filter by data class"></div>
+    </div>
+    <div class="jewels-body">
+      <div class="wall" id="wall"></div>
+      <aside class="card drawer" id="jewelDrawer" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <!-- 2 ATTACK -->
+  <section class="view" id="view-attack" role="tabpanel">
+    <div class="view-head">
+      <div>
+        <h1>How far does one break-in reach?</h1>
+        <div class="sub" id="attackSub">Pick a way in, then press Run.</div>
+      </div>
+    </div>
+    <div class="attack-body">
+      <div class="card map-card">
+        <svg id="zoneSvg" viewBox="0 0 1100 610" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Trust zones and attack paths"></svg>
+        <div class="map-legend">
+          <span class="lg"><i class="sw ok"></i>Running</span>
+          <span class="lg"><i class="sw lock"></i>Encrypted</span>
+          <span class="lg"><i class="sw exp"></i>Data presumed exposed</span>
+          <span class="lg"><i class="sw cut"></i>Path cut by a control</span>
+        </div>
+      </div>
+      <aside class="side">
+        <div class="card side-card">
+          <div class="card-h">Way in <span class="sub">6 scenarios</span></div>
+          <div class="scn-list" id="scnList"></div>
+          <div class="run-row">
+            <button class="btn primary" id="btnRun">Run</button>
+            <span class="muted small" id="runNote"></span>
+          </div>
+        </div>
+        <div class="card side-card grow">
+          <div class="card-h">What happened <span class="sim-tag" data-tip="Written by a simulated AI from the engine's results.">simulated</span></div>
+          <div class="result" id="attackResult"><div class="empty">Results appear here after a run.</div></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 3 IMPACT -->
+  <section class="view" id="view-impact" role="tabpanel">
+    <div class="view-head">
+      <div>
+        <h1>What does it cost the business?</h1>
+        <div class="sub" id="impactSub">Run a scenario first.</div>
+      </div>
+      <div class="spacer"></div>
+      <div class="head-controls">
+        <label class="field" data-tip="When the files are encrypted. The calendar changes how much each hour costs.">
+          <span>Start</span>
+          <select id="startSel"></select>
+        </label>
+        <div class="switches" id="wkSwitches"></div>
+      </div>
+    </div>
+    <div class="impact-body">
+      <div class="card timeline-card">
+        <div class="card-h">Recovery timeline <span class="sub" id="tlSub"></span><span class="spacer"></span>
+          <span class="tl-legend">
+            <span class="lg"><i class="sw restore"></i>Restore</span>
+            <span class="lg"><i class="sw rebuild"></i>Rebuild</span>
+            <span class="lg"><i class="sw offline"></i>Offline copy</span>
+            <span class="lg"><i class="sw vendor"></i>Vendor</span>
+          </span>
+        </div>
+        <div class="tl-host" id="tlHost"></div>
+        <div class="clock-row">
+          <button class="btn sm icon" id="btnPlay" aria-label="Play clock" data-tip="Play the clock.">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5l12 7-12 7z"/></svg>
+          </button>
+          <input type="range" id="clock" min="0" max="200" step="1" value="0" aria-label="Clock hour">
+          <div class="clock-read mono" id="clockRead">Hour 0</div>
+        </div>
+      </div>
+      <div class="impact-cards">
+        <div class="card">
+          <div class="card-h">Who is affected <button class="why" data-why="people">Why?</button></div>
+          <div class="people" id="peopleList"></div>
+        </div>
+        <div class="card">
+          <div class="card-h">Total impact <span class="sub" id="totalSub"></span><button class="why" data-why="cost">Why?</button></div>
+          <div class="wf-host" id="wfHost"></div>
+        </div>
+        <div class="card">
+          <div class="card-h">Obligations and clocks <span class="tag-warn" data-tip="Reference markers only. Legal confirms before any real use.">not legal advice</span></div>
+          <div class="obl" id="oblList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 DATA -->
+  <section class="view" id="view-data" role="tabpanel">
+    <div class="view-head">
+      <div>
+        <h1>What did they take?</h1>
+        <div class="sub">Data on a reached system is presumed exposed until forensics shows otherwise.</div>
+      </div>
+    </div>
+    <div class="data-tiles" id="dataTiles"></div>
+    <div class="data-body">
+      <div class="card">
+        <div class="card-h">Where it sits <span class="sub" id="matrixSub">held · presumed exposed</span></div>
+        <div class="matrix-host" id="matrix"></div>
+      </div>
+      <div class="card">
+        <div class="card-h">Data that can't be restored <button class="why" data-why="dataLost">Why?</button></div>
+        <div class="lost-host" id="lostBars"></div>
+        <div class="notify" id="notifyLine"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 DECIDE -->
+  <section class="view" id="view-decide" role="tabpanel">
+    <div class="view-head">
+      <div>
+        <h1>What do we change?</h1>
+        <div class="sub">Projections only. Nothing changes the baseline without approval.</div>
+      </div>
+    </div>
+    <div class="decide-body">
+      <div class="card">
+        <div class="card-h">Controls <span class="sub" id="ctrlSub">effect of each alone</span></div>
+        <div class="ctrl-grid" id="ctrlGrid"></div>
+      </div>
+      <div class="card order-card">
+        <div class="card-h">Restore order <button class="why" data-why="order">Why?</button></div>
+        <ol class="order" id="orderList"></ol>
+        <div class="order-foot">
+          <span class="muted small" id="teamsNote"></span>
+          <span class="spacer"></span>
+          <button class="btn sm" id="btnOrderReset">Default</button>
+          <button class="btn sm primary" id="btnAdopt" data-tip="Only the COO can adopt a new restore order as the baseline.">Adopt</button>
+        </div>
+      </div>
+      <div class="decide-right">
+        <div class="card">
+          <div class="card-h">Baseline vs projection</div>
+          <div class="compare" id="compare"></div>
+        </div>
+        <div class="card brief-card">
+          <div class="card-h">Executive brief <span class="sim-tag" data-tip="Drafted by a simulated AI. A person edits and approves it.">simulated</span></div>
+          <div class="steps" id="briefSteps"></div>
+          <div class="brief-actions">
+            <button class="btn primary" id="btnDraft">Draft brief</button>
+            <button class="btn" id="btnOpenBrief" disabled>Open</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- drawers and modals -->
+<aside class="panel" id="panelChecks" aria-hidden="true">
+  <div class="panel-h"><span>Known-answer checks</span><span class="spacer"></span><button class="btn sm" id="btnRerun">Run again</button><button class="btn sm icon" data-close="panelChecks" aria-label="Close">✕</button></div>
+  <div class="panel-b" id="checksBody"></div>
+</aside>
+<aside class="panel" id="panelLog" aria-hidden="true">
+  <div class="panel-h"><span>Activity log</span><span class="spacer"></span><button class="btn sm icon" data-close="panelLog" aria-label="Close">✕</button></div>
+  <ol class="panel-b log" id="logBody"></ol>
+</aside>
+
+<div class="modal" id="briefModal" aria-hidden="true" role="dialog" aria-label="Executive brief">
+  <div class="modal-inner">
+    <div class="modal-bar">
+      <div class="steps compact" id="briefStepsModal"></div>
+      <span class="spacer"></span>
+      <button class="btn sm" id="btnEdit">Edit</button>
+      <button class="btn sm" id="btnLegal" data-tip="General Counsel signs off on the regulatory lines.">Legal sign-off</button>
+      <button class="btn sm primary" id="btnApprove" data-tip="The CISO approves. The last editor can't approve.">Approve</button>
+      <button class="btn sm" id="btnSend">Send</button>
+      <button class="btn sm" id="btnDownload">Download .md</button>
+      <button class="btn sm icon" data-close="briefModal" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-msg" id="briefMsg" role="status"></div>
+    <div class="paper-wrap"><article class="paper" id="paper"></article></div>
+  </div>
+</div>
+
+<div class="modal" id="whyModal" aria-hidden="true" role="dialog" aria-label="Why">
+  <div class="why-card">
+    <div class="panel-h"><span id="whyTitle">Why?</span><span class="sim-tag">simulated</span><span class="spacer"></span><button class="btn sm icon" data-close="whyModal" aria-label="Close">✕</button></div>
+    <div class="why-body" id="whyBody"></div>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip" role="tooltip"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<footer class="foot">For demo purposes only. All data is fictional and does not represent any organization. · Built by Aby Rao</footer>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
