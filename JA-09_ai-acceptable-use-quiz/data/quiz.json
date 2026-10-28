@@ -1,0 +1,212 @@
+{
+ "questions": [
+  {
+   "id": "Q1",
+   "prompt": "Rewrite our published press release in a public chatbot, signed in with your personal account.",
+   "inputs": {
+    "tool": "T5",
+    "data": [
+     "public"
+    ],
+    "purpose": "draft"
+   },
+   "topic": "Public chatbots",
+   "answer": "conditions"
+  },
+  {
+   "id": "Q2",
+   "prompt": "Paste this quarter's results, out next week, into the company AI assistant to draft talking points.",
+   "inputs": {
+    "tool": "T1",
+    "data": [
+     "financials"
+    ],
+    "purpose": "draft"
+   },
+   "topic": "Restricted data",
+   "answer": "not_approved"
+  },
+  {
+   "id": "Q3",
+   "prompt": "Ask the code assistant to review a pull request with no secrets in it.",
+   "inputs": {
+    "tool": "T3",
+    "data": [
+     "code"
+    ],
+    "purpose": "code"
+   },
+   "topic": "Approved tools",
+   "answer": "approved"
+  },
+  {
+   "id": "Q4",
+   "prompt": "Upload a list of 2,000 customer emails to the company AI assistant to plan a campaign.",
+   "inputs": {
+    "tool": "T1",
+    "data": [
+     "customer"
+    ],
+    "purpose": "summarize"
+   },
+   "topic": "Restricted data",
+   "answer": "not_approved"
+  },
+  {
+   "id": "Q5",
+   "prompt": "Support Copilot drafts a reply to a customer complaint. You edit and send it.",
+   "inputs": {
+    "tool": "T2",
+    "data": [
+     "customer"
+    ],
+    "purpose": "reply",
+    "reviewed": true
+   },
+   "topic": "Customer replies",
+   "answer": "conditions"
+  },
+  {
+   "id": "Q6",
+   "prompt": "A supplier invites NoteHawk to your call. You let it take notes.",
+   "inputs": {
+    "tool": "T6",
+    "data": [
+     "strategy"
+    ],
+    "purpose": "meeting"
+   },
+   "topic": "Blocked tools",
+   "answer": "not_approved"
+  },
+  {
+   "id": "Q7",
+   "prompt": "Use the company AI assistant to rank 300 job applicants by résumé.",
+   "inputs": {
+    "tool": "T1",
+    "data": [
+     "employee"
+    ],
+    "purpose": "people"
+   },
+   "topic": "Decisions about people",
+   "answer": "not_approved"
+  },
+  {
+   "id": "Q8",
+   "prompt": "Ask the company AI assistant to summarize an internal process doc.",
+   "inputs": {
+    "tool": "T1",
+    "data": [
+     "internal"
+    ],
+    "purpose": "summarize"
+   },
+   "topic": "Approved tools",
+   "answer": "approved"
+  },
+  {
+   "id": "Q9",
+   "prompt": "Paste a config file with an API key into the code assistant to debug it.",
+   "inputs": {
+    "tool": "T3",
+    "data": [
+     "code",
+     "secrets"
+    ],
+    "purpose": "code"
+   },
+   "topic": "Never-allowed data",
+   "answer": "not_approved"
+  },
+  {
+   "id": "Q10",
+   "prompt": "The company AI assistant takes notes in your team meeting. You told everyone at the start.",
+   "inputs": {
+    "tool": "T1",
+    "data": [
+     "internal"
+    ],
+    "purpose": "meeting",
+    "consent": true
+   },
+   "topic": "Meetings",
+   "answer": "conditions"
+  },
+  {
+   "id": "Q11",
+   "prompt": "TabGenie AI, a browser extension, summarizes a customer contract for you.",
+   "inputs": {
+    "tool": "T7",
+    "data": [
+     "strategy"
+    ],
+    "purpose": "summarize"
+   },
+   "topic": "Blocked tools",
+   "answer": "not_approved"
+  },
+  {
+   "id": "Q12",
+   "prompt": "Set up the company AI assistant to send replies to customer emails automatically.",
+   "inputs": {
+    "tool": "T1",
+    "data": [
+     "internal"
+    ],
+    "purpose": "reply",
+    "reviewed": false
+   },
+   "topic": "Customer replies",
+   "answer": "not_approved"
+  }
+ ],
+ "scoring": {
+  "correct": 100,
+  "streak_step": 10,
+  "streak_cap": 50,
+  "hint_cost": 25,
+  "pass_correct": 10,
+  "levels": [
+   [
+    "AI Explorer",
+    0
+   ],
+   [
+    "AI Navigator",
+    800
+   ],
+   [
+    "AI Champion",
+    1400
+   ]
+  ]
+ },
+ "badges": [
+  {
+   "id": "guardian",
+   "name": "Data Guardian",
+   "rule": "Answer every restricted-data question correctly (Q2, Q4, Q9)."
+  },
+  {
+   "id": "streak",
+   "name": "Clean Streak",
+   "rule": "Five correct answers in a row."
+  },
+  {
+   "id": "reader",
+   "name": "Policy Reader",
+   "rule": "Open five policy sections."
+  },
+  {
+   "id": "ally",
+   "name": "Speak-up Ally",
+   "rule": "Finish the three Speak up cards."
+  },
+  {
+   "id": "certified",
+   "name": "Certified",
+   "rule": "10 of 12 correct. Records your policy attestation."
+  }
+ ]
+}

@@ -1,0 +1,384 @@
+{
+ "as_of": "2026-10-30",
+ "window": [
+  "2026-10-01",
+  "2026-10-30"
+ ],
+ "policy": {
+  "title": "AI Acceptable Use Policy",
+  "version": "2.1",
+  "effective": "2026-10-14",
+  "owner": "AI Governance Committee",
+  "review": "Every 6 months, or when a tool or rule changes",
+  "sections": [
+   {
+    "id": "1",
+    "title": "Why this policy exists",
+    "items": [
+     [
+      "1.1",
+      "AI tools help us work faster. This policy tells you which tools to use, what data can go into them, and what stays human."
+     ],
+     [
+      "1.2",
+      "It applies to everyone who works for us, on any device, whenever company or customer information is involved."
+     ]
+    ]
+   },
+   {
+    "id": "2",
+    "title": "Five principles",
+    "items": [
+     [
+      "2.1",
+      "AI helps; people decide."
+     ],
+     [
+      "2.2",
+      "Protect data: only put in what the tool is approved for."
+     ],
+     [
+      "2.3",
+      "You own the output: check it before you use it."
+     ],
+     [
+      "2.4",
+      "Be open about AI use when it matters to the reader."
+     ],
+     [
+      "2.5",
+      "Speak up when something looks wrong."
+     ]
+    ]
+   },
+   {
+    "id": "3",
+    "title": "Data: what can go where",
+    "items": [
+     [
+      "3.1",
+      "Every piece of information has a class: Public, Internal, Confidential or Restricted."
+     ],
+     [
+      "3.2",
+      "Use a tool only for data up to the class it's approved for (see the table)."
+     ],
+     [
+      "3.3",
+      "Restricted data goes only into a tool approved for that exact data and task. Today that's Support Copilot, for customer data in support work."
+     ],
+     [
+      "3.4",
+      "Never put passwords, keys, tokens, payment card numbers, bank account numbers or government ID numbers into any AI tool."
+     ]
+    ]
+   },
+   {
+    "id": "4",
+    "title": "Tools",
+    "items": [
+     [
+      "4.1",
+      "Use the approved tools first. They run on our enterprise accounts and don't train on our data."
+     ],
+     [
+      "4.2",
+      "Blocked tools (for example NoteHawk and TabGenie AI) must not be used, even if a customer or supplier invites them."
+     ],
+     [
+      "4.3",
+      "Public chatbots with personal accounts: published content only, never signed in with a company email."
+     ],
+     [
+      "4.4",
+      "Need a tool that isn't listed? Request it through AI vendor intake. Don't start with a free trial."
+     ]
+    ]
+   },
+   {
+    "id": "5",
+    "title": "Never use AI to",
+    "items": [
+     [
+      "5.1",
+      "Make or recommend decisions about people: hiring, firing, pay, promotion or discipline."
+     ],
+     [
+      "5.2",
+      "Imitate a real person's voice, face or writing without their written consent."
+     ],
+     [
+      "5.3",
+      "Get around security controls, monitoring or this policy."
+     ],
+     [
+      "5.4",
+      "Monitor or profile colleagues."
+     ]
+    ]
+   },
+   {
+    "id": "6",
+    "title": "Your responsibilities",
+    "items": [
+     [
+      "6.1",
+      "A person reviews anything AI drafts before it reaches a customer."
+     ],
+     [
+      "6.2",
+      "Check facts, figures, code and sources. AI output is your work once you use it."
+     ],
+     [
+      "6.3",
+      "Tell everyone in a meeting before AI takes notes, and delete recordings within 30 days."
+     ],
+     [
+      "6.4",
+      "Label AI-generated images and media in external content."
+     ]
+    ]
+   },
+   {
+    "id": "7",
+    "title": "Speak up",
+    "items": [
+     [
+      "7.1",
+      "If you see AI used against this policy, talk to the person, ask the AI help desk, or report it. Anonymous reports are welcome."
+     ],
+     [
+      "7.2",
+      "Reports start with coaching, not discipline. Retaliation against anyone who speaks up is not allowed."
+     ],
+     [
+      "7.3",
+      "Never forward or screenshot the sensitive data itself when you report."
+     ]
+    ]
+   },
+   {
+    "id": "8",
+    "title": "Exceptions",
+    "items": [
+     [
+      "8.1",
+      "Ask the AI Governance Committee for an exception with a business reason, an owner and an end date. Wait for approval before you start."
+     ]
+    ]
+   }
+  ],
+  "history": [
+   {
+    "version": "2.0",
+    "date": "2026-04-01",
+    "change": "Added Support Copilot for customer data; added the five principles."
+   },
+   {
+    "version": "2.1",
+    "date": "2026-10-14",
+    "change": "Blocked NoteHawk and TabGenie AI (blacklist v3.2); added 4.2 and 6.3."
+   }
+  ]
+ },
+ "classes": [
+  "Public",
+  "Internal",
+  "Confidential",
+  "Restricted"
+ ],
+ "data_types": [
+  {
+   "id": "public",
+   "label": "Published content",
+   "cls": "Public",
+   "never": false,
+   "examples": "Website copy, press releases, published docs"
+  },
+  {
+   "id": "internal",
+   "label": "Internal documents",
+   "cls": "Internal",
+   "never": false,
+   "examples": "Announcements, process docs, meeting agendas"
+  },
+  {
+   "id": "strategy",
+   "label": "Plans and contracts",
+   "cls": "Confidential",
+   "never": false,
+   "examples": "Strategy decks, pricing, customer and supplier contracts"
+  },
+  {
+   "id": "code",
+   "label": "Source code",
+   "cls": "Confidential",
+   "never": false,
+   "examples": "Application code with no secrets in it"
+  },
+  {
+   "id": "customer",
+   "label": "Customer personal data",
+   "cls": "Restricted",
+   "never": false,
+   "examples": "Names, emails, phone numbers, support tickets, account history"
+  },
+  {
+   "id": "employee",
+   "label": "Employee records",
+   "cls": "Restricted",
+   "never": false,
+   "examples": "HR files, pay, performance, health and leave"
+  },
+  {
+   "id": "financials",
+   "label": "Unreleased financials",
+   "cls": "Restricted",
+   "never": false,
+   "examples": "Quarter results and forecasts before they're public"
+  },
+  {
+   "id": "secrets",
+   "label": "Passwords and keys",
+   "cls": "Restricted",
+   "never": true,
+   "examples": "Passwords, API keys, tokens, private certificates"
+  },
+  {
+   "id": "payment",
+   "label": "Card, bank and ID numbers",
+   "cls": "Restricted",
+   "never": true,
+   "examples": "Payment card numbers, bank account numbers, government ID numbers"
+  }
+ ],
+ "tools": [
+  {
+   "id": "T1",
+   "name": "Company AI assistant",
+   "status": "approved",
+   "max_class": "Confidential",
+   "restricted_ok": [],
+   "purposes": null,
+   "note": "Enterprise tenant with single sign-on. Prompts aren't used for training and are kept 30 days. Includes meeting notes."
+  },
+  {
+   "id": "T2",
+   "name": "Support Copilot",
+   "status": "approved",
+   "max_class": "Internal",
+   "restricted_ok": [
+    "customer"
+   ],
+   "purposes": [
+    "reply",
+    "summarize"
+   ],
+   "note": "Built into the support desk. Approved for customer personal data in support work only."
+  },
+  {
+   "id": "T3",
+   "name": "Code assistant",
+   "status": "approved",
+   "max_class": "Confidential",
+   "restricted_ok": [],
+   "purposes": [
+    "code",
+    "summarize"
+   ],
+   "note": "Enterprise license on company repositories. Code isn't used for training."
+  },
+  {
+   "id": "T4",
+   "name": "Design tool AI",
+   "status": "limited",
+   "max_class": "Internal",
+   "restricted_ok": [],
+   "purposes": [
+    "draft",
+    "image"
+   ],
+   "note": "AI features in the company design tool. Internal and public content only."
+  },
+  {
+   "id": "T5",
+   "name": "Public chatbot, personal account",
+   "status": "public_only",
+   "max_class": "Public",
+   "restricted_ok": [],
+   "purposes": null,
+   "note": "Any consumer AI chatbot used with a personal account. Published content only."
+  },
+  {
+   "id": "T6",
+   "name": "NoteHawk meeting bot",
+   "status": "blocked",
+   "max_class": null,
+   "restricted_ok": [],
+   "purposes": null,
+   "note": "Free meeting note-taker. Blocked by the AI Governance Committee (blacklist v3.2, BL-06)."
+  },
+  {
+   "id": "T7",
+   "name": "TabGenie AI extension",
+   "status": "blocked",
+   "max_class": null,
+   "restricted_ok": [],
+   "purposes": null,
+   "note": "Browser extension that reads every page you open. Blocked (blacklist v3.2, BL-04)."
+  }
+ ],
+ "status_label": {
+  "approved": "Approved",
+  "limited": "Approved with limits",
+  "public_only": "Public content only",
+  "blocked": "Blocked"
+ },
+ "purposes": [
+  {
+   "id": "draft",
+   "label": "Draft or edit writing"
+  },
+  {
+   "id": "summarize",
+   "label": "Summarize or analyze"
+  },
+  {
+   "id": "code",
+   "label": "Write or review code"
+  },
+  {
+   "id": "meeting",
+   "label": "Take meeting notes"
+  },
+  {
+   "id": "reply",
+   "label": "Reply to a customer"
+  },
+  {
+   "id": "image",
+   "label": "Create images or visuals"
+  },
+  {
+   "id": "people",
+   "label": "Screen, rank or evaluate people"
+  },
+  {
+   "id": "likeness",
+   "label": "Imitate a real person's voice or face"
+  }
+ ],
+ "rule_label": {
+  "R1": "Never-allowed data (keys, card, bank or ID numbers)",
+  "R2": "Decisions about people",
+  "R3": "Imitating a real person",
+  "R4": "Blocked tool",
+  "R5": "Non-public data in a public chatbot",
+  "R6": "Data above the tool's approval",
+  "R7": "Tool not approved for this task",
+  "R8": "Customer reply without review",
+  "R9": "Meeting notes without telling attendees",
+  "R10": "Allowed with conditions",
+  "R11": "Allowed"
+ }
+}

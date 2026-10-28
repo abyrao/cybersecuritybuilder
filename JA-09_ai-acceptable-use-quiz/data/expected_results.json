@@ -1,0 +1,615 @@
+{
+ "self_check": {
+  "K1_customer_list_public_chatbot": {
+   "verdict": "not_approved",
+   "rule": "R5",
+   "clauses": [
+    "4.3",
+    "3.2"
+   ],
+   "safer": "Use Support Copilot instead.",
+   "conditions": [],
+   "data_class": "Restricted"
+  },
+  "K2_customer_list_company_assistant": {
+   "verdict": "not_approved",
+   "rule": "R6",
+   "clauses": [
+    "3.3"
+   ],
+   "safer": "Use Support Copilot instead.",
+   "conditions": [],
+   "data_class": "Restricted"
+  },
+  "K3_customer_reply_support_copilot": {
+   "verdict": "conditions",
+   "rule": "R10",
+   "clauses": [
+    "3.3",
+    "6.1",
+    "6.2"
+   ],
+   "safer": null,
+   "conditions": [
+    "Use only the fields the task needs",
+    "No card, bank or ID numbers",
+    "A person reviews and sends the reply"
+   ],
+   "data_class": "Restricted"
+  },
+  "K4_card_numbers_support_copilot": {
+   "verdict": "not_approved",
+   "rule": "R1",
+   "clauses": [
+    "3.4"
+   ],
+   "safer": "Remove the numbers, keys or passwords first, or use masked values (for example the last four digits).",
+   "conditions": [],
+   "data_class": "Restricted"
+  },
+  "K5_press_release_public_chatbot": {
+   "verdict": "conditions",
+   "rule": "R10",
+   "clauses": [
+    "4.3",
+    "6.2"
+   ],
+   "safer": null,
+   "conditions": [
+    "Don't sign in with your company email",
+    "Paste only what's already published",
+    "Check facts before you use it"
+   ],
+   "data_class": "Public"
+  },
+  "K6_code_no_secrets": {
+   "verdict": "approved",
+   "rule": "R11",
+   "clauses": [
+    "6.2"
+   ],
+   "safer": null,
+   "conditions": [
+    "Check the output before you use it"
+   ],
+   "data_class": "Confidential"
+  },
+  "K7_code_with_key": {
+   "verdict": "not_approved",
+   "rule": "R1",
+   "clauses": [
+    "3.4"
+   ],
+   "safer": "Remove the numbers, keys or passwords first, or use masked values (for example the last four digits).",
+   "conditions": [],
+   "data_class": "Restricted"
+  },
+  "K8_rank_applicants": {
+   "verdict": "not_approved",
+   "rule": "R2",
+   "clauses": [
+    "5.1",
+    "2.1"
+   ],
+   "safer": "Use AI to draft the job description or interview questions. Decisions about people stay with people.",
+   "conditions": [],
+   "data_class": "Restricted"
+  },
+  "K9_auto_reply_no_review": {
+   "verdict": "not_approved",
+   "rule": "R8",
+   "clauses": [
+    "6.1"
+   ],
+   "safer": "Keep the AI draft, then have a person review and send it.",
+   "conditions": [],
+   "data_class": "Internal"
+  },
+  "K10_notehawk": {
+   "verdict": "not_approved",
+   "rule": "R4",
+   "clauses": [
+    "4.2"
+   ],
+   "safer": "Use the company AI assistant's meeting notes, and tell everyone first.",
+   "conditions": [],
+   "data_class": "Internal"
+  },
+  "K11_company_notes_no_consent": {
+   "verdict": "not_approved",
+   "rule": "R9",
+   "clauses": [
+    "6.3"
+   ],
+   "safer": "Tell everyone in the meeting first, then turn on notes.",
+   "conditions": [],
+   "data_class": "Internal"
+  },
+  "K12_company_notes_consent": {
+   "verdict": "conditions",
+   "rule": "R10",
+   "clauses": [
+    "6.3",
+    "6.2"
+   ],
+   "safer": null,
+   "conditions": [
+    "Tell everyone before notes start",
+    "Delete the recording within 30 days"
+   ],
+   "data_class": "Internal"
+  }
+ },
+ "quiz_answers": {
+  "Q1": {
+   "verdict": "conditions",
+   "rule": "R10",
+   "clauses": [
+    "4.3",
+    "6.2"
+   ],
+   "safer": null,
+   "conditions": [
+    "Don't sign in with your company email",
+    "Paste only what's already published",
+    "Check facts before you use it"
+   ],
+   "data_class": "Public"
+  },
+  "Q2": {
+   "verdict": "not_approved",
+   "rule": "R6",
+   "clauses": [
+    "3.3"
+   ],
+   "safer": "No approved tool takes this data for this task. Remove or mask the restricted data, or request an exception.",
+   "conditions": [],
+   "data_class": "Restricted"
+  },
+  "Q3": {
+   "verdict": "approved",
+   "rule": "R11",
+   "clauses": [
+    "6.2"
+   ],
+   "safer": null,
+   "conditions": [
+    "Check the output before you use it"
+   ],
+   "data_class": "Confidential"
+  },
+  "Q4": {
+   "verdict": "not_approved",
+   "rule": "R6",
+   "clauses": [
+    "3.3"
+   ],
+   "safer": "Use Support Copilot instead.",
+   "conditions": [],
+   "data_class": "Restricted"
+  },
+  "Q5": {
+   "verdict": "conditions",
+   "rule": "R10",
+   "clauses": [
+    "3.3",
+    "6.1",
+    "6.2"
+   ],
+   "safer": null,
+   "conditions": [
+    "Use only the fields the task needs",
+    "No card, bank or ID numbers",
+    "A person reviews and sends the reply"
+   ],
+   "data_class": "Restricted"
+  },
+  "Q6": {
+   "verdict": "not_approved",
+   "rule": "R4",
+   "clauses": [
+    "4.2"
+   ],
+   "safer": "Use the company AI assistant's meeting notes, and tell everyone first.",
+   "conditions": [],
+   "data_class": "Confidential"
+  },
+  "Q7": {
+   "verdict": "not_approved",
+   "rule": "R2",
+   "clauses": [
+    "5.1",
+    "2.1"
+   ],
+   "safer": "Use AI to draft the job description or interview questions. Decisions about people stay with people.",
+   "conditions": [],
+   "data_class": "Restricted"
+  },
+  "Q8": {
+   "verdict": "approved",
+   "rule": "R11",
+   "clauses": [
+    "6.2"
+   ],
+   "safer": null,
+   "conditions": [
+    "Check the output before you use it"
+   ],
+   "data_class": "Internal"
+  },
+  "Q9": {
+   "verdict": "not_approved",
+   "rule": "R1",
+   "clauses": [
+    "3.4"
+   ],
+   "safer": "Remove the numbers, keys or passwords first, or use masked values (for example the last four digits).",
+   "conditions": [],
+   "data_class": "Restricted"
+  },
+  "Q10": {
+   "verdict": "conditions",
+   "rule": "R10",
+   "clauses": [
+    "6.3",
+    "6.2"
+   ],
+   "safer": null,
+   "conditions": [
+    "Tell everyone before notes start",
+    "Delete the recording within 30 days"
+   ],
+   "data_class": "Internal"
+  },
+  "Q11": {
+   "verdict": "not_approved",
+   "rule": "R4",
+   "clauses": [
+    "4.2"
+   ],
+   "safer": "Use the company AI assistant instead.",
+   "conditions": [],
+   "data_class": "Confidential"
+  },
+  "Q12": {
+   "verdict": "not_approved",
+   "rule": "R8",
+   "clauses": [
+    "6.1"
+   ],
+   "safer": "Keep the AI draft, then have a person review and send it.",
+   "conditions": [],
+   "data_class": "Internal"
+  }
+ },
+ "runs": {
+  "perfect": {
+   "points": 1650,
+   "best_streak": 12,
+   "correct": 12,
+   "level": "AI Champion",
+   "passed": true
+  },
+  "perfect_with_two_hints": {
+   "points": 1600,
+   "best_streak": 12,
+   "correct": 12,
+   "level": "AI Champion",
+   "passed": true
+  },
+  "ten_correct_misses_q4_q11": {
+   "points": 1180,
+   "best_streak": 6,
+   "correct": 10,
+   "level": "AI Navigator",
+   "passed": true
+  },
+  "nine_correct": {
+   "points": 990,
+   "best_streak": 4,
+   "correct": 9,
+   "level": "AI Navigator",
+   "passed": false
+  },
+  "none": {
+   "points": 0,
+   "best_streak": 0,
+   "correct": 0,
+   "level": "AI Explorer",
+   "passed": false
+  }
+ },
+ "program": {
+  "departments": [
+   {
+    "id": "FIN",
+    "name": "Finance",
+    "headcount": 310,
+    "quiz_attempts": 279,
+    "completion": 0.9,
+    "quiz_avg": 0.783,
+    "passed": 137,
+    "attested": 0.442,
+    "checks": 325,
+    "approved": 210,
+    "conditions": 45,
+    "not_approved": 70,
+    "not_approved_share": 0.215
+   },
+   {
+    "id": "HR",
+    "name": "HR",
+    "headcount": 180,
+    "quiz_attempts": 175,
+    "completion": 0.972,
+    "quiz_avg": 0.807,
+    "passed": 101,
+    "attested": 0.561,
+    "checks": 143,
+    "approved": 90,
+    "conditions": 25,
+    "not_approved": 28,
+    "not_approved_share": 0.196
+   },
+   {
+    "id": "SAL",
+    "name": "Sales",
+    "headcount": 820,
+    "quiz_attempts": 582,
+    "completion": 0.71,
+    "quiz_avg": 0.829,
+    "passed": 388,
+    "attested": 0.473,
+    "checks": 871,
+    "approved": 370,
+    "conditions": 170,
+    "not_approved": 331,
+    "not_approved_share": 0.38
+   },
+   {
+    "id": "MKT",
+    "name": "Marketing",
+    "headcount": 260,
+    "quiz_attempts": 229,
+    "completion": 0.881,
+    "quiz_avg": 0.792,
+    "passed": 120,
+    "attested": 0.462,
+    "checks": 549,
+    "approved": 320,
+    "conditions": 160,
+    "not_approved": 69,
+    "not_approved_share": 0.126
+   },
+   {
+    "id": "ENG",
+    "name": "Engineering",
+    "headcount": 1150,
+    "quiz_attempts": 908,
+    "completion": 0.79,
+    "quiz_avg": 0.783,
+    "passed": 445,
+    "attested": 0.387,
+    "checks": 1510,
+    "approved": 1280,
+    "conditions": 130,
+    "not_approved": 100,
+    "not_approved_share": 0.066
+   },
+   {
+    "id": "SUP",
+    "name": "Customer Support",
+    "headcount": 720,
+    "quiz_attempts": 598,
+    "completion": 0.831,
+    "quiz_avg": 0.739,
+    "passed": 206,
+    "attested": 0.286,
+    "checks": 1445,
+    "approved": 120,
+    "conditions": 1250,
+    "not_approved": 75,
+    "not_approved_share": 0.052
+   },
+   {
+    "id": "LEG",
+    "name": "Legal",
+    "headcount": 90,
+    "quiz_attempts": 86,
+    "completion": 0.956,
+    "quiz_avg": 0.837,
+    "passed": 60,
+    "attested": 0.667,
+    "checks": 89,
+    "approved": 75,
+    "conditions": 10,
+    "not_approved": 4,
+    "not_approved_share": 0.045
+   },
+   {
+    "id": "OPS",
+    "name": "Operations",
+    "headcount": 590,
+    "quiz_attempts": 242,
+    "completion": 0.41,
+    "quiz_avg": 0.662,
+    "passed": 39,
+    "attested": 0.066,
+    "checks": 395,
+    "approved": 270,
+    "conditions": 80,
+    "not_approved": 45,
+    "not_approved_share": 0.114
+   },
+   {
+    "id": "EXE",
+    "name": "Executive",
+    "headcount": 80,
+    "quiz_attempts": 51,
+    "completion": 0.637,
+    "quiz_avg": 0.752,
+    "passed": 20,
+    "attested": 0.25,
+    "checks": 64,
+    "approved": 40,
+    "conditions": 10,
+    "not_approved": 14,
+    "not_approved_share": 0.219
+   }
+  ],
+  "totals": {
+   "headcount": 4200,
+   "quiz_attempts": 3150,
+   "completion": 0.75,
+   "passed": 1516,
+   "attested": 0.361,
+   "quiz_avg": 0.777,
+   "checks": 5391,
+   "approved": 2775,
+   "conditions": 1880,
+   "not_approved": 736,
+   "not_approved_share": 0.137
+  },
+  "quiz_questions": [
+   {
+    "id": "Q1",
+    "topic": "Public chatbots",
+    "attempts": 3150,
+    "missed": 766,
+    "missed_share": 0.243
+   },
+   {
+    "id": "Q2",
+    "topic": "Restricted data",
+    "attempts": 3150,
+    "missed": 483,
+    "missed_share": 0.153
+   },
+   {
+    "id": "Q3",
+    "topic": "Approved tools",
+    "attempts": 3150,
+    "missed": 264,
+    "missed_share": 0.084
+   },
+   {
+    "id": "Q4",
+    "topic": "Restricted data",
+    "attempts": 3150,
+    "missed": 1710,
+    "missed_share": 0.543
+   },
+   {
+    "id": "Q5",
+    "topic": "Customer replies",
+    "attempts": 3150,
+    "missed": 741,
+    "missed_share": 0.235
+   },
+   {
+    "id": "Q6",
+    "topic": "Blocked tools",
+    "attempts": 3150,
+    "missed": 979,
+    "missed_share": 0.311
+   },
+   {
+    "id": "Q7",
+    "topic": "Decisions about people",
+    "attempts": 3150,
+    "missed": 376,
+    "missed_share": 0.119
+   },
+   {
+    "id": "Q8",
+    "topic": "Approved tools",
+    "attempts": 3150,
+    "missed": 140,
+    "missed_share": 0.044
+   },
+   {
+    "id": "Q9",
+    "topic": "Never-allowed data",
+    "attempts": 3150,
+    "missed": 531,
+    "missed_share": 0.169
+   },
+   {
+    "id": "Q10",
+    "topic": "Meetings",
+    "attempts": 3150,
+    "missed": 954,
+    "missed_share": 0.303
+   },
+   {
+    "id": "Q11",
+    "topic": "Blocked tools",
+    "attempts": 3150,
+    "missed": 1206,
+    "missed_share": 0.383
+   },
+   {
+    "id": "Q12",
+    "topic": "Customer replies",
+    "attempts": 3150,
+    "missed": 294,
+    "missed_share": 0.093
+   }
+  ],
+  "not_approved_by_rule": {
+   "R1": 60,
+   "R2": 22,
+   "R4": 349,
+   "R5": 92,
+   "R6": 157,
+   "R8": 56
+  },
+  "by_tool": {
+   "T1": {
+    "approved": 1755,
+    "not_approved": 235,
+    "conditions": 255
+   },
+   "T2": {
+    "conditions": 1230
+   },
+   "T3": {
+    "approved": 900,
+    "not_approved": 60
+   },
+   "T4": {
+    "approved": 120
+   },
+   "T5": {
+    "not_approved": 92,
+    "conditions": 395
+   },
+   "T6": {
+    "not_approved": 254
+   },
+   "T7": {
+    "not_approved": 95
+   }
+  },
+  "reports": {
+   "total": 23,
+   "by_rule": {
+    "R4": 11,
+    "R5": 4,
+    "R8": 3,
+    "R6": 2,
+    "R1": 2,
+    "R2": 1
+   },
+   "by_status": {
+    "coached": 15,
+    "open": 5,
+    "no_issue": 3
+   },
+   "anonymous": 12,
+   "talked_first": 8,
+   "disciplinary": 0
+  },
+  "questions_total": 123
+ }
+}

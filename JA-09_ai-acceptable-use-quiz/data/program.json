@@ -1,0 +1,611 @@
+{
+ "departments": [
+  {
+   "id": "FIN",
+   "name": "Finance",
+   "headcount": 310
+  },
+  {
+   "id": "HR",
+   "name": "HR",
+   "headcount": 180
+  },
+  {
+   "id": "SAL",
+   "name": "Sales",
+   "headcount": 820
+  },
+  {
+   "id": "MKT",
+   "name": "Marketing",
+   "headcount": 260
+  },
+  {
+   "id": "ENG",
+   "name": "Engineering",
+   "headcount": 1150
+  },
+  {
+   "id": "SUP",
+   "name": "Customer Support",
+   "headcount": 720
+  },
+  {
+   "id": "LEG",
+   "name": "Legal",
+   "headcount": 90
+  },
+  {
+   "id": "OPS",
+   "name": "Operations",
+   "headcount": 590
+  },
+  {
+   "id": "EXE",
+   "name": "Executive",
+   "headcount": 80
+  }
+ ],
+ "quiz_rates": {
+  "FIN": {
+   "Q1": 0.77,
+   "Q2": 0.86,
+   "Q3": 0.93,
+   "Q4": 0.47,
+   "Q5": 0.74,
+   "Q6": 0.68,
+   "Q7": 0.89,
+   "Q8": 0.98,
+   "Q9": 0.81,
+   "Q10": 0.71,
+   "Q11": 0.63,
+   "Q12": 0.92
+  },
+  "HR": {
+   "Q1": 0.79,
+   "Q2": 0.88,
+   "Q3": 0.95,
+   "Q4": 0.49,
+   "Q5": 0.76,
+   "Q6": 0.7,
+   "Q7": 0.98,
+   "Q8": 0.98,
+   "Q9": 0.83,
+   "Q10": 0.73,
+   "Q11": 0.65,
+   "Q12": 0.94
+  },
+  "SAL": {
+   "Q1": 0.81,
+   "Q2": 0.9,
+   "Q3": 0.97,
+   "Q4": 0.51,
+   "Q5": 0.78,
+   "Q6": 0.84,
+   "Q7": 0.93,
+   "Q8": 0.98,
+   "Q9": 0.85,
+   "Q10": 0.75,
+   "Q11": 0.67,
+   "Q12": 0.96
+  },
+  "MKT": {
+   "Q1": 0.78,
+   "Q2": 0.87,
+   "Q3": 0.94,
+   "Q4": 0.48,
+   "Q5": 0.75,
+   "Q6": 0.69,
+   "Q7": 0.9,
+   "Q8": 0.98,
+   "Q9": 0.82,
+   "Q10": 0.72,
+   "Q11": 0.64,
+   "Q12": 0.93
+  },
+  "ENG": {
+   "Q1": 0.76,
+   "Q2": 0.85,
+   "Q3": 0.92,
+   "Q4": 0.46,
+   "Q5": 0.73,
+   "Q6": 0.67,
+   "Q7": 0.88,
+   "Q8": 0.97,
+   "Q9": 0.92,
+   "Q10": 0.7,
+   "Q11": 0.62,
+   "Q12": 0.91
+  },
+  "SUP": {
+   "Q1": 0.71,
+   "Q2": 0.8,
+   "Q3": 0.87,
+   "Q4": 0.41,
+   "Q5": 0.88,
+   "Q6": 0.62,
+   "Q7": 0.83,
+   "Q8": 0.92,
+   "Q9": 0.75,
+   "Q10": 0.65,
+   "Q11": 0.57,
+   "Q12": 0.86
+  },
+  "LEG": {
+   "Q1": 0.83,
+   "Q2": 0.92,
+   "Q3": 0.98,
+   "Q4": 0.53,
+   "Q5": 0.8,
+   "Q6": 0.74,
+   "Q7": 0.95,
+   "Q8": 0.98,
+   "Q9": 0.87,
+   "Q10": 0.77,
+   "Q11": 0.69,
+   "Q12": 0.98
+  },
+  "OPS": {
+   "Q1": 0.65,
+   "Q2": 0.74,
+   "Q3": 0.81,
+   "Q4": 0.35,
+   "Q5": 0.62,
+   "Q6": 0.56,
+   "Q7": 0.77,
+   "Q8": 0.86,
+   "Q9": 0.69,
+   "Q10": 0.59,
+   "Q11": 0.51,
+   "Q12": 0.8
+  },
+  "EXE": {
+   "Q1": 0.74,
+   "Q2": 0.83,
+   "Q3": 0.9,
+   "Q4": 0.44,
+   "Q5": 0.71,
+   "Q6": 0.65,
+   "Q7": 0.86,
+   "Q8": 0.95,
+   "Q9": 0.78,
+   "Q10": 0.68,
+   "Q11": 0.6,
+   "Q12": 0.89
+  }
+ },
+ "completion": {
+  "FIN": 0.9,
+  "HR": 0.97,
+  "SAL": 0.71,
+  "MKT": 0.88,
+  "ENG": 0.79,
+  "SUP": 0.83,
+  "LEG": 0.96,
+  "OPS": 0.41,
+  "EXE": 0.64
+ },
+ "templates": {
+  "S1": {
+   "tool": "T1",
+   "data": [
+    "internal"
+   ],
+   "purpose": "summarize"
+  },
+  "S2": {
+   "tool": "T1",
+   "data": [
+    "strategy"
+   ],
+   "purpose": "draft"
+  },
+  "S3": {
+   "tool": "T1",
+   "data": [
+    "customer"
+   ],
+   "purpose": "summarize"
+  },
+  "S4": {
+   "tool": "T2",
+   "data": [
+    "customer"
+   ],
+   "purpose": "reply",
+   "reviewed": true
+  },
+  "S5": {
+   "tool": "T2",
+   "data": [
+    "customer"
+   ],
+   "purpose": "summarize"
+  },
+  "S6": {
+   "tool": "T3",
+   "data": [
+    "code"
+   ],
+   "purpose": "code"
+  },
+  "S7": {
+   "tool": "T3",
+   "data": [
+    "code",
+    "secrets"
+   ],
+   "purpose": "code"
+  },
+  "S8": {
+   "tool": "T6",
+   "data": [
+    "strategy"
+   ],
+   "purpose": "meeting"
+  },
+  "S9": {
+   "tool": "T1",
+   "data": [
+    "internal"
+   ],
+   "purpose": "meeting",
+   "consent": true
+  },
+  "S10": {
+   "tool": "T5",
+   "data": [
+    "public"
+   ],
+   "purpose": "draft"
+  },
+  "S11": {
+   "tool": "T5",
+   "data": [
+    "strategy"
+   ],
+   "purpose": "summarize"
+  },
+  "S12": {
+   "tool": "T7",
+   "data": [
+    "strategy"
+   ],
+   "purpose": "summarize"
+  },
+  "S13": {
+   "tool": "T1",
+   "data": [
+    "employee"
+   ],
+   "purpose": "people"
+  },
+  "S14": {
+   "tool": "T1",
+   "data": [
+    "financials"
+   ],
+   "purpose": "draft"
+  },
+  "S15": {
+   "tool": "T1",
+   "data": [
+    "internal"
+   ],
+   "purpose": "reply",
+   "reviewed": false
+  },
+  "S16": {
+   "tool": "T4",
+   "data": [
+    "public"
+   ],
+   "purpose": "image"
+  }
+ },
+ "volume": {
+  "FIN": {
+   "S1": 120,
+   "S2": 90,
+   "S14": 38,
+   "S11": 20,
+   "S12": 12,
+   "S10": 15,
+   "S9": 30
+  },
+  "HR": {
+   "S1": 60,
+   "S2": 30,
+   "S13": 22,
+   "S9": 15,
+   "S10": 10,
+   "S11": 6
+  },
+  "SAL": {
+   "S1": 160,
+   "S2": 210,
+   "S3": 48,
+   "S8": 212,
+   "S9": 90,
+   "S10": 80,
+   "S11": 32,
+   "S12": 18,
+   "S15": 21
+  },
+  "MKT": {
+   "S1": 90,
+   "S2": 110,
+   "S10": 160,
+   "S16": 120,
+   "S11": 30,
+   "S3": 25,
+   "S8": 14
+  },
+  "ENG": {
+   "S6": 900,
+   "S7": 60,
+   "S1": 260,
+   "S2": 120,
+   "S12": 40,
+   "S10": 70,
+   "S9": 60
+  },
+  "SUP": {
+   "S4": 820,
+   "S5": 410,
+   "S3": 40,
+   "S15": 35,
+   "S1": 120,
+   "S10": 20
+  },
+  "LEG": {
+   "S1": 40,
+   "S2": 35,
+   "S9": 10,
+   "S11": 4
+  },
+  "OPS": {
+   "S1": 180,
+   "S2": 90,
+   "S9": 40,
+   "S10": 40,
+   "S12": 25,
+   "S8": 20
+  },
+  "EXE": {
+   "S2": 40,
+   "S14": 6,
+   "S9": 10,
+   "S8": 8
+  }
+ },
+ "reports": [
+  {
+   "id": "SR-01",
+   "rule": "R4",
+   "dept": "SAL",
+   "channel": "named",
+   "talked_first": true,
+   "status": "coached"
+  },
+  {
+   "id": "SR-02",
+   "rule": "R4",
+   "dept": "SAL",
+   "channel": "anonymous",
+   "talked_first": false,
+   "status": "coached"
+  },
+  {
+   "id": "SR-03",
+   "rule": "R4",
+   "dept": "SAL",
+   "channel": "anonymous",
+   "talked_first": false,
+   "status": "coached"
+  },
+  {
+   "id": "SR-04",
+   "rule": "R5",
+   "dept": "MKT",
+   "channel": "named",
+   "talked_first": true,
+   "status": "coached"
+  },
+  {
+   "id": "SR-05",
+   "rule": "R4",
+   "dept": "OPS",
+   "channel": "anonymous",
+   "talked_first": false,
+   "status": "open"
+  },
+  {
+   "id": "SR-06",
+   "rule": "R8",
+   "dept": "SUP",
+   "channel": "named",
+   "talked_first": true,
+   "status": "coached"
+  },
+  {
+   "id": "SR-07",
+   "rule": "R4",
+   "dept": "SAL",
+   "channel": "named",
+   "talked_first": false,
+   "status": "coached"
+  },
+  {
+   "id": "SR-08",
+   "rule": "R6",
+   "dept": "SAL",
+   "channel": "anonymous",
+   "talked_first": false,
+   "status": "coached"
+  },
+  {
+   "id": "SR-09",
+   "rule": "R4",
+   "dept": "EXE",
+   "channel": "named",
+   "talked_first": true,
+   "status": "coached"
+  },
+  {
+   "id": "SR-10",
+   "rule": "R5",
+   "dept": "FIN",
+   "channel": "anonymous",
+   "talked_first": false,
+   "status": "no_issue"
+  },
+  {
+   "id": "SR-11",
+   "rule": "R4",
+   "dept": "SAL",
+   "channel": "anonymous",
+   "talked_first": false,
+   "status": "open"
+  },
+  {
+   "id": "SR-12",
+   "rule": "R1",
+   "dept": "ENG",
+   "channel": "named",
+   "talked_first": true,
+   "status": "coached"
+  },
+  {
+   "id": "SR-13",
+   "rule": "R4",
+   "dept": "MKT",
+   "channel": "named",
+   "talked_first": false,
+   "status": "coached"
+  },
+  {
+   "id": "SR-14",
+   "rule": "R8",
+   "dept": "SUP",
+   "channel": "anonymous",
+   "talked_first": false,
+   "status": "coached"
+  },
+  {
+   "id": "SR-15",
+   "rule": "R5",
+   "dept": "SAL",
+   "channel": "named",
+   "talked_first": true,
+   "status": "no_issue"
+  },
+  {
+   "id": "SR-16",
+   "rule": "R4",
+   "dept": "SAL",
+   "channel": "anonymous",
+   "talked_first": false,
+   "status": "coached"
+  },
+  {
+   "id": "SR-17",
+   "rule": "R2",
+   "dept": "HR",
+   "channel": "anonymous",
+   "talked_first": false,
+   "status": "open"
+  },
+  {
+   "id": "SR-18",
+   "rule": "R4",
+   "dept": "OPS",
+   "channel": "named",
+   "talked_first": true,
+   "status": "coached"
+  },
+  {
+   "id": "SR-19",
+   "rule": "R6",
+   "dept": "SAL",
+   "channel": "named",
+   "talked_first": false,
+   "status": "coached"
+  },
+  {
+   "id": "SR-20",
+   "rule": "R5",
+   "dept": "MKT",
+   "channel": "anonymous",
+   "talked_first": false,
+   "status": "coached"
+  },
+  {
+   "id": "SR-21",
+   "rule": "R4",
+   "dept": "SAL",
+   "channel": "anonymous",
+   "talked_first": false,
+   "status": "open"
+  },
+  {
+   "id": "SR-22",
+   "rule": "R1",
+   "dept": "ENG",
+   "channel": "named",
+   "talked_first": true,
+   "status": "no_issue"
+  },
+  {
+   "id": "SR-23",
+   "rule": "R8",
+   "dept": "SUP",
+   "channel": "anonymous",
+   "talked_first": false,
+   "status": "open"
+  }
+ ],
+ "report_status": {
+  "coached": "Coached",
+  "open": "Open",
+  "no_issue": "No issue found"
+ },
+ "questions": [
+  {
+   "text": "Can I use AI to summarize customer calls?",
+   "count": 41,
+   "clause": "6.3"
+  },
+  {
+   "text": "A supplier uses NoteHawk. Can I join the call?",
+   "count": 33,
+   "clause": "4.2"
+  },
+  {
+   "text": "Can the company assistant screen résumés for keywords?",
+   "count": 18,
+   "clause": "5.1"
+  },
+  {
+   "text": "Can I paste a screenshot of a dashboard into a chatbot?",
+   "count": 15,
+   "clause": "3.2"
+  },
+  {
+   "text": "Is the code assistant OK for open-source projects?",
+   "count": 9,
+   "clause": "4.1"
+  },
+  {
+   "text": "Do I have to label AI images in internal decks?",
+   "count": 7,
+   "clause": "6.4"
+  }
+ ],
+ "faq_draft": {
+  "clause": "6.3",
+  "version": "2.2",
+  "text": "Customer call summaries: Support Copilot may summarize recorded support calls when the customer was told the call is recorded. Use the company AI assistant for internal calls only. NoteHawk stays blocked, even when a customer or supplier brings it.",
+  "change": "Clarified 6.3: customer call summaries allowed in Support Copilot when the customer was told about the recording."
+ }
+}
