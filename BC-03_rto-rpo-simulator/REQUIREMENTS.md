@@ -2,7 +2,7 @@
 
 **Build type:** Simulator · **Mindset shift:** Business communication · **Owner:** Aby Rao
 **Visual scheme:** 9 · Plum & Gold (drawn at random from the five schemes no build has used)
-**Status:** Requirements ready
+**Status:** Prototype built (see README.md)
 
 Requirements captured from Aby's notes on Oct 27, 2026, mapped to the ten build questions in the master template (`claude/Builder_Prototype_Template.md` in the project). Items marked *(assumed)* were filled in by Claude and need Aby's confirmation.
 
@@ -63,7 +63,7 @@ Supporting findings:
 1. **Map:** hover **Wire transfers**; its dependency tree lights up across all layers.
 2. **Targets:** the "8 of 11" tile; click the AD inversion to see every service that inherits it.
 3. **Simulate:** pick **Ransomware**, start Friday 07:00 (payroll Friday, month-end), press **Run**; watch the failure spread and scrub the clock to hour 56.
-4. Click **Wire transfers** → **Why?** shows the critical path, gold on the map.
+4. Click **Wire transfers** → **Why?** shows the critical path, in the accent color on the map.
 5. **Impact:** downtime and data-loss bars versus targets, cost to date, the 36-hour clock.
 6. **Decide:** toggle **Break-glass backup console** and **Rehearse AD recovery**; wires drop from 56 h to 26 h (ghost bars).
 7. **Draft memo** (simulated) → switch to the continuity lead → **Approve**.
@@ -134,7 +134,7 @@ Layout is fixed by the data, not force-directed, so the room sees the same pictu
 * **Clock:** scrubber from hour 0 to 12 hours past the last recovery; play at 1, 4, or 12 sim-hours per second.
 * **Node states:** healthy, down, failing over, restoring (progress ring), waiting on a prerequisite (hourglass), degraded (soft dependency down), recovered.
 * **Service rail:** each service with a bar counting toward its RTO marker; turns accent when it passes it.
-* **Critical path:** click a service → **Why?** → the gold path on the map, plus a plain-language chain (simulated).
+* **Critical path:** click a service → **Why?** → the accent-colored path on the map, plus a plain-language chain (simulated).
 * **Injects:** cards appear at their hour with a discussion prompt and a notes field for the facilitator.
 * **Decisions:** fraud fail open or closed (SC04, SC17) and workarounds (ACH, wires, branches, contact center) are toggle cards. Each records who decided and at what hour.
 * **Custom:** click any node → **Fail** → mode (outage, corruption, compromise, vendor outage with hours). Combine several.
@@ -151,7 +151,7 @@ Layout is fixed by the data, not force-directed, so the room sees the same pictu
 * **What-ifs** (from `topology.json`): break-glass backup console, rehearse AD recovery, second HSM pair in DC2, diverse fiber entry, 4-hour immutable backups, warm fraud standby. Each re-runs the engine; ghost bars show the projection.
 * **Fix ranking:** hours saved across all services and data loss avoided for the current scenario.
 * **Gap acceptance:** service owner, reason, review date.
-* **Memo (simulated):** one page: scenario, what broke, the chain, cost, the two fixes that matter most, and asks. Download as Markdown.
+* **Memo (simulated):** one page: scenario, what broke, the chain, cost, the two fixes that matter most, and asks. Download as a text file.
 
 ### Global
 Reset, presenter mode (larger type), activity log, Checks panel, "simulated" tag on every AI output, persona switcher ("Viewing as": Facilitator, Continuity lead, Head of Payments, CISO), and the required footer on every view.

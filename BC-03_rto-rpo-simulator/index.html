@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RTO and RPO Tabletop Simulator</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+    </div>
+    <div>
+      <div class="brand-title">Recovery Tabletop</div>
+      <div class="brand-sub">BC-03 · RTO and RPO simulator</div>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-view="map" role="tab"><kbd>1</kbd>Map</button>
+    <button class="tab" data-view="targets" role="tab"><kbd>2</kbd>Targets</button>
+    <button class="tab" data-view="simulate" role="tab"><kbd>3</kbd>Simulate</button>
+    <button class="tab" data-view="impact" role="tab"><kbd>4</kbd>Impact</button>
+    <button class="tab" data-view="decide" role="tab"><kbd>5</kbd>Decide</button>
+  </nav>
+  <div class="spacer"></div>
+  <div class="tools">
+    <div class="persona" data-tip="Who is using the simulator. Approvals and gap acceptance check this.">
+      <label for="persona">Viewing as</label>
+      <select id="persona"></select>
+    </div>
+    <button class="btn" id="btnChecks" data-tip="Known-answer checks, run live against the engine.">Checks <span class="badge-count" id="checkCount">–</span></button>
+    <button class="btn" id="btnLog" data-tip="Every run, decision and approval, with the sim hour and who did it.">Log <span class="badge-count" id="logCount">0</span></button>
+    <button class="btn icon" id="btnPresenter" data-tip="Presenter mode: larger type (P).">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+    </button>
+    <button class="btn" id="btnReset" data-tip="Start over: clears runs, decisions, approvals and the log.">Reset</button>
+  </div>
+</header>
+
+<main>
+  <!-- 1 MAP -->
+  <section class="view active" id="view-map">
+    <div class="view-head">
+      <div>
+        <h1>How is the bank built?</h1>
+        <div class="sub">76 assets, 9 layers, 5 sites. Hover a service to see what it stands on.</div>
+      </div>
+    </div>
+    <div class="map-wrap" id="mapWrapMap">
+      <div class="card map-card" id="mapSlotMap"></div>
+      <aside class="side">
+        <div class="card" style="flex:1">
+          <div class="card-h">Business services <span class="sub">target RTO · RPO</span></div>
+          <ul class="list scroll" id="svcList"></ul>
+        </div>
+        <div class="card">
+          <div class="card-h">Sites</div>
+          <div class="toggles" id="siteToggles"></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 2 TARGETS -->
+  <section class="view" id="view-targets">
+    <div class="view-head">
+      <div>
+        <h1>Do our targets hold on paper?</h1>
+        <div class="sub">No failure needed. Each service is only as fast as the slowest thing it depends on.</div>
+      </div>
+    </div>
+    <div class="tiles" id="targetTiles" style="grid-template-columns: repeat(4, 1fr)"></div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-h">Promised vs chain <span class="sub">service target vs worst target below it</span></div>
+        <div class="chart" id="dumbbell"></div>
+      </div>
+      <div class="card">
+        <div class="card-h"><span id="scatterTitle">Target vs tested</span>
+          <span class="spacer"></span>
+          <div class="seg" id="scatterSeg"><button class="on" data-k="rto">RTO</button><button data-k="rpo">RPO</button></div>
+        </div>
+        <div class="chart" id="scatter"></div>
+      </div>
+      <div class="card">
+        <div class="card-h" id="targetListTitle">Inversions</div>
+        <div class="scroll" id="targetList" style="padding: 0 6px 10px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 SIMULATE -->
+  <section class="view" id="view-simulate">
+    <div class="card sim-bar">
+      <button class="scenario-btn" id="btnLibrary" data-tip="Pick one of 20 scenarios, or build a custom failure.">
+        <span class="k">Scenario</span><span class="v" id="scenarioName">Choose a scenario</span>
+      </button>
+      <div class="field"><label for="startDay">Start</label>
+        <div style="display:flex; gap:4px"><select id="startDay"></select><select id="startHour"></select></div>
+      </div>
+      <button class="tg" id="peakToggle" data-tip="Holiday card peak (Nov 15 to Dec 31): card payments ×1.4.">Holiday peak</button>
+      <button class="btn primary" id="btnRun">Run</button>
+      <div class="clock">
+        <button class="btn icon" id="btnPlay" data-tip="Play or pause the clock (space).">
+          <svg id="playIcon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l11-7z"/></svg>
+        </button>
+        <div class="speed" id="speed"><button data-s="1">1×</button><button data-s="4" class="on">4×</button><button data-s="12">12×</button></div>
+        <div class="scrub" id="scrub"><input type="range" id="clock" min="0" max="72" step="0.25" value="0" aria-label="Simulation clock"></div>
+        <div class="clock-read"><b id="clockH">Hour 0</b><span id="clockT">–</span></div>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <div class="card map-card" id="mapSlotSim"></div>
+      <aside class="side">
+        <div class="card" style="flex: 1.25">
+          <div class="card-h">Services <span class="sub" id="railSub">bar = time down vs RTO</span></div>
+          <div class="scroll" id="rail" style="padding: 0 6px 8px"></div>
+        </div>
+        <div class="card" style="flex: 1">
+          <div class="card-h" id="simSideTitle">Why?</div>
+          <div class="scroll" id="simSide"></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 4 IMPACT -->
+  <section class="view" id="view-impact">
+    <div class="view-head">
+      <div>
+        <h1>What does it cost the business?</h1>
+        <div class="sub" id="impactSub">Data lost to the left of hour 0, time down to the right.</div>
+      </div>
+    </div>
+    <div id="impactBody" style="display:flex; flex-direction:column; gap:14px; flex:1; min-height:0"></div>
+  </section>
+
+  <!-- 5 DECIDE -->
+  <section class="view" id="view-decide">
+    <div class="view-head">
+      <div>
+        <h1>What do we fix or accept?</h1>
+        <div class="sub" id="decideSub">Toggle a fix to project it. Nothing changes the baseline until an owner approves.</div>
+      </div>
+    </div>
+    <div id="decideBody" style="display:flex; flex-direction:column; gap:14px; flex:1; min-height:0"></div>
+  </section>
+</main>
+
+<!-- scenario library -->
+<div class="overlay" id="libOverlay" role="dialog" aria-label="Scenario library">
+  <div class="card lib">
+    <div class="card-h" style="padding-top:16px">Scenario library <span class="sub">20 scenarios</span><span class="spacer" style="flex:1"></span><button class="btn sm" id="libClose">Close</button></div>
+    <div class="filters" id="libFilters"></div>
+    <div class="lib-grid" id="libGrid"></div>
+  </div>
+</div>
+
+<!-- node drawer -->
+<aside class="drawer" id="drawer" aria-label="Asset details">
+  <div class="drawer-h"><div style="flex:1" id="drawerHead"></div><button class="btn sm" id="drawerClose">Close</button></div>
+  <div class="drawer-b" id="drawerBody"></div>
+</aside>
+
+<!-- panels -->
+<div class="card panel" id="logPanel"><div class="card-h">Activity log<span class="spacer" style="flex:1"></span><button class="btn sm" data-close="logPanel">Close</button></div><div class="scroll" id="logList"></div></div>
+<div class="card panel" id="checkPanel"><div class="card-h">Known-answer checks<span class="spacer" style="flex:1"></span><button class="btn sm" id="rerunChecks">Run again</button><button class="btn sm" data-close="checkPanel">Close</button></div><div class="scroll" id="checkList"></div></div>
+
+<div class="toast" id="toast"></div>
+<div class="tip" id="tip"></div>
+<footer>For demo purposes only. All data is fictional and does not represent any organization. · Built by Aby Rao</footer>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
