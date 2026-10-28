@@ -1,0 +1,74 @@
+[
+ {
+  "id": "R1",
+  "name": "Phished finance workstation",
+  "entry": "Z_user",
+  "mode": "encrypt",
+  "start": "2026-11-20T02:00",
+  "setup": "A finance analyst opens a fake invoice. Nine days later, files are encrypted at 2 a.m. Friday.",
+  "suggested": [
+   "C1",
+   "C3",
+   "C5"
+  ]
+ },
+ {
+  "id": "R2",
+  "name": "VPN appliance exploit",
+  "entry": "Z_corp",
+  "mode": "encrypt",
+  "start": "2026-11-20T02:00",
+  "setup": "An unpatched VPN appliance gives the attacker a foothold inside the data center.",
+  "suggested": [
+   "C3",
+   "C4"
+  ]
+ },
+ {
+  "id": "R3",
+  "name": "Plant remote-support tool",
+  "entry": "Z_ot",
+  "mode": "encrypt",
+  "start": "2026-11-20T02:00",
+  "setup": "A support vendor's remote access tool at a plant is compromised.",
+  "suggested": [
+   "C2"
+  ]
+ },
+ {
+  "id": "R4",
+  "name": "Leaked cloud access key",
+  "entry": "Z_cloud",
+  "mode": "encrypt",
+  "start": "2026-11-20T02:00",
+  "setup": "A developer's cloud key leaks in a public code repository.",
+  "suggested": [
+   "C4"
+  ]
+ },
+ {
+  "id": "R5",
+  "name": "Payroll provider ransomware",
+  "entry": "Z_saas",
+  "mode": "vendor",
+  "vendor_outage_h": 96,
+  "start": "2026-11-20T02:00",
+  "setup": "The payroll provider is hit. It expects 4 days to restore.",
+  "suggested": []
+ },
+ {
+  "id": "R6",
+  "name": "Formula theft, no encryption",
+  "entry": null,
+  "mode": "exfil",
+  "targets": [
+   "CJ09"
+  ],
+  "stopped_records": 40,
+  "start": "2026-11-20T02:00",
+  "setup": "A contractor's account downloads the formula library. A ransom note follows; nothing is encrypted.",
+  "suggested": [
+   "C5"
+  ]
+ }
+]

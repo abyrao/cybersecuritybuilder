@@ -1,0 +1,2546 @@
+{
+ "R1": {
+  "baseline": {
+   "zones": [
+    "Z_backup",
+    "Z_cloud",
+    "Z_corp",
+    "Z_ot",
+    "Z_user"
+   ],
+   "hit": {
+    "AD": {
+     "up": 64,
+     "loss_h": null,
+     "path": "rebuild"
+    },
+    "CJ01": {
+     "up": 34,
+     "loss_h": 0.25,
+     "path": "restore"
+    },
+    "CJ02": {
+     "up": 126,
+     "loss_h": 168,
+     "path": "rebuild"
+    },
+    "CJ03": {
+     "up": 30,
+     "loss_h": 0.25,
+     "path": "restore"
+    },
+    "CJ04": {
+     "up": 94,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ05": {
+     "up": 162,
+     "loss_h": 168,
+     "path": "rebuild"
+    },
+    "CJ06": {
+     "up": 102,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ08": {
+     "up": 54,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ09": {
+     "up": 134,
+     "loss_h": 984,
+     "path": "offline copy"
+    },
+    "CJ10": {
+     "up": 190,
+     "loss_h": 168,
+     "path": "rebuild"
+    },
+    "CJ11": {
+     "up": 90,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ12": {
+     "up": 72,
+     "loss_h": 24,
+     "path": "restore"
+    }
+   },
+   "jobs": [
+    {
+     "id": "AD",
+     "lane": 0,
+     "start": 24,
+     "end": 64,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ01",
+     "lane": 1,
+     "start": 24,
+     "end": 34,
+     "how": "restore"
+    },
+    {
+     "id": "CJ03",
+     "lane": 2,
+     "start": 24,
+     "end": 30,
+     "how": "restore"
+    },
+    {
+     "id": "CJ02",
+     "lane": 2,
+     "start": 30,
+     "end": 126,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ08",
+     "lane": 1,
+     "start": 34,
+     "end": 54,
+     "how": "restore"
+    },
+    {
+     "id": "CJ04",
+     "lane": 1,
+     "start": 64,
+     "end": 94,
+     "how": "restore"
+    },
+    {
+     "id": "CJ12",
+     "lane": 0,
+     "start": 64,
+     "end": 72,
+     "how": "restore"
+    },
+    {
+     "id": "CJ11",
+     "lane": 0,
+     "start": 72,
+     "end": 90,
+     "how": "restore"
+    },
+    {
+     "id": "CJ06",
+     "lane": 0,
+     "start": 90,
+     "end": 102,
+     "how": "restore"
+    },
+    {
+     "id": "CJ10",
+     "lane": 1,
+     "start": 94,
+     "end": 190,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ05",
+     "lane": 0,
+     "start": 102,
+     "end": 162,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ09",
+     "lane": 2,
+     "start": 126,
+     "end": 134,
+     "how": "offline copy"
+    }
+   ],
+   "services": {
+    "S1": {
+     "down_h": 34,
+     "cause": "CJ01"
+    },
+    "S2": {
+     "down_h": 94,
+     "cause": "CJ04"
+    },
+    "S3": {
+     "down_h": 94,
+     "cause": "CJ04"
+    },
+    "S4": {
+     "down_h": 190,
+     "cause": "CJ10"
+    },
+    "S5": {
+     "down_h": 102,
+     "cause": "CJ06"
+    }
+   },
+   "hours_down": 190,
+   "jewels_down": 11,
+   "revenue_at_risk": 9206470,
+   "revenue_lost": 2440529,
+   "per_service": {
+    "S1": {
+     "at_risk": 1926470,
+     "lost": 1348529
+    },
+    "S2": {
+     "at_risk": 7280000,
+     "lost": 1092000
+    }
+   },
+   "shoppers_turned_away": 21405,
+   "orders_delayed": 135590,
+   "partners_affected": 340,
+   "plant_workers_idle": 2900,
+   "plant_cost": 10340000,
+   "obligations": [
+    {
+     "id": "O1",
+     "due_h": 86.0,
+     "back_h": 102,
+     "missed": true
+    },
+    {
+     "id": "O2",
+     "due_h": 104.0,
+     "back_h": 102,
+     "missed": false
+    },
+    {
+     "id": "O3",
+     "due_h": 438.0,
+     "back_h": 162,
+     "missed": false
+    }
+   ],
+   "exposed": [
+    "CJ01",
+    "CJ02",
+    "CJ03",
+    "CJ04",
+    "CJ05",
+    "CJ06",
+    "CJ08",
+    "CJ09",
+    "CJ10",
+    "CJ11",
+    "CJ12"
+   ],
+   "exposure": {
+    "customer": {
+     "items": [
+      {
+       "jewel": "CJ01",
+       "records": 2400000,
+       "unit": "customers"
+      },
+      {
+       "jewel": "CJ02",
+       "records": 2400000,
+       "unit": "customers"
+      },
+      {
+       "jewel": "CJ11",
+       "records": 2400000,
+       "unit": "customers"
+      }
+     ],
+     "systems": [
+      "CJ01",
+      "CJ02",
+      "CJ11"
+     ],
+     "records": 2400000
+    },
+    "payment": {
+     "items": [
+      {
+       "jewel": "CJ03",
+       "records": 900000,
+       "unit": "stored cards"
+      }
+     ],
+     "systems": [
+      "CJ03"
+     ],
+     "records": 900000
+    },
+    "financial": {
+     "items": [
+      {
+       "jewel": "CJ04",
+       "records": 4200,
+       "unit": "suppliers"
+      },
+      {
+       "jewel": "CJ05",
+       "records": 1,
+       "unit": "quarter"
+      },
+      {
+       "jewel": "CJ06",
+       "records": 38,
+       "unit": "bank accounts"
+      },
+      {
+       "jewel": "CJ12",
+       "records": 340,
+       "unit": "retail partners"
+      }
+     ],
+     "systems": [
+      "CJ04",
+      "CJ05",
+      "CJ06",
+      "CJ12"
+     ]
+    },
+    "ip": {
+     "items": [
+      {
+       "jewel": "CJ08",
+       "records": 14000,
+       "unit": "design files"
+      },
+      {
+       "jewel": "CJ09",
+       "records": 2300,
+       "unit": "formulas"
+      },
+      {
+       "jewel": "CJ10",
+       "records": 2300,
+       "unit": "formulas"
+      }
+     ],
+     "systems": [
+      "CJ08",
+      "CJ09",
+      "CJ10"
+     ],
+     "formulas": 2300,
+     "design_files": 14000
+    }
+   },
+   "customers_exposed": 2400000,
+   "employees_exposed": 0,
+   "notification_cost": 7200000,
+   "recovery_cost": 1760000,
+   "team_hours": 404,
+   "total_impact": 21740529,
+   "data_lost_h": {
+    "AD": null,
+    "CJ01": 0.25,
+    "CJ02": 168,
+    "CJ03": 0.25,
+    "CJ04": 24,
+    "CJ05": 168,
+    "CJ06": 24,
+    "CJ08": 24,
+    "CJ09": 984,
+    "CJ10": 168,
+    "CJ11": 24,
+    "CJ12": 24
+   }
+  },
+  "with_suggested": {
+   "zones": [
+    "Z_user"
+   ],
+   "hit": {},
+   "jobs": [],
+   "services": {
+    "S1": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S2": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S3": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S4": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S5": {
+     "down_h": 0,
+     "cause": null
+    }
+   },
+   "hours_down": 0,
+   "jewels_down": 0,
+   "revenue_at_risk": 0,
+   "revenue_lost": 0,
+   "per_service": {
+    "S1": {
+     "at_risk": 0,
+     "lost": 0
+    },
+    "S2": {
+     "at_risk": 0,
+     "lost": 0
+    }
+   },
+   "shoppers_turned_away": 0,
+   "orders_delayed": 0,
+   "partners_affected": 0,
+   "plant_workers_idle": 0,
+   "plant_cost": 0,
+   "obligations": [
+    {
+     "id": "O1",
+     "due_h": 86.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O2",
+     "due_h": 104.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O3",
+     "due_h": 438.0,
+     "back_h": 0,
+     "missed": false
+    }
+   ],
+   "exposed": [],
+   "exposure": {},
+   "customers_exposed": 0,
+   "employees_exposed": 0,
+   "notification_cost": 0,
+   "recovery_cost": 0,
+   "team_hours": 0,
+   "total_impact": 0,
+   "data_lost_h": {}
+  }
+ },
+ "R2": {
+  "baseline": {
+   "zones": [
+    "Z_backup",
+    "Z_cloud",
+    "Z_corp",
+    "Z_ot"
+   ],
+   "hit": {
+    "AD": {
+     "up": 64,
+     "loss_h": null,
+     "path": "rebuild"
+    },
+    "CJ01": {
+     "up": 34,
+     "loss_h": 0.25,
+     "path": "restore"
+    },
+    "CJ02": {
+     "up": 126,
+     "loss_h": 168,
+     "path": "rebuild"
+    },
+    "CJ03": {
+     "up": 30,
+     "loss_h": 0.25,
+     "path": "restore"
+    },
+    "CJ04": {
+     "up": 94,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ05": {
+     "up": 162,
+     "loss_h": 168,
+     "path": "rebuild"
+    },
+    "CJ06": {
+     "up": 102,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ08": {
+     "up": 54,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ09": {
+     "up": 134,
+     "loss_h": 984,
+     "path": "offline copy"
+    },
+    "CJ10": {
+     "up": 190,
+     "loss_h": 168,
+     "path": "rebuild"
+    },
+    "CJ11": {
+     "up": 90,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ12": {
+     "up": 72,
+     "loss_h": 24,
+     "path": "restore"
+    }
+   },
+   "jobs": [
+    {
+     "id": "AD",
+     "lane": 0,
+     "start": 24,
+     "end": 64,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ01",
+     "lane": 1,
+     "start": 24,
+     "end": 34,
+     "how": "restore"
+    },
+    {
+     "id": "CJ03",
+     "lane": 2,
+     "start": 24,
+     "end": 30,
+     "how": "restore"
+    },
+    {
+     "id": "CJ02",
+     "lane": 2,
+     "start": 30,
+     "end": 126,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ08",
+     "lane": 1,
+     "start": 34,
+     "end": 54,
+     "how": "restore"
+    },
+    {
+     "id": "CJ04",
+     "lane": 1,
+     "start": 64,
+     "end": 94,
+     "how": "restore"
+    },
+    {
+     "id": "CJ12",
+     "lane": 0,
+     "start": 64,
+     "end": 72,
+     "how": "restore"
+    },
+    {
+     "id": "CJ11",
+     "lane": 0,
+     "start": 72,
+     "end": 90,
+     "how": "restore"
+    },
+    {
+     "id": "CJ06",
+     "lane": 0,
+     "start": 90,
+     "end": 102,
+     "how": "restore"
+    },
+    {
+     "id": "CJ10",
+     "lane": 1,
+     "start": 94,
+     "end": 190,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ05",
+     "lane": 0,
+     "start": 102,
+     "end": 162,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ09",
+     "lane": 2,
+     "start": 126,
+     "end": 134,
+     "how": "offline copy"
+    }
+   ],
+   "services": {
+    "S1": {
+     "down_h": 34,
+     "cause": "CJ01"
+    },
+    "S2": {
+     "down_h": 94,
+     "cause": "CJ04"
+    },
+    "S3": {
+     "down_h": 94,
+     "cause": "CJ04"
+    },
+    "S4": {
+     "down_h": 190,
+     "cause": "CJ10"
+    },
+    "S5": {
+     "down_h": 102,
+     "cause": "CJ06"
+    }
+   },
+   "hours_down": 190,
+   "jewels_down": 11,
+   "revenue_at_risk": 9206470,
+   "revenue_lost": 2440529,
+   "per_service": {
+    "S1": {
+     "at_risk": 1926470,
+     "lost": 1348529
+    },
+    "S2": {
+     "at_risk": 7280000,
+     "lost": 1092000
+    }
+   },
+   "shoppers_turned_away": 21405,
+   "orders_delayed": 135590,
+   "partners_affected": 340,
+   "plant_workers_idle": 2900,
+   "plant_cost": 10340000,
+   "obligations": [
+    {
+     "id": "O1",
+     "due_h": 86.0,
+     "back_h": 102,
+     "missed": true
+    },
+    {
+     "id": "O2",
+     "due_h": 104.0,
+     "back_h": 102,
+     "missed": false
+    },
+    {
+     "id": "O3",
+     "due_h": 438.0,
+     "back_h": 162,
+     "missed": false
+    }
+   ],
+   "exposed": [
+    "CJ01",
+    "CJ02",
+    "CJ03",
+    "CJ04",
+    "CJ05",
+    "CJ06",
+    "CJ08",
+    "CJ09",
+    "CJ10",
+    "CJ11",
+    "CJ12"
+   ],
+   "exposure": {
+    "customer": {
+     "items": [
+      {
+       "jewel": "CJ01",
+       "records": 2400000,
+       "unit": "customers"
+      },
+      {
+       "jewel": "CJ02",
+       "records": 2400000,
+       "unit": "customers"
+      },
+      {
+       "jewel": "CJ11",
+       "records": 2400000,
+       "unit": "customers"
+      }
+     ],
+     "systems": [
+      "CJ01",
+      "CJ02",
+      "CJ11"
+     ],
+     "records": 2400000
+    },
+    "payment": {
+     "items": [
+      {
+       "jewel": "CJ03",
+       "records": 900000,
+       "unit": "stored cards"
+      }
+     ],
+     "systems": [
+      "CJ03"
+     ],
+     "records": 900000
+    },
+    "financial": {
+     "items": [
+      {
+       "jewel": "CJ04",
+       "records": 4200,
+       "unit": "suppliers"
+      },
+      {
+       "jewel": "CJ05",
+       "records": 1,
+       "unit": "quarter"
+      },
+      {
+       "jewel": "CJ06",
+       "records": 38,
+       "unit": "bank accounts"
+      },
+      {
+       "jewel": "CJ12",
+       "records": 340,
+       "unit": "retail partners"
+      }
+     ],
+     "systems": [
+      "CJ04",
+      "CJ05",
+      "CJ06",
+      "CJ12"
+     ]
+    },
+    "ip": {
+     "items": [
+      {
+       "jewel": "CJ08",
+       "records": 14000,
+       "unit": "design files"
+      },
+      {
+       "jewel": "CJ09",
+       "records": 2300,
+       "unit": "formulas"
+      },
+      {
+       "jewel": "CJ10",
+       "records": 2300,
+       "unit": "formulas"
+      }
+     ],
+     "systems": [
+      "CJ08",
+      "CJ09",
+      "CJ10"
+     ],
+     "formulas": 2300,
+     "design_files": 14000
+    }
+   },
+   "customers_exposed": 2400000,
+   "employees_exposed": 0,
+   "notification_cost": 7200000,
+   "recovery_cost": 1760000,
+   "team_hours": 404,
+   "total_impact": 21740529,
+   "data_lost_h": {
+    "AD": null,
+    "CJ01": 0.25,
+    "CJ02": 168,
+    "CJ03": 0.25,
+    "CJ04": 24,
+    "CJ05": 168,
+    "CJ06": 24,
+    "CJ08": 24,
+    "CJ09": 984,
+    "CJ10": 168,
+    "CJ11": 24,
+    "CJ12": 24
+   }
+  },
+  "with_suggested": {
+   "zones": [
+    "Z_corp",
+    "Z_ot"
+   ],
+   "hit": {
+    "AD": {
+     "up": 44,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ04": {
+     "up": 74,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ05": {
+     "up": 80,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ06": {
+     "up": 64,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ09": {
+     "up": 82,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ10": {
+     "up": 98,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ11": {
+     "up": 62,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ12": {
+     "up": 52,
+     "loss_h": 24,
+     "path": "restore"
+    }
+   },
+   "jobs": [
+    {
+     "id": "AD",
+     "lane": 0,
+     "start": 24,
+     "end": 44,
+     "how": "restore"
+    },
+    {
+     "id": "CJ04",
+     "lane": 1,
+     "start": 44,
+     "end": 74,
+     "how": "restore"
+    },
+    {
+     "id": "CJ12",
+     "lane": 2,
+     "start": 44,
+     "end": 52,
+     "how": "restore"
+    },
+    {
+     "id": "CJ11",
+     "lane": 0,
+     "start": 44,
+     "end": 62,
+     "how": "restore"
+    },
+    {
+     "id": "CJ06",
+     "lane": 2,
+     "start": 52,
+     "end": 64,
+     "how": "restore"
+    },
+    {
+     "id": "CJ10",
+     "lane": 0,
+     "start": 62,
+     "end": 98,
+     "how": "restore"
+    },
+    {
+     "id": "CJ05",
+     "lane": 2,
+     "start": 64,
+     "end": 80,
+     "how": "restore"
+    },
+    {
+     "id": "CJ09",
+     "lane": 1,
+     "start": 74,
+     "end": 82,
+     "how": "restore"
+    }
+   ],
+   "services": {
+    "S1": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S2": {
+     "down_h": 74,
+     "cause": "CJ04"
+    },
+    "S3": {
+     "down_h": 74,
+     "cause": "CJ04"
+    },
+    "S4": {
+     "down_h": 98,
+     "cause": "CJ10"
+    },
+    "S5": {
+     "down_h": 74,
+     "cause": "CJ04"
+    }
+   },
+   "hours_down": 98,
+   "jewels_down": 7,
+   "revenue_at_risk": 3640000,
+   "revenue_lost": 546000,
+   "per_service": {
+    "S1": {
+     "at_risk": 0,
+     "lost": 0
+    },
+    "S2": {
+     "at_risk": 3640000,
+     "lost": 546000
+    }
+   },
+   "shoppers_turned_away": 0,
+   "orders_delayed": 103922,
+   "partners_affected": 340,
+   "plant_workers_idle": 2900,
+   "plant_cost": 5500000,
+   "obligations": [
+    {
+     "id": "O1",
+     "due_h": 86.0,
+     "back_h": 64,
+     "missed": false
+    },
+    {
+     "id": "O2",
+     "due_h": 104.0,
+     "back_h": 74,
+     "missed": false
+    },
+    {
+     "id": "O3",
+     "due_h": 438.0,
+     "back_h": 80,
+     "missed": false
+    }
+   ],
+   "exposed": [
+    "CJ04",
+    "CJ05",
+    "CJ06",
+    "CJ09",
+    "CJ10",
+    "CJ11",
+    "CJ12"
+   ],
+   "exposure": {
+    "financial": {
+     "items": [
+      {
+       "jewel": "CJ04",
+       "records": 4200,
+       "unit": "suppliers"
+      },
+      {
+       "jewel": "CJ05",
+       "records": 1,
+       "unit": "quarter"
+      },
+      {
+       "jewel": "CJ06",
+       "records": 38,
+       "unit": "bank accounts"
+      },
+      {
+       "jewel": "CJ12",
+       "records": 340,
+       "unit": "retail partners"
+      }
+     ],
+     "systems": [
+      "CJ04",
+      "CJ05",
+      "CJ06",
+      "CJ12"
+     ]
+    },
+    "ip": {
+     "items": [
+      {
+       "jewel": "CJ09",
+       "records": 2300,
+       "unit": "formulas"
+      },
+      {
+       "jewel": "CJ10",
+       "records": 2300,
+       "unit": "formulas"
+      }
+     ],
+     "systems": [
+      "CJ09",
+      "CJ10"
+     ],
+     "formulas": 2300,
+     "design_files": 0
+    },
+    "customer": {
+     "items": [
+      {
+       "jewel": "CJ11",
+       "records": 2400000,
+       "unit": "customers"
+      }
+     ],
+     "systems": [
+      "CJ11"
+     ],
+     "records": 2400000
+    }
+   },
+   "customers_exposed": 2400000,
+   "employees_exposed": 0,
+   "notification_cost": 7200000,
+   "recovery_cost": 1120000,
+   "team_hours": 148,
+   "total_impact": 14366000,
+   "data_lost_h": {
+    "AD": 24,
+    "CJ04": 24,
+    "CJ05": 24,
+    "CJ06": 24,
+    "CJ09": 24,
+    "CJ10": 24,
+    "CJ11": 24,
+    "CJ12": 24
+   }
+  }
+ },
+ "R3": {
+  "baseline": {
+   "zones": [
+    "Z_backup",
+    "Z_cloud",
+    "Z_corp",
+    "Z_ot"
+   ],
+   "hit": {
+    "AD": {
+     "up": 64,
+     "loss_h": null,
+     "path": "rebuild"
+    },
+    "CJ01": {
+     "up": 34,
+     "loss_h": 0.25,
+     "path": "restore"
+    },
+    "CJ02": {
+     "up": 126,
+     "loss_h": 168,
+     "path": "rebuild"
+    },
+    "CJ03": {
+     "up": 30,
+     "loss_h": 0.25,
+     "path": "restore"
+    },
+    "CJ04": {
+     "up": 94,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ05": {
+     "up": 162,
+     "loss_h": 168,
+     "path": "rebuild"
+    },
+    "CJ06": {
+     "up": 102,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ08": {
+     "up": 54,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ09": {
+     "up": 134,
+     "loss_h": 984,
+     "path": "offline copy"
+    },
+    "CJ10": {
+     "up": 190,
+     "loss_h": 168,
+     "path": "rebuild"
+    },
+    "CJ11": {
+     "up": 90,
+     "loss_h": 24,
+     "path": "restore"
+    },
+    "CJ12": {
+     "up": 72,
+     "loss_h": 24,
+     "path": "restore"
+    }
+   },
+   "jobs": [
+    {
+     "id": "AD",
+     "lane": 0,
+     "start": 24,
+     "end": 64,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ01",
+     "lane": 1,
+     "start": 24,
+     "end": 34,
+     "how": "restore"
+    },
+    {
+     "id": "CJ03",
+     "lane": 2,
+     "start": 24,
+     "end": 30,
+     "how": "restore"
+    },
+    {
+     "id": "CJ02",
+     "lane": 2,
+     "start": 30,
+     "end": 126,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ08",
+     "lane": 1,
+     "start": 34,
+     "end": 54,
+     "how": "restore"
+    },
+    {
+     "id": "CJ04",
+     "lane": 1,
+     "start": 64,
+     "end": 94,
+     "how": "restore"
+    },
+    {
+     "id": "CJ12",
+     "lane": 0,
+     "start": 64,
+     "end": 72,
+     "how": "restore"
+    },
+    {
+     "id": "CJ11",
+     "lane": 0,
+     "start": 72,
+     "end": 90,
+     "how": "restore"
+    },
+    {
+     "id": "CJ06",
+     "lane": 0,
+     "start": 90,
+     "end": 102,
+     "how": "restore"
+    },
+    {
+     "id": "CJ10",
+     "lane": 1,
+     "start": 94,
+     "end": 190,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ05",
+     "lane": 0,
+     "start": 102,
+     "end": 162,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ09",
+     "lane": 2,
+     "start": 126,
+     "end": 134,
+     "how": "offline copy"
+    }
+   ],
+   "services": {
+    "S1": {
+     "down_h": 34,
+     "cause": "CJ01"
+    },
+    "S2": {
+     "down_h": 94,
+     "cause": "CJ04"
+    },
+    "S3": {
+     "down_h": 94,
+     "cause": "CJ04"
+    },
+    "S4": {
+     "down_h": 190,
+     "cause": "CJ10"
+    },
+    "S5": {
+     "down_h": 102,
+     "cause": "CJ06"
+    }
+   },
+   "hours_down": 190,
+   "jewels_down": 11,
+   "revenue_at_risk": 9206470,
+   "revenue_lost": 2440529,
+   "per_service": {
+    "S1": {
+     "at_risk": 1926470,
+     "lost": 1348529
+    },
+    "S2": {
+     "at_risk": 7280000,
+     "lost": 1092000
+    }
+   },
+   "shoppers_turned_away": 21405,
+   "orders_delayed": 135590,
+   "partners_affected": 340,
+   "plant_workers_idle": 2900,
+   "plant_cost": 10340000,
+   "obligations": [
+    {
+     "id": "O1",
+     "due_h": 86.0,
+     "back_h": 102,
+     "missed": true
+    },
+    {
+     "id": "O2",
+     "due_h": 104.0,
+     "back_h": 102,
+     "missed": false
+    },
+    {
+     "id": "O3",
+     "due_h": 438.0,
+     "back_h": 162,
+     "missed": false
+    }
+   ],
+   "exposed": [
+    "CJ01",
+    "CJ02",
+    "CJ03",
+    "CJ04",
+    "CJ05",
+    "CJ06",
+    "CJ08",
+    "CJ09",
+    "CJ10",
+    "CJ11",
+    "CJ12"
+   ],
+   "exposure": {
+    "customer": {
+     "items": [
+      {
+       "jewel": "CJ01",
+       "records": 2400000,
+       "unit": "customers"
+      },
+      {
+       "jewel": "CJ02",
+       "records": 2400000,
+       "unit": "customers"
+      },
+      {
+       "jewel": "CJ11",
+       "records": 2400000,
+       "unit": "customers"
+      }
+     ],
+     "systems": [
+      "CJ01",
+      "CJ02",
+      "CJ11"
+     ],
+     "records": 2400000
+    },
+    "payment": {
+     "items": [
+      {
+       "jewel": "CJ03",
+       "records": 900000,
+       "unit": "stored cards"
+      }
+     ],
+     "systems": [
+      "CJ03"
+     ],
+     "records": 900000
+    },
+    "financial": {
+     "items": [
+      {
+       "jewel": "CJ04",
+       "records": 4200,
+       "unit": "suppliers"
+      },
+      {
+       "jewel": "CJ05",
+       "records": 1,
+       "unit": "quarter"
+      },
+      {
+       "jewel": "CJ06",
+       "records": 38,
+       "unit": "bank accounts"
+      },
+      {
+       "jewel": "CJ12",
+       "records": 340,
+       "unit": "retail partners"
+      }
+     ],
+     "systems": [
+      "CJ04",
+      "CJ05",
+      "CJ06",
+      "CJ12"
+     ]
+    },
+    "ip": {
+     "items": [
+      {
+       "jewel": "CJ08",
+       "records": 14000,
+       "unit": "design files"
+      },
+      {
+       "jewel": "CJ09",
+       "records": 2300,
+       "unit": "formulas"
+      },
+      {
+       "jewel": "CJ10",
+       "records": 2300,
+       "unit": "formulas"
+      }
+     ],
+     "systems": [
+      "CJ08",
+      "CJ09",
+      "CJ10"
+     ],
+     "formulas": 2300,
+     "design_files": 14000
+    }
+   },
+   "customers_exposed": 2400000,
+   "employees_exposed": 0,
+   "notification_cost": 7200000,
+   "recovery_cost": 1760000,
+   "team_hours": 404,
+   "total_impact": 21740529,
+   "data_lost_h": {
+    "AD": null,
+    "CJ01": 0.25,
+    "CJ02": 168,
+    "CJ03": 0.25,
+    "CJ04": 24,
+    "CJ05": 168,
+    "CJ06": 24,
+    "CJ08": 24,
+    "CJ09": 984,
+    "CJ10": 168,
+    "CJ11": 24,
+    "CJ12": 24
+   }
+  },
+  "with_suggested": {
+   "zones": [
+    "Z_ot"
+   ],
+   "hit": {
+    "CJ10": {
+     "up": 60,
+     "loss_h": 24,
+     "path": "restore"
+    }
+   },
+   "jobs": [
+    {
+     "id": "CJ10",
+     "lane": 0,
+     "start": 24,
+     "end": 60,
+     "how": "restore"
+    }
+   ],
+   "services": {
+    "S1": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S2": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S3": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S4": {
+     "down_h": 60,
+     "cause": "CJ10"
+    },
+    "S5": {
+     "down_h": 0,
+     "cause": null
+    }
+   },
+   "hours_down": 60,
+   "jewels_down": 1,
+   "revenue_at_risk": 0,
+   "revenue_lost": 0,
+   "per_service": {
+    "S1": {
+     "at_risk": 0,
+     "lost": 0
+    },
+    "S2": {
+     "at_risk": 0,
+     "lost": 0
+    }
+   },
+   "shoppers_turned_away": 0,
+   "orders_delayed": 0,
+   "partners_affected": 0,
+   "plant_workers_idle": 2900,
+   "plant_cost": 2420000,
+   "obligations": [
+    {
+     "id": "O1",
+     "due_h": 86.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O2",
+     "due_h": 104.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O3",
+     "due_h": 438.0,
+     "back_h": 0,
+     "missed": false
+    }
+   ],
+   "exposed": [
+    "CJ10"
+   ],
+   "exposure": {
+    "ip": {
+     "items": [
+      {
+       "jewel": "CJ10",
+       "records": 2300,
+       "unit": "formulas"
+      }
+     ],
+     "systems": [
+      "CJ10"
+     ],
+     "formulas": 2300,
+     "design_files": 0
+    }
+   },
+   "customers_exposed": 0,
+   "employees_exposed": 0,
+   "notification_cost": 0,
+   "recovery_cost": 840000,
+   "team_hours": 36,
+   "total_impact": 3260000,
+   "data_lost_h": {
+    "CJ10": 24
+   }
+  }
+ },
+ "R4": {
+  "baseline": {
+   "zones": [
+    "Z_cloud"
+   ],
+   "hit": {
+    "CJ01": {
+     "up": 34,
+     "loss_h": 0.25,
+     "path": "restore"
+    },
+    "CJ02": {
+     "up": 120,
+     "loss_h": 168,
+     "path": "rebuild"
+    },
+    "CJ03": {
+     "up": 30,
+     "loss_h": 0.25,
+     "path": "restore"
+    },
+    "CJ08": {
+     "up": 50,
+     "loss_h": 24,
+     "path": "restore"
+    }
+   },
+   "jobs": [
+    {
+     "id": "CJ01",
+     "lane": 0,
+     "start": 24,
+     "end": 34,
+     "how": "restore"
+    },
+    {
+     "id": "CJ03",
+     "lane": 1,
+     "start": 24,
+     "end": 30,
+     "how": "restore"
+    },
+    {
+     "id": "CJ02",
+     "lane": 2,
+     "start": 24,
+     "end": 120,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ08",
+     "lane": 1,
+     "start": 30,
+     "end": 50,
+     "how": "restore"
+    }
+   ],
+   "services": {
+    "S1": {
+     "down_h": 34,
+     "cause": "CJ01"
+    },
+    "S2": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S3": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S4": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S5": {
+     "down_h": 0,
+     "cause": null
+    }
+   },
+   "hours_down": 34,
+   "jewels_down": 4,
+   "revenue_at_risk": 1926470,
+   "revenue_lost": 1348529,
+   "per_service": {
+    "S1": {
+     "at_risk": 1926470,
+     "lost": 1348529
+    },
+    "S2": {
+     "at_risk": 0,
+     "lost": 0
+    }
+   },
+   "shoppers_turned_away": 21405,
+   "orders_delayed": 0,
+   "partners_affected": 0,
+   "plant_workers_idle": 0,
+   "plant_cost": 0,
+   "obligations": [
+    {
+     "id": "O1",
+     "due_h": 86.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O2",
+     "due_h": 104.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O3",
+     "due_h": 438.0,
+     "back_h": 0,
+     "missed": false
+    }
+   ],
+   "exposed": [
+    "CJ01",
+    "CJ02",
+    "CJ03",
+    "CJ08"
+   ],
+   "exposure": {
+    "customer": {
+     "items": [
+      {
+       "jewel": "CJ01",
+       "records": 2400000,
+       "unit": "customers"
+      },
+      {
+       "jewel": "CJ02",
+       "records": 2400000,
+       "unit": "customers"
+      }
+     ],
+     "systems": [
+      "CJ01",
+      "CJ02"
+     ],
+     "records": 2400000
+    },
+    "payment": {
+     "items": [
+      {
+       "jewel": "CJ03",
+       "records": 900000,
+       "unit": "stored cards"
+      }
+     ],
+     "systems": [
+      "CJ03"
+     ],
+     "records": 900000
+    },
+    "ip": {
+     "items": [
+      {
+       "jewel": "CJ08",
+       "records": 14000,
+       "unit": "design files"
+      }
+     ],
+     "systems": [
+      "CJ08"
+     ],
+     "formulas": 0,
+     "design_files": 14000
+    }
+   },
+   "customers_exposed": 2400000,
+   "employees_exposed": 0,
+   "notification_cost": 7200000,
+   "recovery_cost": 1080000,
+   "team_hours": 132,
+   "total_impact": 9628529,
+   "data_lost_h": {
+    "CJ01": 0.25,
+    "CJ02": 168,
+    "CJ03": 0.25,
+    "CJ08": 24
+   }
+  },
+  "with_suggested": {
+   "zones": [
+    "Z_cloud"
+   ],
+   "hit": {
+    "CJ01": {
+     "up": 34,
+     "loss_h": 0.25,
+     "path": "restore"
+    },
+    "CJ02": {
+     "up": 120,
+     "loss_h": 168,
+     "path": "rebuild"
+    },
+    "CJ03": {
+     "up": 30,
+     "loss_h": 0.25,
+     "path": "restore"
+    },
+    "CJ08": {
+     "up": 50,
+     "loss_h": 24,
+     "path": "restore"
+    }
+   },
+   "jobs": [
+    {
+     "id": "CJ01",
+     "lane": 0,
+     "start": 24,
+     "end": 34,
+     "how": "restore"
+    },
+    {
+     "id": "CJ03",
+     "lane": 1,
+     "start": 24,
+     "end": 30,
+     "how": "restore"
+    },
+    {
+     "id": "CJ02",
+     "lane": 2,
+     "start": 24,
+     "end": 120,
+     "how": "rebuild"
+    },
+    {
+     "id": "CJ08",
+     "lane": 1,
+     "start": 30,
+     "end": 50,
+     "how": "restore"
+    }
+   ],
+   "services": {
+    "S1": {
+     "down_h": 34,
+     "cause": "CJ01"
+    },
+    "S2": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S3": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S4": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S5": {
+     "down_h": 0,
+     "cause": null
+    }
+   },
+   "hours_down": 34,
+   "jewels_down": 4,
+   "revenue_at_risk": 1926470,
+   "revenue_lost": 1348529,
+   "per_service": {
+    "S1": {
+     "at_risk": 1926470,
+     "lost": 1348529
+    },
+    "S2": {
+     "at_risk": 0,
+     "lost": 0
+    }
+   },
+   "shoppers_turned_away": 21405,
+   "orders_delayed": 0,
+   "partners_affected": 0,
+   "plant_workers_idle": 0,
+   "plant_cost": 0,
+   "obligations": [
+    {
+     "id": "O1",
+     "due_h": 86.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O2",
+     "due_h": 104.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O3",
+     "due_h": 438.0,
+     "back_h": 0,
+     "missed": false
+    }
+   ],
+   "exposed": [
+    "CJ01",
+    "CJ02",
+    "CJ03",
+    "CJ08"
+   ],
+   "exposure": {
+    "customer": {
+     "items": [
+      {
+       "jewel": "CJ01",
+       "records": 2400000,
+       "unit": "customers"
+      },
+      {
+       "jewel": "CJ02",
+       "records": 2400000,
+       "unit": "customers"
+      }
+     ],
+     "systems": [
+      "CJ01",
+      "CJ02"
+     ],
+     "records": 2400000
+    },
+    "payment": {
+     "items": [
+      {
+       "jewel": "CJ03",
+       "records": 900000,
+       "unit": "stored cards"
+      }
+     ],
+     "systems": [
+      "CJ03"
+     ],
+     "records": 900000
+    },
+    "ip": {
+     "items": [
+      {
+       "jewel": "CJ08",
+       "records": 14000,
+       "unit": "design files"
+      }
+     ],
+     "systems": [
+      "CJ08"
+     ],
+     "formulas": 0,
+     "design_files": 14000
+    }
+   },
+   "customers_exposed": 2400000,
+   "employees_exposed": 0,
+   "notification_cost": 7200000,
+   "recovery_cost": 1080000,
+   "team_hours": 132,
+   "total_impact": 9628529,
+   "data_lost_h": {
+    "CJ01": 0.25,
+    "CJ02": 168,
+    "CJ03": 0.25,
+    "CJ08": 24
+   }
+  }
+ },
+ "R5": {
+  "baseline": {
+   "zones": [
+    "Z_saas"
+   ],
+   "hit": {
+    "CJ07": {
+     "up": 96,
+     "loss_h": 24,
+     "path": "vendor"
+    }
+   },
+   "jobs": [],
+   "services": {
+    "S1": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S2": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S3": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S4": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S5": {
+     "down_h": 96,
+     "cause": "CJ07"
+    }
+   },
+   "hours_down": 96,
+   "jewels_down": 1,
+   "revenue_at_risk": 0,
+   "revenue_lost": 0,
+   "per_service": {
+    "S1": {
+     "at_risk": 0,
+     "lost": 0
+    },
+    "S2": {
+     "at_risk": 0,
+     "lost": 0
+    }
+   },
+   "shoppers_turned_away": 0,
+   "orders_delayed": 0,
+   "partners_affected": 0,
+   "plant_workers_idle": 0,
+   "plant_cost": 0,
+   "obligations": [
+    {
+     "id": "O1",
+     "due_h": 86.0,
+     "back_h": 96,
+     "missed": true
+    },
+    {
+     "id": "O2",
+     "due_h": 104.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O3",
+     "due_h": 438.0,
+     "back_h": 0,
+     "missed": false
+    }
+   ],
+   "exposed": [
+    "CJ07"
+   ],
+   "exposure": {
+    "employee": {
+     "items": [
+      {
+       "jewel": "CJ07",
+       "records": 6400,
+       "unit": "employees"
+      }
+     ],
+     "systems": [
+      "CJ07"
+     ],
+     "records": 6400
+    }
+   },
+   "customers_exposed": 0,
+   "employees_exposed": 6400,
+   "notification_cost": 256000,
+   "recovery_cost": 0,
+   "team_hours": 0,
+   "total_impact": 256000,
+   "data_lost_h": {
+    "CJ07": 24
+   }
+  }
+ },
+ "R6": {
+  "baseline": {
+   "zones": [],
+   "hit": {},
+   "jobs": [],
+   "services": {
+    "S1": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S2": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S3": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S4": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S5": {
+     "down_h": 0,
+     "cause": null
+    }
+   },
+   "hours_down": 0,
+   "jewels_down": 0,
+   "revenue_at_risk": 0,
+   "revenue_lost": 0,
+   "per_service": {
+    "S1": {
+     "at_risk": 0,
+     "lost": 0
+    },
+    "S2": {
+     "at_risk": 0,
+     "lost": 0
+    }
+   },
+   "shoppers_turned_away": 0,
+   "orders_delayed": 0,
+   "partners_affected": 0,
+   "plant_workers_idle": 0,
+   "plant_cost": 0,
+   "obligations": [
+    {
+     "id": "O1",
+     "due_h": 86.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O2",
+     "due_h": 104.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O3",
+     "due_h": 438.0,
+     "back_h": 0,
+     "missed": false
+    }
+   ],
+   "exposed": [
+    "CJ09"
+   ],
+   "exposure": {
+    "ip": {
+     "items": [
+      {
+       "jewel": "CJ09",
+       "records": 2300,
+       "unit": "formulas"
+      }
+     ],
+     "systems": [
+      "CJ09"
+     ],
+     "formulas": 2300,
+     "design_files": 0
+    }
+   },
+   "customers_exposed": 0,
+   "employees_exposed": 0,
+   "notification_cost": 0,
+   "recovery_cost": 750000,
+   "team_hours": 0,
+   "total_impact": 750000,
+   "data_lost_h": {}
+  },
+  "with_suggested": {
+   "zones": [],
+   "hit": {},
+   "jobs": [],
+   "services": {
+    "S1": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S2": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S3": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S4": {
+     "down_h": 0,
+     "cause": null
+    },
+    "S5": {
+     "down_h": 0,
+     "cause": null
+    }
+   },
+   "hours_down": 0,
+   "jewels_down": 0,
+   "revenue_at_risk": 0,
+   "revenue_lost": 0,
+   "per_service": {
+    "S1": {
+     "at_risk": 0,
+     "lost": 0
+    },
+    "S2": {
+     "at_risk": 0,
+     "lost": 0
+    }
+   },
+   "shoppers_turned_away": 0,
+   "orders_delayed": 0,
+   "partners_affected": 0,
+   "plant_workers_idle": 0,
+   "plant_cost": 0,
+   "obligations": [
+    {
+     "id": "O1",
+     "due_h": 86.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O2",
+     "due_h": 104.0,
+     "back_h": 0,
+     "missed": false
+    },
+    {
+     "id": "O3",
+     "due_h": 438.0,
+     "back_h": 0,
+     "missed": false
+    }
+   ],
+   "exposed": [
+    "CJ09"
+   ],
+   "exposure": {
+    "ip": {
+     "items": [
+      {
+       "jewel": "CJ09",
+       "records": 40,
+       "unit": "formulas"
+      }
+     ],
+     "systems": [
+      "CJ09"
+     ],
+     "formulas": 40,
+     "design_files": 0
+    }
+   },
+   "customers_exposed": 0,
+   "employees_exposed": 0,
+   "notification_cost": 0,
+   "recovery_cost": 750000,
+   "team_hours": 0,
+   "total_impact": 750000,
+   "data_lost_h": {}
+  }
+ },
+ "_clocks_R1": {
+  "materiality": "2026-11-22T02:00:00",
+  "sec_8k_due": "2026-11-27",
+  "state_notice_due": "2026-12-20"
+ },
+ "_priority_swap_R1": {
+  "zones": [
+   "Z_backup",
+   "Z_cloud",
+   "Z_corp",
+   "Z_ot",
+   "Z_user"
+  ],
+  "hit": {
+   "AD": {
+    "up": 64,
+    "loss_h": null,
+    "path": "rebuild"
+   },
+   "CJ01": {
+    "up": 34,
+    "loss_h": 0.25,
+    "path": "restore"
+   },
+   "CJ02": {
+    "up": 126,
+    "loss_h": 168,
+    "path": "rebuild"
+   },
+   "CJ03": {
+    "up": 30,
+    "loss_h": 0.25,
+    "path": "restore"
+   },
+   "CJ04": {
+    "up": 94,
+    "loss_h": 24,
+    "path": "restore"
+   },
+   "CJ05": {
+    "up": 162,
+    "loss_h": 168,
+    "path": "rebuild"
+   },
+   "CJ06": {
+    "up": 76,
+    "loss_h": 24,
+    "path": "restore"
+   },
+   "CJ08": {
+    "up": 54,
+    "loss_h": 24,
+    "path": "restore"
+   },
+   "CJ09": {
+    "up": 134,
+    "loss_h": 984,
+    "path": "offline copy"
+   },
+   "CJ10": {
+    "up": 190,
+    "loss_h": 168,
+    "path": "rebuild"
+   },
+   "CJ11": {
+    "up": 102,
+    "loss_h": 24,
+    "path": "restore"
+   },
+   "CJ12": {
+    "up": 84,
+    "loss_h": 24,
+    "path": "restore"
+   }
+  },
+  "jobs": [
+   {
+    "id": "AD",
+    "lane": 0,
+    "start": 24,
+    "end": 64,
+    "how": "rebuild"
+   },
+   {
+    "id": "CJ01",
+    "lane": 1,
+    "start": 24,
+    "end": 34,
+    "how": "restore"
+   },
+   {
+    "id": "CJ03",
+    "lane": 2,
+    "start": 24,
+    "end": 30,
+    "how": "restore"
+   },
+   {
+    "id": "CJ02",
+    "lane": 2,
+    "start": 30,
+    "end": 126,
+    "how": "rebuild"
+   },
+   {
+    "id": "CJ08",
+    "lane": 1,
+    "start": 34,
+    "end": 54,
+    "how": "restore"
+   },
+   {
+    "id": "CJ04",
+    "lane": 1,
+    "start": 64,
+    "end": 94,
+    "how": "restore"
+   },
+   {
+    "id": "CJ06",
+    "lane": 0,
+    "start": 64,
+    "end": 76,
+    "how": "restore"
+   },
+   {
+    "id": "CJ12",
+    "lane": 0,
+    "start": 76,
+    "end": 84,
+    "how": "restore"
+   },
+   {
+    "id": "CJ11",
+    "lane": 0,
+    "start": 84,
+    "end": 102,
+    "how": "restore"
+   },
+   {
+    "id": "CJ10",
+    "lane": 1,
+    "start": 94,
+    "end": 190,
+    "how": "rebuild"
+   },
+   {
+    "id": "CJ05",
+    "lane": 0,
+    "start": 102,
+    "end": 162,
+    "how": "rebuild"
+   },
+   {
+    "id": "CJ09",
+    "lane": 2,
+    "start": 126,
+    "end": 134,
+    "how": "offline copy"
+   }
+  ],
+  "services": {
+   "S1": {
+    "down_h": 34,
+    "cause": "CJ01"
+   },
+   "S2": {
+    "down_h": 94,
+    "cause": "CJ04"
+   },
+   "S3": {
+    "down_h": 102,
+    "cause": "CJ11"
+   },
+   "S4": {
+    "down_h": 190,
+    "cause": "CJ10"
+   },
+   "S5": {
+    "down_h": 94,
+    "cause": "CJ04"
+   }
+  },
+  "hours_down": 190,
+  "jewels_down": 11,
+  "revenue_at_risk": 9206470,
+  "revenue_lost": 2440529,
+  "per_service": {
+   "S1": {
+    "at_risk": 1926470,
+    "lost": 1348529
+   },
+   "S2": {
+    "at_risk": 7280000,
+    "lost": 1092000
+   }
+  },
+  "shoppers_turned_away": 21405,
+  "orders_delayed": 141869,
+  "partners_affected": 340,
+  "plant_workers_idle": 2900,
+  "plant_cost": 10340000,
+  "obligations": [
+   {
+    "id": "O1",
+    "due_h": 86.0,
+    "back_h": 76,
+    "missed": false
+   },
+   {
+    "id": "O2",
+    "due_h": 104.0,
+    "back_h": 94,
+    "missed": false
+   },
+   {
+    "id": "O3",
+    "due_h": 438.0,
+    "back_h": 162,
+    "missed": false
+   }
+  ],
+  "exposed": [
+   "CJ01",
+   "CJ02",
+   "CJ03",
+   "CJ04",
+   "CJ05",
+   "CJ06",
+   "CJ08",
+   "CJ09",
+   "CJ10",
+   "CJ11",
+   "CJ12"
+  ],
+  "exposure": {
+   "customer": {
+    "items": [
+     {
+      "jewel": "CJ01",
+      "records": 2400000,
+      "unit": "customers"
+     },
+     {
+      "jewel": "CJ02",
+      "records": 2400000,
+      "unit": "customers"
+     },
+     {
+      "jewel": "CJ11",
+      "records": 2400000,
+      "unit": "customers"
+     }
+    ],
+    "systems": [
+     "CJ01",
+     "CJ02",
+     "CJ11"
+    ],
+    "records": 2400000
+   },
+   "payment": {
+    "items": [
+     {
+      "jewel": "CJ03",
+      "records": 900000,
+      "unit": "stored cards"
+     }
+    ],
+    "systems": [
+     "CJ03"
+    ],
+    "records": 900000
+   },
+   "financial": {
+    "items": [
+     {
+      "jewel": "CJ04",
+      "records": 4200,
+      "unit": "suppliers"
+     },
+     {
+      "jewel": "CJ05",
+      "records": 1,
+      "unit": "quarter"
+     },
+     {
+      "jewel": "CJ06",
+      "records": 38,
+      "unit": "bank accounts"
+     },
+     {
+      "jewel": "CJ12",
+      "records": 340,
+      "unit": "retail partners"
+     }
+    ],
+    "systems": [
+     "CJ04",
+     "CJ05",
+     "CJ06",
+     "CJ12"
+    ]
+   },
+   "ip": {
+    "items": [
+     {
+      "jewel": "CJ08",
+      "records": 14000,
+      "unit": "design files"
+     },
+     {
+      "jewel": "CJ09",
+      "records": 2300,
+      "unit": "formulas"
+     },
+     {
+      "jewel": "CJ10",
+      "records": 2300,
+      "unit": "formulas"
+     }
+    ],
+    "systems": [
+     "CJ08",
+     "CJ09",
+     "CJ10"
+    ],
+    "formulas": 2300,
+    "design_files": 14000
+   }
+  },
+  "customers_exposed": 2400000,
+  "employees_exposed": 0,
+  "notification_cost": 7200000,
+  "recovery_cost": 1760000,
+  "team_hours": 404,
+  "total_impact": 21740529,
+  "data_lost_h": {
+   "AD": null,
+   "CJ01": 0.25,
+   "CJ02": 168,
+   "CJ03": 0.25,
+   "CJ04": 24,
+   "CJ05": 168,
+   "CJ06": 24,
+   "CJ08": 24,
+   "CJ09": 984,
+   "CJ10": 168,
+   "CJ11": 24,
+   "CJ12": 24
+  }
+ },
+ "_controls_R1": {
+  "C1": {
+   "hours_down": 0,
+   "jewels_down": 0,
+   "revenue_at_risk": 0,
+   "customers_exposed": 0,
+   "total_impact": 0
+  },
+  "C2": {
+   "hours_down": 102,
+   "jewels_down": 10,
+   "revenue_at_risk": 9206470,
+   "customers_exposed": 2400000,
+   "total_impact": 16220529
+  },
+  "C3": {
+   "hours_down": 102,
+   "jewels_down": 11,
+   "revenue_at_risk": 5566470,
+   "customers_exposed": 2400000,
+   "total_impact": 16274529
+  },
+  "C4": {
+   "hours_down": 178,
+   "jewels_down": 7,
+   "revenue_at_risk": 7280000,
+   "customers_exposed": 2400000,
+   "total_impact": 20062000
+  },
+  "C5": {
+   "hours_down": 190,
+   "jewels_down": 10,
+   "revenue_at_risk": 9206470,
+   "customers_exposed": 2400000,
+   "total_impact": 21720529
+  },
+  "C6": {
+   "hours_down": 168,
+   "jewels_down": 11,
+   "revenue_at_risk": 9206470,
+   "customers_exposed": 2400000,
+   "total_impact": 21740529
+  }
+ }
+}

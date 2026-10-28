@@ -1,0 +1,591 @@
+{
+ "meta": {
+  "note": "All data is fictional.",
+  "units": "hours, US dollars",
+  "contain_h": 24,
+  "recovery_teams": 3,
+  "team_rate": 2500,
+  "ir_flat": 750000,
+  "notify_per_person": {
+   "customer": 3,
+   "employee": 40,
+   "payment": 0,
+   "financial": 0,
+   "ip": 0
+  }
+ },
+ "company": {
+  "description": "Fictional consumer products manufacturer: online store, 340 retail partners, 3 plants, 2 distribution centers",
+  "annual_revenue": 1900000000,
+  "employees": 6400,
+  "plant_workers": 2900,
+  "customers": 2400000,
+  "retail_partners": 340,
+  "plants": 3,
+  "distribution_centers": 2
+ },
+ "zones": {
+  "Z_user": "Office workstations",
+  "Z_corp": "Corporate data center",
+  "Z_ot": "Plant networks",
+  "Z_backup": "Backup platform",
+  "Z_cloud": "Cloud accounts",
+  "Z_saas": "Payroll provider",
+  "Z_vault": "Isolated formula vault"
+ },
+ "paths": [
+  {
+   "id": "P1",
+   "source": "Z_user",
+   "target": "Z_corp",
+   "how": "Domain admins sign in on office workstations",
+   "cut_by": "C1"
+  },
+  {
+   "id": "P2",
+   "source": "Z_corp",
+   "target": "Z_ot",
+   "how": "Plants share the corporate domain and a flat network",
+   "cut_by": "C2"
+  },
+  {
+   "id": "P3",
+   "source": "Z_ot",
+   "target": "Z_corp",
+   "how": "Plant remote-support tool stores domain credentials",
+   "cut_by": "C2"
+  },
+  {
+   "id": "P4",
+   "source": "Z_corp",
+   "target": "Z_backup",
+   "how": "Backup console is joined to the corporate domain",
+   "cut_by": "C3"
+  },
+  {
+   "id": "P5",
+   "source": "Z_corp",
+   "target": "Z_cloud",
+   "how": "Cloud admin roles granted to synced domain accounts",
+   "cut_by": "C4"
+  }
+ ],
+ "jewels": [
+  {
+   "id": "AD",
+   "kind": "enabler",
+   "name": "Active Directory",
+   "zone": "Z_corp",
+   "hosting": "Data center",
+   "owner": "Identity team",
+   "criticality": 5,
+   "data": [],
+   "restore_h": 20,
+   "rebuild_h": 40,
+   "backup": "standard",
+   "copy_age_h": 24,
+   "offline_age_h": null,
+   "listed": true,
+   "note": "Every on-premises restore waits for it",
+   "rto_h": 8,
+   "rpo_h": 24
+  },
+  {
+   "id": "CJ01",
+   "kind": "crown jewel",
+   "name": "Online store",
+   "zone": "Z_cloud",
+   "hosting": "Cloud",
+   "owner": "VP Digital Commerce",
+   "criticality": 5,
+   "data": [
+    {
+     "class": "customer",
+     "records": 2400000,
+     "unit": "customers",
+     "what": "Names, addresses, order history"
+    }
+   ],
+   "restore_h": 10,
+   "rebuild_h": 72,
+   "backup": "immutable",
+   "copy_age_h": 0.25,
+   "offline_age_h": null,
+   "listed": true,
+   "note": "",
+   "rto_h": 4,
+   "rpo_h": 0.25
+  },
+  {
+   "id": "CJ02",
+   "kind": "crown jewel",
+   "name": "Customer data platform",
+   "zone": "Z_cloud",
+   "hosting": "Cloud",
+   "owner": "VP Marketing",
+   "criticality": 3,
+   "data": [
+    {
+     "class": "customer",
+     "records": 2400000,
+     "unit": "customers",
+     "what": "Profiles, loyalty, purchase history, email"
+    }
+   ],
+   "restore_h": 12,
+   "rebuild_h": 96,
+   "backup": "standard",
+   "copy_age_h": 24,
+   "offline_age_h": 168,
+   "listed": true,
+   "note": "Snapshots sit in the same cloud account",
+   "rto_h": 24,
+   "rpo_h": 24
+  },
+  {
+   "id": "CJ03",
+   "kind": "crown jewel",
+   "name": "Payment token vault",
+   "zone": "Z_cloud",
+   "hosting": "Cloud",
+   "owner": "Treasurer",
+   "criticality": 5,
+   "data": [
+    {
+     "class": "payment",
+     "records": 900000,
+     "unit": "stored cards",
+     "what": "Payment tokens and last four digits; no full card numbers"
+    }
+   ],
+   "restore_h": 6,
+   "rebuild_h": 48,
+   "backup": "immutable",
+   "copy_age_h": 0.25,
+   "offline_age_h": null,
+   "listed": true,
+   "note": "",
+   "rto_h": 4,
+   "rpo_h": 0.25
+  },
+  {
+   "id": "CJ04",
+   "kind": "crown jewel",
+   "name": "ERP",
+   "zone": "Z_corp",
+   "hosting": "Data center",
+   "owner": "CFO",
+   "criticality": 5,
+   "data": [
+    {
+     "class": "financial",
+     "records": 4200,
+     "unit": "suppliers",
+     "what": "Supplier bank details, pricing, margins, orders"
+    }
+   ],
+   "restore_h": 30,
+   "rebuild_h": 120,
+   "backup": "immutable",
+   "copy_age_h": 24,
+   "offline_age_h": null,
+   "listed": true,
+   "note": "",
+   "rto_h": 24,
+   "rpo_h": 24
+  },
+  {
+   "id": "CJ05",
+   "kind": "crown jewel",
+   "name": "Financial close",
+   "zone": "Z_corp",
+   "hosting": "Data center",
+   "owner": "Controller",
+   "criticality": 4,
+   "data": [
+    {
+     "class": "financial",
+     "records": 1,
+     "unit": "quarter",
+     "what": "Unreleased Q3 results, due out Dec 8"
+    }
+   ],
+   "restore_h": 16,
+   "rebuild_h": 60,
+   "backup": "standard",
+   "copy_age_h": 24,
+   "offline_age_h": 168,
+   "listed": true,
+   "note": "",
+   "rto_h": 48,
+   "rpo_h": 24
+  },
+  {
+   "id": "CJ06",
+   "kind": "crown jewel",
+   "name": "Treasury and bank payments",
+   "zone": "Z_corp",
+   "hosting": "Data center",
+   "owner": "Treasurer",
+   "criticality": 5,
+   "data": [
+    {
+     "class": "financial",
+     "records": 38,
+     "unit": "bank accounts",
+     "what": "Bank accounts, payment files, signing keys"
+    }
+   ],
+   "restore_h": 12,
+   "rebuild_h": 48,
+   "backup": "immutable",
+   "copy_age_h": 24,
+   "offline_age_h": null,
+   "listed": true,
+   "note": "",
+   "rto_h": 24,
+   "rpo_h": 24
+  },
+  {
+   "id": "CJ07",
+   "kind": "crown jewel",
+   "name": "HR and payroll",
+   "zone": "Z_saas",
+   "hosting": "SaaS",
+   "owner": "CHRO",
+   "criticality": 5,
+   "data": [
+    {
+     "class": "employee",
+     "records": 6400,
+     "unit": "employees",
+     "what": "Social Security numbers, bank details, salaries"
+    }
+   ],
+   "restore_h": null,
+   "rebuild_h": null,
+   "backup": "vendor",
+   "copy_age_h": 24,
+   "offline_age_h": null,
+   "listed": true,
+   "note": "",
+   "rto_h": 24,
+   "rpo_h": 24
+  },
+  {
+   "id": "CJ08",
+   "kind": "crown jewel",
+   "name": "Product designs (PLM)",
+   "zone": "Z_cloud",
+   "hosting": "Cloud",
+   "owner": "VP Product",
+   "criticality": 4,
+   "data": [
+    {
+     "class": "ip",
+     "records": 14000,
+     "unit": "design files",
+     "what": "Product designs, including the unreleased 2027 line"
+    }
+   ],
+   "restore_h": 20,
+   "rebuild_h": 120,
+   "backup": "immutable",
+   "copy_age_h": 24,
+   "offline_age_h": null,
+   "listed": true,
+   "note": "",
+   "rto_h": 72,
+   "rpo_h": 24
+  },
+  {
+   "id": "CJ09",
+   "kind": "crown jewel",
+   "name": "Formula library",
+   "zone": "Z_corp",
+   "hosting": "File share",
+   "owner": "VP R&D",
+   "criticality": 5,
+   "data": [
+    {
+     "class": "ip",
+     "records": 2300,
+     "unit": "formulas",
+     "what": "Product formulas and lab data: the company's core trade secret"
+    }
+   ],
+   "restore_h": 8,
+   "rebuild_h": null,
+   "backup": "standard",
+   "copy_age_h": 24,
+   "offline_age_h": 984,
+   "listed": false,
+   "note": "A folder on a general file share; not on the crown-jewel list",
+   "rto_h": 72,
+   "rpo_h": 24
+  },
+  {
+   "id": "CJ10",
+   "kind": "crown jewel",
+   "name": "Plant systems (MES)",
+   "zone": "Z_ot",
+   "hosting": "Plants",
+   "owner": "VP Manufacturing",
+   "criticality": 5,
+   "data": [
+    {
+     "class": "ip",
+     "records": 2300,
+     "unit": "formulas",
+     "what": "Production recipes copied from the formula library"
+    }
+   ],
+   "restore_h": 36,
+   "rebuild_h": 96,
+   "backup": "standard",
+   "copy_age_h": 24,
+   "offline_age_h": 168,
+   "listed": true,
+   "note": "",
+   "rto_h": 12,
+   "rpo_h": 24
+  },
+  {
+   "id": "CJ11",
+   "kind": "crown jewel",
+   "name": "Warehouse management",
+   "zone": "Z_corp",
+   "hosting": "Data center",
+   "owner": "VP Supply Chain",
+   "criticality": 5,
+   "data": [
+    {
+     "class": "customer",
+     "records": 2400000,
+     "unit": "customers",
+     "what": "Shipping addresses"
+    }
+   ],
+   "restore_h": 18,
+   "rebuild_h": 72,
+   "backup": "immutable",
+   "copy_age_h": 24,
+   "offline_age_h": null,
+   "listed": true,
+   "note": "",
+   "rto_h": 12,
+   "rpo_h": 4
+  },
+  {
+   "id": "CJ12",
+   "kind": "crown jewel",
+   "name": "Retail partner orders (EDI)",
+   "zone": "Z_corp",
+   "hosting": "Data center",
+   "owner": "VP Wholesale",
+   "criticality": 5,
+   "data": [
+    {
+     "class": "financial",
+     "records": 340,
+     "unit": "retail partners",
+     "what": "Partner orders, pricing, contracts"
+    }
+   ],
+   "restore_h": 8,
+   "rebuild_h": 48,
+   "backup": "immutable",
+   "copy_age_h": 24,
+   "offline_age_h": null,
+   "listed": true,
+   "note": "",
+   "rto_h": 8,
+   "rpo_h": 4
+  }
+ ],
+ "services": [
+  {
+   "id": "S1",
+   "name": "Online sales",
+   "deps": [
+    "CJ01",
+    "CJ03"
+   ],
+   "revenue_per_hour": 58000,
+   "profile": "online",
+   "loss_rate": 0.7,
+   "avg_order": 90,
+   "people": "shoppers",
+   "kind": "revenue",
+   "note": "Shoppers who can't buy mostly go elsewhere"
+  },
+  {
+   "id": "S2",
+   "name": "Retail partner orders",
+   "deps": [
+    "CJ12",
+    "CJ04"
+   ],
+   "revenue_per_hour": 260000,
+   "profile": "wholesale",
+   "loss_rate": 0.15,
+   "people": "retail partners",
+   "kind": "revenue",
+   "note": "Partners mostly wait, but miss shelf dates and cancel some orders",
+   "workaround": {
+    "id": "WK1",
+    "name": "Manual order desk",
+    "capacity": 0.3,
+    "after_h": 24
+   }
+  },
+  {
+   "id": "S3",
+   "name": "Shipping",
+   "deps": [
+    "CJ11",
+    "CJ04"
+   ],
+   "kind": "flow",
+   "shipments_per_hour": 1400,
+   "profile": "online",
+   "people": "orders delayed"
+  },
+  {
+   "id": "S4",
+   "name": "Production",
+   "deps": [
+    "CJ10",
+    "CJ04"
+   ],
+   "kind": "cost",
+   "cost_per_hour": 110000,
+   "profile": "plant",
+   "people": "plant workers idle",
+   "workaround": {
+    "id": "WK2",
+    "name": "Paper batch records",
+    "capacity": 0.4,
+    "after_h": 12
+   }
+  },
+  {
+   "id": "S5",
+   "name": "Payroll and payments",
+   "deps": [
+    "CJ07",
+    "CJ06",
+    "CJ04"
+   ],
+   "kind": "obligation"
+  }
+ ],
+ "obligations": [
+  {
+   "id": "O1",
+   "name": "Payroll file to bank",
+   "due": "2026-11-23T16:00",
+   "deps": [
+    "CJ07",
+    "CJ06"
+   ],
+   "people": 6400,
+   "unit": "employees",
+   "note": "Payday moved up to Wed Nov 25 for Thanksgiving; bank needs the file 2 days ahead"
+  },
+  {
+   "id": "O2",
+   "name": "Supplier payment run",
+   "due": "2026-11-24T10:00",
+   "deps": [
+    "CJ04",
+    "CJ06"
+   ],
+   "people": 1150,
+   "unit": "suppliers",
+   "note": "Weekly run every Tuesday"
+  },
+  {
+   "id": "O3",
+   "name": "Q3 earnings release",
+   "due": "2026-12-08T08:00",
+   "deps": [
+    "CJ05"
+   ],
+   "people": null,
+   "unit": null,
+   "note": "Public company; date already announced"
+  }
+ ],
+ "controls": [
+  {
+   "id": "C1",
+   "name": "Tiered admin accounts",
+   "detail": "Domain admins never sign in on office workstations; privileged access vault"
+  },
+  {
+   "id": "C2",
+   "name": "Segment the plants",
+   "detail": "Plants get their own domain and firewall; remote support through a jump host"
+  },
+  {
+   "id": "C3",
+   "name": "Isolated immutable backups",
+   "detail": "Backup console off the domain; immutable copies for every crown jewel"
+  },
+  {
+   "id": "C4",
+   "name": "Cloud-only admins",
+   "detail": "Cloud admin roles only on cloud-native accounts with phishing-resistant MFA"
+  },
+  {
+   "id": "C5",
+   "name": "Formula vault",
+   "detail": "Move formulas into an isolated vault with download alerts and immutable copies"
+  },
+  {
+   "id": "C6",
+   "name": "Recovery retainer",
+   "detail": "Pre-contracted recovery firm: 5 recovery teams instead of 3"
+  }
+ ],
+ "default_priority": [
+  "CJ01",
+  "CJ03",
+  "CJ04",
+  "CJ12",
+  "CJ11",
+  "CJ06",
+  "CJ10",
+  "CJ02",
+  "CJ05",
+  "CJ08",
+  "CJ09"
+ ],
+ "calendar": {
+  "holidays": [
+   "2026-11-26",
+   "2026-11-27"
+  ],
+  "online_multipliers": [
+   [
+    "2026-11-01",
+    "2026-11-25",
+    1.3,
+    "Holiday build"
+   ],
+   [
+    "2026-11-26",
+    "2026-11-30",
+    3.0,
+    "Thanksgiving to Cyber Monday"
+   ],
+   [
+    "2026-12-01",
+    "2026-12-20",
+    1.6,
+    "Holiday peak"
+   ]
+  ]
+ }
+}
