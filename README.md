@@ -21,3 +21,4 @@ Each build lives in its own folder, named by build ID. Every prototype runs offl
 | JA-01 | [Shadow AI inventory and response](JA-01_shadow-ai-inventory/) | 1 · Paper & Signal | Prototype built |
 | JA-02 | [AI vendor intake and risk triage](JA-02_ai-vendor-intake/) | 2 · Midnight Ops | Prototype built |
 | JA-03 | [Responsible AI release gate](JA-03_rai-release-gate/) | 7 · Graphite & Lime | Prototype built |
+| JA-04 | [Prompt injection test suite for an internal HR chatbot](JA-04_prompt-injection-suite/) | 2 · Midnight Ops | Requirements ready |
