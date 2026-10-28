@@ -1,0 +1,2251 @@
+{
+ "summary": {
+  "open": 83,
+  "closed": 117,
+  "assets": 16,
+  "past_due": 9,
+  "kev_open": 3,
+  "daily_cost_today": 786621,
+  "top2_share": 0.456,
+  "top3_share": 0.48,
+  "projected_new": 36
+ },
+ "edge": [
+  {
+   "asset": "A01",
+   "open": 11,
+   "past_due": 0,
+   "daily_cost": 402956,
+   "impact_if_exploited": 82120000,
+   "oldest_days": 147,
+   "kev_open": 1
+  },
+  {
+   "asset": "A02",
+   "open": 7,
+   "past_due": 1,
+   "daily_cost": 52802,
+   "impact_if_exploited": 75880000,
+   "oldest_days": 181,
+   "kev_open": 0
+  },
+  {
+   "asset": "A03",
+   "open": 5,
+   "past_due": 1,
+   "daily_cost": 18908,
+   "impact_if_exploited": 21410000,
+   "oldest_days": 74,
+   "kev_open": 0
+  },
+  {
+   "asset": "A04",
+   "open": 3,
+   "past_due": 0,
+   "daily_cost": 9535,
+   "impact_if_exploited": 79720000,
+   "oldest_days": 121,
+   "kev_open": 0
+  },
+  {
+   "asset": "A05",
+   "open": 4,
+   "past_due": 1,
+   "daily_cost": 145898,
+   "impact_if_exploited": 45590000,
+   "oldest_days": 67,
+   "kev_open": 1
+  },
+  {
+   "asset": "A06",
+   "open": 6,
+   "past_due": 0,
+   "daily_cost": 113337,
+   "impact_if_exploited": 95340000,
+   "oldest_days": 115,
+   "kev_open": 0
+  },
+  {
+   "asset": "A07",
+   "open": 8,
+   "past_due": 0,
+   "daily_cost": 11683,
+   "impact_if_exploited": 7360000,
+   "oldest_days": 70,
+   "kev_open": 0
+  },
+  {
+   "asset": "A08",
+   "open": 3,
+   "past_due": 1,
+   "daily_cost": 3023,
+   "impact_if_exploited": 5080000,
+   "oldest_days": 63,
+   "kev_open": 0
+  },
+  {
+   "asset": "A09",
+   "open": 7,
+   "past_due": 1,
+   "daily_cost": 679,
+   "impact_if_exploited": 490000,
+   "oldest_days": 189,
+   "kev_open": 0
+  },
+  {
+   "asset": "A10",
+   "open": 4,
+   "past_due": 1,
+   "daily_cost": 501,
+   "impact_if_exploited": 634000,
+   "oldest_days": 107,
+   "kev_open": 0
+  },
+  {
+   "asset": "A11",
+   "open": 3,
+   "past_due": 0,
+   "daily_cost": 4594,
+   "impact_if_exploited": 7690000,
+   "oldest_days": 33,
+   "kev_open": 0
+  },
+  {
+   "asset": "A12",
+   "open": 8,
+   "past_due": 1,
+   "daily_cost": 7598,
+   "impact_if_exploited": 9542000,
+   "oldest_days": 170,
+   "kev_open": 0
+  },
+  {
+   "asset": "A13",
+   "open": 7,
+   "past_due": 1,
+   "daily_cost": 3764,
+   "impact_if_exploited": 5401000,
+   "oldest_days": 127,
+   "kev_open": 0
+  },
+  {
+   "asset": "A14",
+   "open": 1,
+   "past_due": 1,
+   "daily_cost": 443,
+   "impact_if_exploited": 261000,
+   "oldest_days": 212,
+   "kev_open": 1
+  },
+  {
+   "asset": "A15",
+   "open": 1,
+   "past_due": 0,
+   "daily_cost": 69,
+   "impact_if_exploited": 346000,
+   "oldest_days": 22,
+   "kev_open": 0
+  },
+  {
+   "asset": "A16",
+   "open": 5,
+   "past_due": 0,
+   "daily_cost": 10831,
+   "impact_if_exploited": 30160000,
+   "oldest_days": 149,
+   "kev_open": 0
+  }
+ ],
+ "history": {
+  "by_month": {
+   "2025-11": 7357239,
+   "2025-12": 4011394,
+   "2026-01": 721658,
+   "2026-02": 271934,
+   "2026-03": 285630,
+   "2026-04": 1150682,
+   "2026-05": 290822,
+   "2026-06": 527185,
+   "2026-07": 443798,
+   "2026-08": 532391,
+   "2026-09": 491607,
+   "2026-10": 2936053
+  },
+  "total": 19020393,
+  "accrued_open": 2959546,
+  "closed": 117,
+  "late": 43,
+  "by_severity": {
+   "Critical": {
+    "count": 10,
+    "median_days": 42,
+    "sla": 30,
+    "on_time": 1
+   },
+   "High": {
+    "count": 38,
+    "median_days": 56,
+    "sla": 60,
+    "on_time": 25
+   },
+   "Medium": {
+    "count": 49,
+    "median_days": 80,
+    "sla": 90,
+    "on_time": 33
+   },
+   "Low": {
+    "count": 20,
+    "median_days": 149,
+    "sla": 180,
+    "on_time": 15
+   }
+  },
+  "freeze_share": 0.586,
+  "freeze_cost": 11140342
+ },
+ "history_findings": [
+  {
+   "id": "F-0004",
+   "days_to_patch": 61,
+   "days_late": 31,
+   "cost_of_delay": 7838565,
+   "freeze": true
+  },
+  {
+   "id": "F-0006",
+   "days_to_patch": 52,
+   "days_late": 22,
+   "cost_of_delay": 1740479,
+   "freeze": true
+  },
+  {
+   "id": "F-0009",
+   "days_to_patch": 42,
+   "days_late": 12,
+   "cost_of_delay": 1334309,
+   "freeze": true
+  },
+  {
+   "id": "F-0011",
+   "days_to_patch": 42,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0013",
+   "days_to_patch": 41,
+   "days_late": 11,
+   "cost_of_delay": 226989,
+   "freeze": true
+  },
+  {
+   "id": "F-0015",
+   "days_to_patch": 41,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0203",
+   "days_to_patch": 158,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0205",
+   "days_to_patch": 41,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0206",
+   "days_to_patch": 73,
+   "days_late": 13,
+   "cost_of_delay": 198992,
+   "freeze": false
+  },
+  {
+   "id": "F-0207",
+   "days_to_patch": 4,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0208",
+   "days_to_patch": 75,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0210",
+   "days_to_patch": 89,
+   "days_late": 29,
+   "cost_of_delay": 443196,
+   "freeze": false
+  },
+  {
+   "id": "F-0211",
+   "days_to_patch": 36,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0212",
+   "days_to_patch": 144,
+   "days_late": 54,
+   "cost_of_delay": 73818,
+   "freeze": true
+  },
+  {
+   "id": "F-0213",
+   "days_to_patch": 59,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0214",
+   "days_to_patch": 53,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0216",
+   "days_to_patch": 29,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0217",
+   "days_to_patch": 146,
+   "days_late": 56,
+   "cost_of_delay": 76244,
+   "freeze": false
+  },
+  {
+   "id": "F-0218",
+   "days_to_patch": 56,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0219",
+   "days_to_patch": 42,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0220",
+   "days_to_patch": 149,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0221",
+   "days_to_patch": 59,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0222",
+   "days_to_patch": 233,
+   "days_late": 53,
+   "cost_of_delay": 788877,
+   "freeze": false
+  },
+  {
+   "id": "F-0224",
+   "days_to_patch": 70,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0226",
+   "days_to_patch": 64,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0227",
+   "days_to_patch": 32,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0228",
+   "days_to_patch": 68,
+   "days_late": 8,
+   "cost_of_delay": 2810,
+   "freeze": false
+  },
+  {
+   "id": "F-0229",
+   "days_to_patch": 39,
+   "days_late": 9,
+   "cost_of_delay": 3279,
+   "freeze": false
+  },
+  {
+   "id": "F-0231",
+   "days_to_patch": 57,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0232",
+   "days_to_patch": 112,
+   "days_late": 22,
+   "cost_of_delay": 30184,
+   "freeze": false
+  },
+  {
+   "id": "F-0233",
+   "days_to_patch": 70,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0235",
+   "days_to_patch": 45,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0237",
+   "days_to_patch": 119,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0238",
+   "days_to_patch": 59,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0240",
+   "days_to_patch": 41,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0241",
+   "days_to_patch": 106,
+   "days_late": 16,
+   "cost_of_delay": 48679,
+   "freeze": false
+  },
+  {
+   "id": "F-0242",
+   "days_to_patch": 135,
+   "days_late": 45,
+   "cost_of_delay": 331233,
+   "freeze": false
+  },
+  {
+   "id": "F-0245",
+   "days_to_patch": 69,
+   "days_late": 9,
+   "cost_of_delay": 3135,
+   "freeze": false
+  },
+  {
+   "id": "F-0246",
+   "days_to_patch": 144,
+   "days_late": 54,
+   "cost_of_delay": 3904,
+   "freeze": false
+  },
+  {
+   "id": "F-0249",
+   "days_to_patch": 90,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0250",
+   "days_to_patch": 90,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0251",
+   "days_to_patch": 63,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0252",
+   "days_to_patch": 148,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0253",
+   "days_to_patch": 145,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0254",
+   "days_to_patch": 61,
+   "days_late": 1,
+   "cost_of_delay": 865,
+   "freeze": false
+  },
+  {
+   "id": "F-0255",
+   "days_to_patch": 45,
+   "days_late": 15,
+   "cost_of_delay": 1102,
+   "freeze": false
+  },
+  {
+   "id": "F-0256",
+   "days_to_patch": 105,
+   "days_late": 15,
+   "cost_of_delay": 30377,
+   "freeze": false
+  },
+  {
+   "id": "F-0258",
+   "days_to_patch": 268,
+   "days_late": 88,
+   "cost_of_delay": 117299,
+   "freeze": false
+  },
+  {
+   "id": "F-0260",
+   "days_to_patch": 157,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0261",
+   "days_to_patch": 96,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0262",
+   "days_to_patch": 40,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0263",
+   "days_to_patch": 41,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0264",
+   "days_to_patch": 87,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0266",
+   "days_to_patch": 49,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0267",
+   "days_to_patch": 64,
+   "days_late": 4,
+   "cost_of_delay": 2033,
+   "freeze": false
+  },
+  {
+   "id": "F-0268",
+   "days_to_patch": 67,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0269",
+   "days_to_patch": 55,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0271",
+   "days_to_patch": 52,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0273",
+   "days_to_patch": 92,
+   "days_late": 2,
+   "cost_of_delay": 2750,
+   "freeze": false
+  },
+  {
+   "id": "F-0274",
+   "days_to_patch": 83,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0275",
+   "days_to_patch": 46,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0276",
+   "days_to_patch": 78,
+   "days_late": 18,
+   "cost_of_delay": 11220,
+   "freeze": false
+  },
+  {
+   "id": "F-0278",
+   "days_to_patch": 57,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0279",
+   "days_to_patch": 134,
+   "days_late": 44,
+   "cost_of_delay": 323888,
+   "freeze": false
+  },
+  {
+   "id": "F-0280",
+   "days_to_patch": 88,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0281",
+   "days_to_patch": 80,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0282",
+   "days_to_patch": 53,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0285",
+   "days_to_patch": 134,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0286",
+   "days_to_patch": 137,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0287",
+   "days_to_patch": 84,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0288",
+   "days_to_patch": 38,
+   "days_late": 8,
+   "cost_of_delay": 24402,
+   "freeze": false
+  },
+  {
+   "id": "F-0290",
+   "days_to_patch": 54,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0291",
+   "days_to_patch": 38,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0294",
+   "days_to_patch": 80,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0295",
+   "days_to_patch": 66,
+   "days_late": 6,
+   "cost_of_delay": 438,
+   "freeze": false
+  },
+  {
+   "id": "F-0296",
+   "days_to_patch": 44,
+   "days_late": 14,
+   "cost_of_delay": 725,
+   "freeze": false
+  },
+  {
+   "id": "F-0297",
+   "days_to_patch": 80,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0299",
+   "days_to_patch": 72,
+   "days_late": 12,
+   "cost_of_delay": 958853,
+   "freeze": false
+  },
+  {
+   "id": "F-0300",
+   "days_to_patch": 68,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0301",
+   "days_to_patch": 80,
+   "days_late": 20,
+   "cost_of_delay": 305927,
+   "freeze": false
+  },
+  {
+   "id": "F-0302",
+   "days_to_patch": 32,
+   "days_late": 2,
+   "cost_of_delay": 167364,
+   "freeze": false
+  },
+  {
+   "id": "F-0303",
+   "days_to_patch": 58,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0304",
+   "days_to_patch": 43,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0305",
+   "days_to_patch": 57,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0306",
+   "days_to_patch": 159,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0307",
+   "days_to_patch": 91,
+   "days_late": 31,
+   "cost_of_delay": 1820,
+   "freeze": false
+  },
+  {
+   "id": "F-0308",
+   "days_to_patch": 93,
+   "days_late": 3,
+   "cost_of_delay": 1520,
+   "freeze": false
+  },
+  {
+   "id": "F-0309",
+   "days_to_patch": 118,
+   "days_late": 28,
+   "cost_of_delay": 463679,
+   "freeze": false
+  },
+  {
+   "id": "F-0311",
+   "days_to_patch": 40,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0313",
+   "days_to_patch": 63,
+   "days_late": 3,
+   "cost_of_delay": 22481,
+   "freeze": true
+  },
+  {
+   "id": "F-0316",
+   "days_to_patch": 71,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0317",
+   "days_to_patch": 70,
+   "days_late": 10,
+   "cost_of_delay": 588,
+   "freeze": false
+  },
+  {
+   "id": "F-0318",
+   "days_to_patch": 32,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0319",
+   "days_to_patch": 64,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0320",
+   "days_to_patch": 41,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0322",
+   "days_to_patch": 103,
+   "days_late": 13,
+   "cost_of_delay": 11204,
+   "freeze": false
+  },
+  {
+   "id": "F-0323",
+   "days_to_patch": 75,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0325",
+   "days_to_patch": 52,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0326",
+   "days_to_patch": 182,
+   "days_late": 2,
+   "cost_of_delay": 2310,
+   "freeze": false
+  },
+  {
+   "id": "F-0327",
+   "days_to_patch": 143,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0329",
+   "days_to_patch": 96,
+   "days_late": 6,
+   "cost_of_delay": 3039,
+   "freeze": false
+  },
+  {
+   "id": "F-0330",
+   "days_to_patch": 89,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0331",
+   "days_to_patch": 78,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0332",
+   "days_to_patch": 52,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0333",
+   "days_to_patch": 105,
+   "days_late": 15,
+   "cost_of_delay": 248722,
+   "freeze": false
+  },
+  {
+   "id": "F-0334",
+   "days_to_patch": 229,
+   "days_late": 49,
+   "cost_of_delay": 148446,
+   "freeze": false
+  },
+  {
+   "id": "F-0335",
+   "days_to_patch": 106,
+   "days_late": 16,
+   "cost_of_delay": 21965,
+   "freeze": false
+  },
+  {
+   "id": "F-0336",
+   "days_to_patch": 61,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0337",
+   "days_to_patch": 56,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0338",
+   "days_to_patch": 39,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0340",
+   "days_to_patch": 86,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0341",
+   "days_to_patch": 96,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0342",
+   "days_to_patch": 80,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0343",
+   "days_to_patch": 167,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0344",
+   "days_to_patch": 230,
+   "days_late": 50,
+   "cost_of_delay": 42627,
+   "freeze": false
+  },
+  {
+   "id": "F-0346",
+   "days_to_patch": 82,
+   "days_late": 0,
+   "cost_of_delay": 0,
+   "freeze": false
+  },
+  {
+   "id": "F-0348",
+   "days_to_patch": 97,
+   "days_late": 7,
+   "cost_of_delay": 508,
+   "freeze": false
+  }
+ ],
+ "calculator": {
+  "F-0142_planned": {
+   "finding": "F-0142",
+   "patch": "2026-12-08",
+   "days_waiting": 39,
+   "chance_by_patch": 0.1104,
+   "expected_loss_waiting": 8852240,
+   "daily_cost_today": 240157,
+   "window_cost": 82000,
+   "break_even_days": 0.34,
+   "impact_if_exploited": 82120000,
+   "impact_parts": {
+    "incident_response": 1000000,
+    "records": 72000000,
+    "downtime": 9120000
+   }
+  },
+  "F-0142_next_window": {
+   "finding": "F-0142",
+   "patch": "2026-11-03",
+   "days_waiting": 4,
+   "chance_by_patch": 0.0119,
+   "expected_loss_waiting": 956322,
+   "daily_cost_today": 240157,
+   "window_cost": 82000,
+   "break_even_days": 0.34,
+   "impact_if_exploited": 82120000,
+   "impact_parts": {
+    "incident_response": 1000000,
+    "records": 72000000,
+    "downtime": 9120000
+   }
+  },
+  "F-0142_waf": {
+   "finding": "F-0142",
+   "patch": "2026-12-08",
+   "days_waiting": 39,
+   "chance_by_patch": 0.0365,
+   "expected_loss_waiting": 2927629,
+   "daily_cost_today": 240157,
+   "window_cost": 82000,
+   "break_even_days": 0.34,
+   "impact_if_exploited": 82120000,
+   "impact_parts": {
+    "incident_response": 1000000,
+    "records": 72000000,
+    "downtime": 9120000
+   }
+  },
+  "F-0118_planned": {
+   "finding": "F-0118",
+   "patch": "2026-12-10",
+   "days_waiting": 41,
+   "chance_by_patch": 0.1157,
+   "expected_loss_waiting": 4580603,
+   "daily_cost_today": 118771,
+   "window_cost": 36000,
+   "break_even_days": 0.3,
+   "impact_if_exploited": 45590000,
+   "impact_parts": {
+    "incident_response": 1000000,
+    "records": 40990000,
+    "downtime": 3600000
+   }
+  },
+  "F-0118_allowlist": {
+   "finding": "F-0118",
+   "patch": "2026-12-10",
+   "days_waiting": 41,
+   "chance_by_patch": 0.0266,
+   "expected_loss_waiting": 1054394,
+   "daily_cost_today": 118771,
+   "window_cost": 36000,
+   "break_even_days": 0.3,
+   "impact_if_exploited": 45590000,
+   "impact_parts": {
+    "incident_response": 1000000,
+    "records": 40990000,
+    "downtime": 3600000
+   }
+  },
+  "F-0097_planned": {
+   "finding": "F-0097",
+   "patch": "2026-12-15",
+   "days_waiting": 46,
+   "chance_by_patch": 0.0227,
+   "expected_loss_waiting": 468949,
+   "daily_cost_today": 10380,
+   "window_cost": 38000,
+   "break_even_days": 3.66,
+   "impact_if_exploited": 21410000,
+   "impact_parts": {
+    "incident_response": 1000000,
+    "records": 18490000,
+    "downtime": 1920000
+   }
+  },
+  "F-0031_daily": {
+   "finding": "F-0031",
+   "patch": "2026-11-29",
+   "days_waiting": 30,
+   "chance_by_patch": 0.0861,
+   "expected_loss_waiting": 12734,
+   "daily_cost_today": 443,
+   "window_cost": 6000,
+   "break_even_days": 13.54,
+   "impact_if_exploited": 261000,
+   "impact_parts": {
+    "incident_response": 250000,
+    "records": 11000,
+    "downtime": 0
+   }
+  },
+  "F-0151_planned": {
+   "finding": "F-0151",
+   "patch": "2026-12-08",
+   "days_waiting": 39,
+   "chance_by_patch": 0.0078,
+   "expected_loss_waiting": 739427,
+   "daily_cost_today": 19032,
+   "window_cost": 66000,
+   "break_even_days": 3.47,
+   "impact_if_exploited": 95340000,
+   "impact_parts": {
+    "incident_response": 1500000,
+    "records": 72240000,
+    "downtime": 21600000
+   }
+  },
+  "F-0151_assume_kev": {
+   "finding": "F-0151",
+   "patch": "2026-12-08",
+   "days_waiting": 39,
+   "chance_by_patch": 0.1104,
+   "expected_loss_waiting": 10508016,
+   "daily_cost_today": 285078,
+   "window_cost": 66000,
+   "break_even_days": 0.23,
+   "impact_if_exploited": 95340000,
+   "impact_parts": {
+    "incident_response": 1500000,
+    "records": 72240000,
+    "downtime": 21600000
+   }
+  }
+ },
+ "forecast": {
+  "base": {
+   "current": {
+    "expected_loss": 44302715,
+    "past_sla": 17091038,
+    "emergency_changes": 0,
+    "waf_rules": 0,
+    "policy_cost": 0,
+    "cumulative": [
+     786621,
+     1572086,
+     2356399,
+     3139563,
+     3921582,
+     4702555,
+     5483406,
+     6263119,
+     7050817,
+     7913199,
+     8774361,
+     9634306,
+     10494181,
+     11354052,
+     12279265,
+     13203196,
+     14131786,
+     15066688,
+     16000386,
+     16932814,
+     17865446,
+     18798286,
+     19729865,
+     20661140,
+     21591160,
+     22519928,
+     23447449,
+     24373775,
+     25301541,
+     26229606,
+     27156434,
+     28082029,
+     29006393,
+     29929531,
+     30867867,
+     31804980,
+     32742343,
+     33678488,
+     34614056,
+     34969830,
+     35325252,
+     35561380,
+     35799508,
+     36047743,
+     36295930,
+     36544071,
+     36749721,
+     36955335,
+     37159977,
+     37364584,
+     37569156,
+     37773693,
+     37978194,
+     38172496,
+     38367634,
+     38556771,
+     38745875,
+     38934945,
+     39123982,
+     39312986,
+     39500350,
+     39687681,
+     39874927,
+     40079917,
+     40287924,
+     40495895,
+     40703830,
+     40879786,
+     41055711,
+     41224240,
+     41392739,
+     41561209,
+     41730814,
+     41900388,
+     42049652,
+     42198890,
+     42348042,
+     42497168,
+     42646268,
+     42795341,
+     42944388,
+     43090299,
+     43236183,
+     43388625,
+     43541040,
+     43693428,
+     43845790,
+     43998125,
+     44150433,
+     44302715
+    ]
+   },
+   "proposed": {
+    "expected_loss": 27508910,
+    "past_sla": 3243192,
+    "emergency_changes": 7,
+    "waf_rules": 0,
+    "policy_cost": 348000,
+    "cumulative": [
+     786621,
+     1572086,
+     2356399,
+     3139563,
+     3546564,
+     3953587,
+     4361551,
+     4769439,
+     5186370,
+     5603223,
+     6020000,
+     6436699,
+     6854465,
+     7273359,
+     7758725,
+     8243935,
+     8734929,
+     9233354,
+     9731692,
+     10229874,
+     10729371,
+     11230184,
+     11730839,
+     12232293,
+     12733589,
+     13231542,
+     13729338,
+     14227031,
+     14727248,
+     15228847,
+     15730289,
+     16231575,
+     16732704,
+     17233678,
+     17750865,
+     18267893,
+     18786234,
+     19304415,
+     19823076,
+     20046052,
+     20268990,
+     20473826,
+     20680672,
+     20897634,
+     21114559,
+     21331447,
+     21505079,
+     21678681,
+     21851332,
+     22023952,
+     22196544,
+     22369105,
+     22541637,
+     22696153,
+     22851513,
+     22983406,
+     23115277,
+     23247126,
+     23378953,
+     23510757,
+     23641092,
+     23771405,
+     23901696,
+     24049742,
+     24200816,
+     24351866,
+     24502889,
+     24638579,
+     24774247,
+     24908095,
+     25041920,
+     25175723,
+     25310667,
+     25445588,
+     25573866,
+     25702123,
+     25828331,
+     25954518,
+     26080683,
+     26206827,
+     26332950,
+     26458890,
+     26584809,
+     26718150,
+     26851469,
+     26984765,
+     27118040,
+     27251292,
+     27380112,
+     27508910
+    ]
+   },
+   "proposed_waf": {
+    "expected_loss": 23814014,
+    "past_sla": 2402900,
+    "emergency_changes": 7,
+    "waf_rules": 31,
+    "policy_cost": 394500,
+    "cumulative": [
+     786621,
+     1352343,
+     1917581,
+     2482339,
+     2838147,
+     3193995,
+     3550730,
+     3907406,
+     4273139,
+     4638810,
+     5004420,
+     5369969,
+     5736598,
+     6104373,
+     6492939,
+     6880591,
+     7274114,
+     7673657,
+     8073199,
+     8472623,
+     8873449,
+     9275677,
+     9677835,
+     10080877,
+     10483181,
+     10882226,
+     11281202,
+     11680160,
+     12081693,
+     12484693,
+     12887622,
+     13290481,
+     13693269,
+     14095987,
+     14515041,
+     14934021,
+     15354399,
+     15774703,
+     16195571,
+     16415248,
+     16634887,
+     16836425,
+     17039973,
+     17253637,
+     17466289,
+     17678904,
+     17850861,
+     18022788,
+     18193805,
+     18364793,
+     18535752,
+     18706681,
+     18877582,
+     19032046,
+     19187354,
+     19319196,
+     19451015,
+     19582812,
+     19714587,
+     19846340,
+     19976623,
+     20106885,
+     20237125,
+     20385119,
+     20535533,
+     20685922,
+     20836285,
+     20971315,
+     21106323,
+     21239562,
+     21372778,
+     21505973,
+     21640308,
+     21773807,
+     21900663,
+     22027436,
+     22152160,
+     22276863,
+     22401544,
+     22526205,
+     22650844,
+     22775362,
+     22899860,
+     23031779,
+     23163677,
+     23295553,
+     23427407,
+     23559238,
+     23686637,
+     23814014
+    ]
+   }
+  },
+  "low": {
+   "current": 22684385,
+   "proposed": 13857373,
+   "proposed_waf": 11991202
+  },
+  "high": {
+   "current": 84750880,
+   "proposed": 54219433,
+   "proposed_waf": 46976142
+  }
+ },
+ "ordering": {
+  "pool": 21,
+  "capacity_per_week": 3,
+  "days": 30,
+  "cvss_order": 6641772,
+  "cost_order": 3885765,
+  "first_week_cvss": [
+   "F-0031",
+   "F-0118",
+   "F-0142"
+  ],
+  "first_week_cost": [
+   "F-0142",
+   "F-0118",
+   "F-0151"
+  ]
+ },
+ "open_findings": [
+  {
+   "id": "F-0142",
+   "due_current": "2026-11-13",
+   "due_proposed": "2026-10-21",
+   "daily_cost": 240157,
+   "status": "kev",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-11-03"
+  },
+  {
+   "id": "F-0118",
+   "due_current": "2026-10-08",
+   "due_proposed": "2026-09-15",
+   "daily_cost": 118771,
+   "status": "kev",
+   "planned_current": "2026-12-10",
+   "planned_proposed": "2026-11-03"
+  },
+  {
+   "id": "F-0097",
+   "due_current": "2026-10-16",
+   "due_proposed": "2026-09-16",
+   "daily_cost": 10380,
+   "status": "poc",
+   "planned_current": "2026-12-15",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0031",
+   "due_current": "2026-05-01",
+   "due_proposed": "2026-04-08",
+   "daily_cost": 443,
+   "status": "kev",
+   "planned_current": "2027-10-30",
+   "planned_proposed": "2026-11-03"
+  },
+  {
+   "id": "F-0151",
+   "due_current": "2026-12-20",
+   "due_proposed": "2026-11-20",
+   "daily_cost": 19032,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0149",
+   "due_current": "2027-01-04",
+   "due_proposed": "2027-01-04",
+   "daily_cost": 1530,
+   "status": "none",
+   "planned_current": "2026-12-10",
+   "planned_proposed": "2026-12-10"
+  },
+  {
+   "id": "F-0201",
+   "due_current": "2027-02-23",
+   "due_proposed": "2027-02-23",
+   "daily_cost": 7539,
+   "status": "none",
+   "planned_current": "2027-01-12",
+   "planned_proposed": "2027-01-12"
+  },
+  {
+   "id": "F-0202",
+   "due_current": "2026-11-30",
+   "due_proposed": "2026-11-30",
+   "daily_cost": 1199,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0204",
+   "due_current": "2027-03-06",
+   "due_proposed": "2027-03-06",
+   "daily_cost": 1204,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0209",
+   "due_current": "2026-11-24",
+   "due_proposed": "2026-11-24",
+   "daily_cost": 125,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0215",
+   "due_current": "2027-01-06",
+   "due_proposed": "2027-01-06",
+   "daily_cost": 952,
+   "status": "none",
+   "planned_current": "2027-01-21",
+   "planned_proposed": "2027-01-07"
+  },
+  {
+   "id": "F-0223",
+   "due_current": "2026-12-22",
+   "due_proposed": "2026-12-22",
+   "daily_cost": 538,
+   "status": "none",
+   "planned_current": "2027-02-18",
+   "planned_proposed": "2026-12-22"
+  },
+  {
+   "id": "F-0225",
+   "due_current": "2026-12-05",
+   "due_proposed": "2026-12-05",
+   "daily_cost": 97,
+   "status": "none",
+   "planned_current": "2026-12-17",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0230",
+   "due_current": "2026-11-04",
+   "due_proposed": "2026-10-05",
+   "daily_cost": 1204,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0234",
+   "due_current": "2026-11-11",
+   "due_proposed": "2026-11-11",
+   "daily_cost": 18771,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0236",
+   "due_current": "2026-12-30",
+   "due_proposed": "2026-12-30",
+   "daily_cost": 3174,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0239",
+   "due_current": "2026-10-21",
+   "due_proposed": "2026-10-21",
+   "daily_cost": 94,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0243",
+   "due_current": "2026-12-11",
+   "due_proposed": "2026-12-11",
+   "daily_cost": 7551,
+   "status": "none",
+   "planned_current": "2026-12-24",
+   "planned_proposed": "2026-12-15"
+  },
+  {
+   "id": "F-0244",
+   "due_current": "2026-12-18",
+   "due_proposed": "2026-12-18",
+   "daily_cost": 16288,
+   "status": "none",
+   "planned_current": "2027-02-04",
+   "planned_proposed": "2026-12-22"
+  },
+  {
+   "id": "F-0247",
+   "due_current": "2026-12-02",
+   "due_proposed": "2026-12-02",
+   "daily_cost": 7544,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0248",
+   "due_current": "2026-11-22",
+   "due_proposed": "2026-10-23",
+   "daily_cost": 16301,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0257",
+   "due_current": "2027-01-03",
+   "due_proposed": "2027-01-03",
+   "daily_cost": 18633,
+   "status": "none",
+   "planned_current": "2026-12-15",
+   "planned_proposed": "2026-12-15"
+  },
+  {
+   "id": "F-0259",
+   "due_current": "2027-02-17",
+   "due_proposed": "2027-02-17",
+   "daily_cost": 1451,
+   "status": "none",
+   "planned_current": "2027-02-02",
+   "planned_proposed": "2027-02-02"
+  },
+  {
+   "id": "F-0265",
+   "due_current": "2026-11-13",
+   "due_proposed": "2026-10-14",
+   "daily_cost": 16272,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0270",
+   "due_current": "2027-03-31",
+   "due_proposed": "2027-03-31",
+   "daily_cost": 16331,
+   "status": "none",
+   "planned_current": "2027-01-28",
+   "planned_proposed": "2027-01-28"
+  },
+  {
+   "id": "F-0272",
+   "due_current": "2026-12-28",
+   "due_proposed": "2026-12-28",
+   "daily_cost": 1010,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0277",
+   "due_current": "2027-02-18",
+   "due_proposed": "2027-02-18",
+   "daily_cost": 2126,
+   "status": "none",
+   "planned_current": "2027-02-16",
+   "planned_proposed": "2027-02-16"
+  },
+  {
+   "id": "F-0283",
+   "due_current": "2026-12-03",
+   "due_proposed": "2026-12-03",
+   "daily_cost": 16239,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0284",
+   "due_current": "2026-11-09",
+   "due_proposed": "2026-11-09",
+   "daily_cost": 938,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0289",
+   "due_current": "2026-10-29",
+   "due_proposed": "2026-10-29",
+   "daily_cost": 7452,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0292",
+   "due_current": "2026-10-27",
+   "due_proposed": "2026-09-27",
+   "daily_cost": 1003,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0293",
+   "due_current": "2027-03-02",
+   "due_proposed": "2027-03-02",
+   "daily_cost": 2129,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0298",
+   "due_current": "2026-12-26",
+   "due_proposed": "2026-12-26",
+   "daily_cost": 1462,
+   "status": "none",
+   "planned_current": "2026-12-29",
+   "planned_proposed": "2026-12-29"
+  },
+  {
+   "id": "F-0310",
+   "due_current": "2026-12-28",
+   "due_proposed": "2026-12-28",
+   "daily_cost": 3173,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0312",
+   "due_current": "2026-11-11",
+   "due_proposed": "2026-11-11",
+   "daily_cost": 1203,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0314",
+   "due_current": "2026-10-13",
+   "due_proposed": "2026-10-13",
+   "daily_cost": 124,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0315",
+   "due_current": "2027-03-10",
+   "due_proposed": "2027-03-10",
+   "daily_cost": 126,
+   "status": "none",
+   "planned_current": "2027-01-05",
+   "planned_proposed": "2027-01-05"
+  },
+  {
+   "id": "F-0321",
+   "due_current": "2026-11-22",
+   "due_proposed": "2026-11-22",
+   "daily_cost": 8996,
+   "status": "none",
+   "planned_current": "2027-01-12",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0324",
+   "due_current": "2026-12-02",
+   "due_proposed": "2026-12-02",
+   "daily_cost": 15947,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0328",
+   "due_current": "2026-12-03",
+   "due_proposed": "2026-11-03",
+   "daily_cost": 2135,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0339",
+   "due_current": "2026-09-23",
+   "due_proposed": "2026-09-23",
+   "daily_cost": 533,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0345",
+   "due_current": "2026-11-19",
+   "due_proposed": "2026-10-20",
+   "daily_cost": 97,
+   "status": "none",
+   "planned_current": "2026-12-29",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0347",
+   "due_current": "2027-04-06",
+   "due_proposed": "2027-04-06",
+   "daily_cost": 69,
+   "status": "none",
+   "planned_current": "2027-03-25",
+   "planned_proposed": "2027-03-25"
+  },
+  {
+   "id": "F-0349",
+   "due_current": "2026-10-26",
+   "due_proposed": "2026-10-03",
+   "daily_cost": 951,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-11-03"
+  },
+  {
+   "id": "F-0350",
+   "due_current": "2027-04-20",
+   "due_proposed": "2027-04-20",
+   "daily_cost": 16396,
+   "status": "none",
+   "planned_current": "2027-03-02",
+   "planned_proposed": "2027-03-02"
+  },
+  {
+   "id": "F-0351",
+   "due_current": "2026-12-01",
+   "due_proposed": "2026-11-01",
+   "daily_cost": 539,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0352",
+   "due_current": "2027-01-23",
+   "due_proposed": "2027-01-23",
+   "daily_cost": 98,
+   "status": "none",
+   "planned_current": "2026-12-29",
+   "planned_proposed": "2026-12-29"
+  },
+  {
+   "id": "F-0353",
+   "due_current": "2027-01-06",
+   "due_proposed": "2027-01-06",
+   "daily_cost": 952,
+   "status": "none",
+   "planned_current": "2027-01-19",
+   "planned_proposed": "2027-01-07"
+  },
+  {
+   "id": "F-0354",
+   "due_current": "2026-11-20",
+   "due_proposed": "2026-10-21",
+   "daily_cost": 1460,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0355",
+   "due_current": "2026-12-19",
+   "due_proposed": "2026-11-19",
+   "daily_cost": 16390,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0356",
+   "due_current": "2026-12-23",
+   "due_proposed": "2026-12-23",
+   "daily_cost": 951,
+   "status": "none",
+   "planned_current": "2027-01-28",
+   "planned_proposed": "2026-12-24"
+  },
+  {
+   "id": "F-0357",
+   "due_current": "2027-01-01",
+   "due_proposed": "2027-01-01",
+   "daily_cost": 16334,
+   "status": "none",
+   "planned_current": "2027-01-05",
+   "planned_proposed": "2027-01-05"
+  },
+  {
+   "id": "F-0358",
+   "due_current": "2026-12-22",
+   "due_proposed": "2026-12-22",
+   "daily_cost": 16301,
+   "status": "none",
+   "planned_current": "2026-12-15",
+   "planned_proposed": "2026-12-15"
+  },
+  {
+   "id": "F-0359",
+   "due_current": "2026-11-26",
+   "due_proposed": "2026-10-27",
+   "daily_cost": 1528,
+   "status": "none",
+   "planned_current": "2026-12-22",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0360",
+   "due_current": "2026-12-30",
+   "due_proposed": "2026-12-30",
+   "daily_cost": 9064,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0361",
+   "due_current": "2026-11-29",
+   "due_proposed": "2026-10-30",
+   "daily_cost": 1010,
+   "status": "none",
+   "planned_current": "2026-12-15",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0362",
+   "due_current": "2027-01-04",
+   "due_proposed": "2027-01-04",
+   "daily_cost": 18975,
+   "status": "none",
+   "planned_current": "2026-12-10",
+   "planned_proposed": "2026-12-10"
+  },
+  {
+   "id": "F-0363",
+   "due_current": "2026-12-07",
+   "due_proposed": "2026-11-07",
+   "daily_cost": 98,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0364",
+   "due_current": "2026-12-30",
+   "due_proposed": "2026-12-30",
+   "daily_cost": 951,
+   "status": "none",
+   "planned_current": "2026-12-17",
+   "planned_proposed": "2026-12-17"
+  },
+  {
+   "id": "F-0365",
+   "due_current": "2027-01-22",
+   "due_proposed": "2027-01-22",
+   "daily_cost": 1536,
+   "status": "none",
+   "planned_current": "2027-02-23",
+   "planned_proposed": "2027-01-26"
+  },
+  {
+   "id": "F-0366",
+   "due_current": "2027-01-15",
+   "due_proposed": "2027-01-15",
+   "daily_cost": 98,
+   "status": "none",
+   "planned_current": "2027-02-02",
+   "planned_proposed": "2027-01-19"
+  },
+  {
+   "id": "F-0367",
+   "due_current": "2026-12-19",
+   "due_proposed": "2026-12-19",
+   "daily_cost": 538,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0368",
+   "due_current": "2026-11-28",
+   "due_proposed": "2026-10-29",
+   "daily_cost": 1463,
+   "status": "none",
+   "planned_current": "2027-01-12",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0369",
+   "due_current": "2026-11-29",
+   "due_proposed": "2026-10-30",
+   "daily_cost": 6021,
+   "status": "poc",
+   "planned_current": "2026-12-22",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0370",
+   "due_current": "2027-04-21",
+   "due_proposed": "2027-04-21",
+   "daily_cost": 7582,
+   "status": "none",
+   "planned_current": "2027-04-22",
+   "planned_proposed": "2027-04-22"
+  },
+  {
+   "id": "F-0371",
+   "due_current": "2026-12-25",
+   "due_proposed": "2026-12-25",
+   "daily_cost": 1462,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0372",
+   "due_current": "2026-12-03",
+   "due_proposed": "2026-11-03",
+   "daily_cost": 952,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0373",
+   "due_current": "2026-11-20",
+   "due_proposed": "2026-10-21",
+   "daily_cost": 538,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0374",
+   "due_current": "2027-04-07",
+   "due_proposed": "2027-04-07",
+   "daily_cost": 7572,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0375",
+   "due_current": "2026-12-31",
+   "due_proposed": "2026-12-31",
+   "daily_cost": 9066,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0376",
+   "due_current": "2026-12-24",
+   "due_proposed": "2026-12-24",
+   "daily_cost": 7561,
+   "status": "none",
+   "planned_current": "2027-01-07",
+   "planned_proposed": "2026-12-24"
+  },
+  {
+   "id": "F-0377",
+   "due_current": "2026-12-06",
+   "due_proposed": "2026-11-06",
+   "daily_cost": 126,
+   "status": "none",
+   "planned_current": "2026-12-29",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0378",
+   "due_current": "2027-01-14",
+   "due_proposed": "2027-01-14",
+   "daily_cost": 2138,
+   "status": "none",
+   "planned_current": "2027-02-11",
+   "planned_proposed": "2027-01-14"
+  },
+  {
+   "id": "F-0379",
+   "due_current": "2026-12-06",
+   "due_proposed": "2026-11-06",
+   "daily_cost": 98,
+   "status": "none",
+   "planned_current": "2027-01-12",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0380",
+   "due_current": "2026-12-12",
+   "due_proposed": "2026-11-12",
+   "daily_cost": 539,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0381",
+   "due_current": "2027-03-26",
+   "due_proposed": "2027-03-26",
+   "daily_cost": 1462,
+   "status": "none",
+   "planned_current": "2027-01-28",
+   "planned_proposed": "2027-01-28"
+  },
+  {
+   "id": "F-0382",
+   "due_current": "2026-11-25",
+   "due_proposed": "2026-10-26",
+   "daily_cost": 1462,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0383",
+   "due_current": "2026-12-23",
+   "due_proposed": "2026-12-23",
+   "daily_cost": 18929,
+   "status": "none",
+   "planned_current": "2027-01-05",
+   "planned_proposed": "2026-12-24"
+  },
+  {
+   "id": "F-0384",
+   "due_current": "2026-11-11",
+   "due_proposed": "2026-10-19",
+   "daily_cost": 18998,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-11-03"
+  },
+  {
+   "id": "F-0385",
+   "due_current": "2027-03-30",
+   "due_proposed": "2027-03-30",
+   "daily_cost": 951,
+   "status": "none",
+   "planned_current": "2027-03-30",
+   "planned_proposed": "2027-03-30"
+  },
+  {
+   "id": "F-0386",
+   "due_current": "2027-01-23",
+   "due_proposed": "2027-01-23",
+   "daily_cost": 3188,
+   "status": "none",
+   "planned_current": "2027-01-28",
+   "planned_proposed": "2027-01-26"
+  },
+  {
+   "id": "F-0387",
+   "due_current": "2026-12-21",
+   "due_proposed": "2026-12-21",
+   "daily_cost": 1461,
+   "status": "none",
+   "planned_current": "2026-12-08",
+   "planned_proposed": "2026-12-08"
+  },
+  {
+   "id": "F-0388",
+   "due_current": "2027-01-04",
+   "due_proposed": "2027-01-04",
+   "daily_cost": 539,
+   "status": "none",
+   "planned_current": "2026-12-15",
+   "planned_proposed": "2026-12-15"
+  }
+ ]
+}
