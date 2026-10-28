@@ -2,7 +2,7 @@
 
 **Build type:** Workflow · **Mindset shift:** Judgment and accountability · **Owner:** Aby Rao
 **Visual scheme:** 7 · Graphite & Lime (drawn at random from the schemes no build has used)
-**Status:** Requirements ready
+**Status:** Prototype built (see README.md)
 
 Requirements captured from Aby's notes on Oct 27, 2026, mapped to the ten build questions in the master template (`claude/Builder_Prototype_Template.md` in the project). Items marked *(assumed)* were filled in by Claude and need Aby's confirmation.
 
@@ -38,7 +38,7 @@ A Responsible AI release gate: a six-step workflow that generates a test data se
 |---|---|---|---|---|
 | **PolicyPal** (demo build) | HR policy assistant, retrieval over documents | 1.0, 1.1, 1.2 | High | 240 cases |
 | **TriageBot** | Security triage agent with tools that can disable accounts | 1.0 | High | 200 cases |
-| **Expense Anomaly Scorer** | Machine learning classifier that flags expenses for audit | 1.0 | Medium | 200 records |
+| **Expense Anomaly Scorer** | Machine learning classifier that flags expenses for audit | 1.0 | Medium | 150 cases (200 reports) |
 
 Each sample has source files, a `config.yaml`, and a `data_map.yaml` listing approved data sources. All names, people, and data are invented. Synthetic personal data uses reserved forms only: ID numbers in the 900 range (never issued) and `@example.com` emails.
 
@@ -65,7 +65,7 @@ Supporting findings:
 
 **7. What will I click during the demo?** *(assumed)*
 1. **Define:** pick **PolicyPal 1.0**; the intake sets risk tier **High**.
-2. **Source:** load the sample code; 9 observations appear, and the lineage map shows 2 unapproved sources in the accent color.
+2. **Source:** load the sample code; 9 observations appear, and the lineage map shows 2 unapproved sources in rose.
 3. **Generate:** 240 cases across 10 dimensions; validation passes 7 of 7 checks; **Approve test set**.
 4. **Run:** "Test 240 cases against PolicyPal 1.0?" → **Yes, run**; the grid fills in.
 5. **Report:** gate **Blocked**; open the critical finding to see the leaked answer and the line in `ingest.py`; **Create tickets**.
@@ -134,7 +134,7 @@ Intake questions (with defaults for each sample):
 
 * **Load:** bundled samples, or the builder's own folder (`webkitdirectory`) or .zip (bundled zip library, no network). Max 500 files, 5 MB total; binary files skipped.
 * **Code reading (simulated AI over pattern rules):** each observation has a file, a line, the matched text, and what it means for testing.
-* **Lineage map:** sources (from code) → ingest or training → index or model → app → output. Sources not in `data_map.yaml` are drawn in the accent color with a **Why?**.
+* **Lineage map:** sources (from code) → ingest or training → index or model → app → output. Sources not in `data_map.yaml` are drawn in rose with a **Why?**.
 
 Detection rules (apply to any code, sample or uploaded):
 
@@ -218,7 +218,7 @@ No tools are found, so the **Agency** dimension is marked not applicable.
 |---|---|---|
 | V1 Coverage | Every applicable dimension ≥ 10 cases; every detected capability has a family | Pass |
 | V2 Known answers | Every case has a pass rule; golden answers cite a document in the approved map | Pass |
-| V3 Duplicates | Near-duplicates (similarity ≥ 0.9) replaced | Pass (3 replaced) |
+| V3 Duplicates | Near-duplicates (similarity ≥ 0.9) rephrased | Pass (1 rephrased) |
 | V4 Synthetic only | ID numbers in the 900 range; emails at `example.com`; no names from the company directory | Pass |
 | V5 Balance | Should-answer cases are 40–60% of the set, so over-refusal can show up | Pass (52%) |
 | V6 Pairs | Paired cases differ in exactly one attribute | Pass |
@@ -227,7 +227,7 @@ No tools are found, so the **Agency** dimension is marked not applicable.
 ### Step 4 · Run
 
 * Confirmation card: "Test 240 cases against PolicyPal 1.0?" with what will happen, how long (simulated), and that nothing leaves the browser. **Yes, run** · **Not now**.
-* Grid: one dot per case, grouped by dimension, filling pass (lime) or fail (accent) in seed order.
+* Grid: one dot per case, grouped by dimension, filling pass (lime) or fail (rose) in seed order.
 * Click a dot: input, output, expected rule, verdict, and **Why?** (rule result plus simulated judge note).
 
 **Results for PolicyPal** (failures by family):
@@ -331,8 +331,8 @@ Build switcher, persona switcher ("Viewing as": Aby Rao, Builder · Jordan Kim, 
 
 Headline: 6 of 25 agency tests disabled an account with no approval when the alert said "urgent" (`agent.py` `auto_approve`). Gate: Blocked.
 
-**Expense Anomaly Scorer 1.0** (200 synthetic expense reports):
-* Fairness: 50 remote and 50 on-site reports matched on amount and category. Flag rates 32% (16 of 50) and 14% (7 of 50); ratio 0.44 against a policy minimum of 0.80, adapted from the four-fifths rule. `work_location` is a model feature.
+**Expense Anomaly Scorer 1.0** (150 cases built from 200 synthetic expense reports; the balance check doesn't apply to a classifier):
+* Fairness: 50 remote and 50 on-site reports matched on amount and category. Flag rates 32% (16 of 50) and 14% (7 of 50); ratio 0.44 against a policy minimum of 0.80, adapted from the four-fifths rule. 9 of 50 pairs get different outcomes. `work_location` is a model feature.
 * Data lineage: training reads `scratch/expenses_2023_relabel.csv`, which isn't in the data map (2 of 10 lineage checks fail).
 * Accuracy 54 of 60 correct (90%); Gate: Blocked.
 
@@ -345,7 +345,7 @@ Headline: 6 of 25 agency tests disabled an account with no approval when the ale
 | K1 | Risk tier from intake | PolicyPal High · TriageBot High · Expense scorer Medium |
 | K2 | Code reading, PolicyPal 1.0 | 9 observations; 3 sources, 2 not in the data map; Agency not applicable |
 | K3 | Default test set, PolicyPal | 240 cases, 10 dimensions, counts as in the family table |
-| K4 | Test set validation | 7 of 7 checks pass; 3 near-duplicates replaced; 52% should-answer |
+| K4 | Test set validation | 7 of 7 checks pass; 1 near-duplicate rephrased; 52% should-answer |
 | K5 | Reproducibility | Same seed and settings → same fingerprint; change the total → different fingerprint |
 | K6 | Run 1.0 | 34 of 240 fail (85.8% pass); 10 findings (1 critical, 4 high, 4 medium, 1 low); gate Blocked |
 | K7 | Finding F1 evidence | 7 failed privacy tests; code pointer `ingest.py` compensation source |
