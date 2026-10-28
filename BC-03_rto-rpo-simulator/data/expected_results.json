@@ -1,0 +1,3974 @@
+{
+ "SC01": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 46,
+    "data_loss_h": 0.0,
+    "rto_gap": 45,
+    "rpo_gap": 0,
+    "chain": [
+     "S01",
+     "A02",
+     "P01",
+     "H10",
+     "H01"
+    ],
+    "cost": 14924000,
+    "cost_wk": 14924000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 60,
+    "data_loss_h": 31,
+    "rto_gap": 56,
+    "rpo_gap": 30.75,
+    "chain": [
+     "S02",
+     "A07",
+     "A01",
+     "D01",
+     "H04",
+     "P01",
+     "H10",
+     "H01"
+    ],
+    "cost": 4674000,
+    "cost_wk": 4674000,
+    "txn_lost": 192600
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 56,
+    "data_loss_h": 24,
+    "rto_gap": 52,
+    "rpo_gap": 23.75,
+    "chain": [
+     "S03",
+     "A06",
+     "A04",
+     "D03",
+     "H04",
+     "P01",
+     "H10",
+     "H01"
+    ],
+    "cost": 6900000,
+    "cost_wk": 5865000,
+    "txn_lost": 400000
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 56,
+    "data_loss_h": 24,
+    "rto_gap": 54,
+    "rpo_gap": 23.95,
+    "chain": [
+     "S04",
+     "A05",
+     "A04",
+     "D03",
+     "H04",
+     "P01",
+     "H10",
+     "H01"
+    ],
+    "cost": 3400000,
+    "cost_wk": 2992000,
+    "txn_lost": 3000
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 60,
+    "data_loss_h": 31,
+    "rto_gap": 52,
+    "rpo_gap": 30,
+    "chain": [
+     "S05",
+     "A09",
+     "A01",
+     "D01",
+     "H04",
+     "P01",
+     "H10",
+     "H01"
+    ],
+    "cost": 700000,
+    "cost_wk": 420000,
+    "txn_lost": 25000
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 60,
+    "data_loss_h": 31,
+    "rto_gap": 56,
+    "rpo_gap": 30.75,
+    "chain": [
+     "S06",
+     "A10",
+     "A01",
+     "D01",
+     "H04",
+     "P01",
+     "H10",
+     "H01"
+    ],
+    "cost": 1968000,
+    "cost_wk": 1968000,
+    "txn_lost": 64200
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 60,
+    "data_loss_h": 31,
+    "rto_gap": 36,
+    "rpo_gap": 27,
+    "chain": [
+     "S07",
+     "A12",
+     "A01",
+     "D01",
+     "H04",
+     "P01",
+     "H10",
+     "H01"
+    ],
+    "cost": 550000,
+    "cost_wk": 550000,
+    "txn_lost": 1200
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 56,
+    "data_loss_h": 24,
+    "rto_gap": 52,
+    "rpo_gap": 23,
+    "chain": [
+     "S08",
+     "A14",
+     "D03",
+     "H04",
+     "P01",
+     "H10",
+     "H01"
+    ],
+    "cost": 1130000,
+    "cost_wk": 1130000,
+    "txn_lost": 7440
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 60,
+    "data_loss_h": 31,
+    "rto_gap": 56,
+    "rpo_gap": 30,
+    "chain": [
+     "S09",
+     "A15",
+     "A01",
+     "D01",
+     "H04",
+     "P01",
+     "H10",
+     "H01"
+    ],
+    "cost": 900000,
+    "cost_wk": 900000,
+    "txn_lost": 200
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 60,
+    "data_loss_h": 31,
+    "rto_gap": 12,
+    "rpo_gap": 7,
+    "chain": [
+     "S11",
+     "A18",
+     "A01",
+     "D01",
+     "H04",
+     "P01",
+     "H10",
+     "H01"
+    ],
+    "cost": 75000,
+    "cost_wk": 75000,
+    "txn_lost": 5000
+   }
+  ],
+  "assets_down": 27,
+  "total_cost": 35221000,
+  "start": "2026-10-30T07:00:00"
+ },
+ "SC02": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 14.0,
+    "data_loss_h": 31,
+    "rto_gap": 10.0,
+    "rpo_gap": 30.75,
+    "chain": [
+     "S02",
+     "A07",
+     "A01",
+     "D01"
+    ],
+    "cost": 1273000,
+    "cost_wk": 1273000,
+    "txn_lost": 192600
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S03"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 14.0,
+    "data_loss_h": 31,
+    "rto_gap": 6.0,
+    "rpo_gap": 30,
+    "chain": [
+     "S05",
+     "A09",
+     "A01",
+     "D01"
+    ],
+    "cost": 700000,
+    "cost_wk": 420000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 14.0,
+    "data_loss_h": 31,
+    "rto_gap": 10.0,
+    "rpo_gap": 30.75,
+    "chain": [
+     "S06",
+     "A10",
+     "A01",
+     "D01"
+    ],
+    "cost": 536000,
+    "cost_wk": 536000,
+    "txn_lost": 64200
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 14.0,
+    "data_loss_h": 31,
+    "rto_gap": 0,
+    "rpo_gap": 27,
+    "chain": [
+     "S07",
+     "A12",
+     "A01",
+     "D01"
+    ],
+    "cost": 550000,
+    "cost_wk": 550000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 14.0,
+    "data_loss_h": 31,
+    "rto_gap": 10.0,
+    "rpo_gap": 30,
+    "chain": [
+     "S09",
+     "A15",
+     "A01",
+     "D01"
+    ],
+    "cost": 600000,
+    "cost_wk": 600000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 14.0,
+    "data_loss_h": 31,
+    "rto_gap": 0,
+    "rpo_gap": 7,
+    "chain": [
+     "S11",
+     "A18",
+     "A01",
+     "D01"
+    ],
+    "cost": 50000,
+    "cost_wk": 50000,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 9,
+  "total_cost": 3709000,
+  "start": "2026-10-26T06:00:00"
+ },
+ "SC03": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 48,
+    "data_loss_h": 0.0,
+    "rto_gap": 47,
+    "rpo_gap": 0,
+    "chain": [
+     "S01",
+     "A02",
+     "H05",
+     "F1"
+    ],
+    "cost": 15252000,
+    "cost_wk": 15252000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 4,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0.25,
+    "chain": [
+     "S02",
+     "A07",
+     "A01",
+     "I02",
+     "P02"
+    ],
+    "cost": 380000,
+    "cost_wk": 380000,
+    "txn_lost": 4500
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 8,
+    "data_loss_h": 0.5,
+    "rto_gap": 4,
+    "rpo_gap": 0.25,
+    "chain": [
+     "S03",
+     "A06",
+     "I03",
+     "P02"
+    ],
+    "cost": 1840000,
+    "cost_wk": 1702000,
+    "txn_lost": 20000
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 48,
+    "data_loss_h": 0.5,
+    "rto_gap": 46,
+    "rpo_gap": 0.45,
+    "chain": [
+     "S04",
+     "A05",
+     "H05",
+     "F1"
+    ],
+    "cost": 6800000,
+    "cost_wk": 5933000,
+    "txn_lost": 150
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 4,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05",
+     "A09",
+     "A01",
+     "I02",
+     "P02"
+    ],
+    "cost": 280000,
+    "cost_wk": 196000,
+    "txn_lost": 1250
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 48,
+    "data_loss_h": 0.5,
+    "rto_gap": 44,
+    "rpo_gap": 0.25,
+    "chain": [
+     "S06",
+     "A10",
+     "H05",
+     "F1"
+    ],
+    "cost": 1488000,
+    "cost_wk": 1488000,
+    "txn_lost": 1500
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 8,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07",
+     "A12",
+     "D05",
+     "P06"
+    ],
+    "cost": 440000,
+    "cost_wk": 440000,
+    "txn_lost": 60
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 4,
+    "data_loss_h": 0.05,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08",
+     "A14",
+     "P02"
+    ],
+    "cost": 100000,
+    "cost_wk": 100000,
+    "txn_lost": 20
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 4,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09",
+     "A15",
+     "A01",
+     "I02",
+     "P02"
+    ],
+    "cost": 240000,
+    "cost_wk": 240000,
+    "txn_lost": 10
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 12,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11",
+     "A18",
+     "P02"
+    ],
+    "cost": 40000,
+    "cost_wk": 40000,
+    "txn_lost": 250
+   }
+  ],
+  "assets_down": 31,
+  "total_cost": 26860000,
+  "start": "2026-10-28T10:00:00"
+ },
+ "SC04": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 3,
+    "data_loss_h": 0.02,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S02",
+     "A07",
+     "P04"
+    ],
+    "cost": 228000,
+    "cost_wk": 228000,
+    "txn_lost": 180
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S03"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 3,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07",
+     "A11",
+     "I01",
+     "P04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 3,
+    "data_loss_h": 0.1,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08",
+     "A13",
+     "D07",
+     "R2"
+    ],
+    "cost": 60000,
+    "cost_wk": 60000,
+    "txn_lost": 40
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 10,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11",
+     "A19",
+     "D06",
+     "R1"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 12,
+  "total_cost": 288000,
+  "start": "2026-10-31T20:00:00"
+ },
+ "SC05": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 30,
+    "data_loss_h": 0.0,
+    "rto_gap": 26,
+    "rpo_gap": 0,
+    "chain": [
+     "S02",
+     "A07",
+     "A01",
+     "I02",
+     "H01"
+    ],
+    "cost": 2337000,
+    "cost_wk": 2337000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 30,
+    "data_loss_h": 0.0,
+    "rto_gap": 26,
+    "rpo_gap": 0,
+    "chain": [
+     "S03",
+     "A06",
+     "A04",
+     "I02",
+     "H01"
+    ],
+    "cost": 3680000,
+    "cost_wk": 2990000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 30,
+    "data_loss_h": 0.0,
+    "rto_gap": 28,
+    "rpo_gap": 0,
+    "chain": [
+     "S04",
+     "A05",
+     "A04",
+     "I02",
+     "H01"
+    ],
+    "cost": 5440000,
+    "cost_wk": 4777000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 30,
+    "data_loss_h": 0.0,
+    "rto_gap": 22,
+    "rpo_gap": 0,
+    "chain": [
+     "S05",
+     "A09",
+     "A01",
+     "I02",
+     "H01"
+    ],
+    "cost": 1120000,
+    "cost_wk": 700000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 30,
+    "data_loss_h": 0.0,
+    "rto_gap": 26,
+    "rpo_gap": 0,
+    "chain": [
+     "S06",
+     "A10",
+     "A01",
+     "I02",
+     "H01"
+    ],
+    "cost": 984000,
+    "cost_wk": 984000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 30,
+    "data_loss_h": 0.0,
+    "rto_gap": 6,
+    "rpo_gap": 0,
+    "chain": [
+     "S07",
+     "A12",
+     "A01",
+     "I02",
+     "H01"
+    ],
+    "cost": 880000,
+    "cost_wk": 880000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 30,
+    "data_loss_h": 0.0,
+    "rto_gap": 26,
+    "rpo_gap": 0,
+    "chain": [
+     "S08",
+     "A14",
+     "H01"
+    ],
+    "cost": 615000,
+    "cost_wk": 615000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 30,
+    "data_loss_h": 0.0,
+    "rto_gap": 26,
+    "rpo_gap": 0,
+    "chain": [
+     "S09",
+     "A15",
+     "A01",
+     "I02",
+     "H01"
+    ],
+    "cost": 960000,
+    "cost_wk": 960000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 30,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11",
+     "A18",
+     "A01",
+     "I02",
+     "H01"
+    ],
+    "cost": 80000,
+    "cost_wk": 80000,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 21,
+  "total_cost": 16096000,
+  "start": "2026-10-27T09:00:00"
+ },
+ "SC06": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 6,
+    "data_loss_h": 0.0,
+    "rto_gap": 2,
+    "rpo_gap": 0,
+    "chain": [
+     "S02",
+     "A07",
+     "H02"
+    ],
+    "cost": 570000,
+    "cost_wk": 570000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S03"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 6,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07",
+     "A11",
+     "H02"
+    ],
+    "cost": 330000,
+    "cost_wk": 330000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 6,
+    "data_loss_h": 0.0,
+    "rto_gap": 2,
+    "rpo_gap": 0,
+    "chain": [
+     "S09",
+     "A15",
+     "H02"
+    ],
+    "cost": 360000,
+    "cost_wk": 360000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 6,
+    "data_loss_h": 0.0,
+    "rto_gap": 2,
+    "rpo_gap": 0,
+    "chain": [
+     "S10",
+     "A16",
+     "H02"
+    ],
+    "cost": 90000,
+    "cost_wk": 75000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 8,
+  "total_cost": 1350000,
+  "start": "2026-10-26T08:00:00"
+ },
+ "SC07": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 18,
+    "data_loss_h": 0.0,
+    "rto_gap": 17,
+    "rpo_gap": 0,
+    "chain": [
+     "S01",
+     "A02",
+     "H05"
+    ],
+    "cost": 5166000,
+    "cost_wk": 5166000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S02"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S03"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 18,
+    "data_loss_h": 0.0,
+    "rto_gap": 16,
+    "rpo_gap": 0,
+    "chain": [
+     "S04",
+     "A05",
+     "H05"
+    ],
+    "cost": 340000,
+    "cost_wk": 340000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 18,
+    "data_loss_h": 0.0,
+    "rto_gap": 14,
+    "rpo_gap": 0,
+    "chain": [
+     "S06",
+     "A10",
+     "H05"
+    ],
+    "cost": 504000,
+    "cost_wk": 504000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 4,
+  "total_cost": 6010000,
+  "start": "2026-10-30T17:00:00"
+ },
+ "SC08": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 3,
+    "data_loss_h": 0.0,
+    "rto_gap": 2,
+    "rpo_gap": 0,
+    "chain": [
+     "S01",
+     "A02",
+     "X01"
+    ],
+    "cost": 1230000,
+    "cost_wk": 1230000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S02"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S03"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 2,
+  "total_cost": 1230000,
+  "start": "2026-10-31T12:00:00"
+ },
+ "SC09": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S02"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 6,
+    "data_loss_h": 0.0,
+    "rto_gap": 2,
+    "rpo_gap": 0,
+    "chain": [
+     "S03",
+     "A06",
+     "X02"
+    ],
+    "cost": 3450000,
+    "cost_wk": 3450000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 2,
+  "total_cost": 3450000,
+  "start": "2026-10-30T07:00:00"
+ },
+ "SC10": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S02"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S03"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 4,
+    "data_loss_h": 0.0,
+    "rto_gap": 2,
+    "rpo_gap": 0,
+    "chain": [
+     "S04",
+     "A05",
+     "X03"
+    ],
+    "cost": 1360000,
+    "cost_wk": 1309000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 2,
+  "total_cost": 1360000,
+  "start": "2026-10-30T14:00:00"
+ },
+ "SC11": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 5,
+    "data_loss_h": 0.0,
+    "rto_gap": 1,
+    "rpo_gap": 0,
+    "chain": [
+     "S02",
+     "A07",
+     "N03"
+    ],
+    "cost": 475000,
+    "cost_wk": 475000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S03"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 3,
+  "total_cost": 475000,
+  "start": "2026-10-26T12:00:00"
+ },
+ "SC12": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 20,
+    "data_loss_h": 0.0,
+    "rto_gap": 16,
+    "rpo_gap": 0,
+    "chain": [
+     "S02",
+     "A07",
+     "I01",
+     "N09",
+     "C1"
+    ],
+    "cost": 1387000,
+    "cost_wk": 1387000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 20,
+    "data_loss_h": 0.0,
+    "rto_gap": 16,
+    "rpo_gap": 0,
+    "chain": [
+     "S03",
+     "A06",
+     "I03",
+     "N01",
+     "C1"
+    ],
+    "cost": 2760000,
+    "cost_wk": 2139000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 20,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07",
+     "A11",
+     "I01",
+     "N09",
+     "C1"
+    ],
+    "cost": 330000,
+    "cost_wk": 330000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 20,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11",
+     "A19",
+     "I03",
+     "N01",
+     "C1"
+    ],
+    "cost": 37500,
+    "cost_wk": 37500,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 12,
+  "total_cost": 4514500,
+  "start": "2026-10-29T15:00:00"
+ },
+ "SC13": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 2.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S02",
+     "A07",
+     "A01",
+     "I02",
+     "H07"
+    ],
+    "cost": 190000,
+    "cost_wk": 190000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 2.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S03",
+     "A06",
+     "A04",
+     "I02",
+     "H07"
+    ],
+    "cost": 460000,
+    "cost_wk": 460000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 2.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S04",
+     "A05",
+     "A04",
+     "I02",
+     "H07"
+    ],
+    "cost": 680000,
+    "cost_wk": 680000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 2.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05",
+     "A09",
+     "A01",
+     "I02",
+     "H07"
+    ],
+    "cost": 140000,
+    "cost_wk": 112000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 2.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06",
+     "A10",
+     "A01",
+     "I02",
+     "H07"
+    ],
+    "cost": 80000,
+    "cost_wk": 80000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 2.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07",
+     "A12",
+     "A01",
+     "I02",
+     "H07"
+    ],
+    "cost": 110000,
+    "cost_wk": 110000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 2.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09",
+     "A15",
+     "A01",
+     "I02",
+     "H07"
+    ],
+    "cost": 120000,
+    "cost_wk": 120000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 2.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11",
+     "A18",
+     "A01",
+     "I02",
+     "H07"
+    ],
+    "cost": 10000,
+    "cost_wk": 10000,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 13,
+  "total_cost": 1790000,
+  "start": "2026-10-28T08:00:00"
+ },
+ "SC14": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 6,
+    "data_loss_h": 0.5,
+    "rto_gap": 2,
+    "rpo_gap": 0.25,
+    "chain": [
+     "S02",
+     "A07",
+     "A01",
+     "I02"
+    ],
+    "cost": 570000,
+    "cost_wk": 570000,
+    "txn_lost": 4500
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 6,
+    "data_loss_h": 0.5,
+    "rto_gap": 2,
+    "rpo_gap": 0.25,
+    "chain": [
+     "S03",
+     "A06",
+     "A04",
+     "I02"
+    ],
+    "cost": 1380000,
+    "cost_wk": 1380000,
+    "txn_lost": 20000
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 6,
+    "data_loss_h": 0.5,
+    "rto_gap": 4,
+    "rpo_gap": 0.45,
+    "chain": [
+     "S04",
+     "A05",
+     "A04",
+     "I02"
+    ],
+    "cost": 2040000,
+    "cost_wk": 1887000,
+    "txn_lost": 150
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 6,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05",
+     "A09",
+     "A01",
+     "I02"
+    ],
+    "cost": 420000,
+    "cost_wk": 280000,
+    "txn_lost": 1250
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 6,
+    "data_loss_h": 0.5,
+    "rto_gap": 2,
+    "rpo_gap": 0.25,
+    "chain": [
+     "S06",
+     "A10",
+     "A01",
+     "I02"
+    ],
+    "cost": 240000,
+    "cost_wk": 240000,
+    "txn_lost": 1500
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 6,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07",
+     "A12",
+     "A01",
+     "I02"
+    ],
+    "cost": 330000,
+    "cost_wk": 330000,
+    "txn_lost": 60
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 6,
+    "data_loss_h": 0.5,
+    "rto_gap": 2,
+    "rpo_gap": 0,
+    "chain": [
+     "S09",
+     "A15",
+     "A01",
+     "I02"
+    ],
+    "cost": 360000,
+    "cost_wk": 360000,
+    "txn_lost": 10
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 6,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11",
+     "A18",
+     "A01",
+     "I02"
+    ],
+    "cost": 30000,
+    "cost_wk": 30000,
+    "txn_lost": 250
+   }
+  ],
+  "assets_down": 12,
+  "total_cost": 5370000,
+  "start": "2026-10-27T11:00:00"
+ },
+ "SC15": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 4,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0.25,
+    "chain": [
+     "S02",
+     "A07",
+     "A01",
+     "I02",
+     "P02"
+    ],
+    "cost": 152000,
+    "cost_wk": 152000,
+    "txn_lost": 1800
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 8,
+    "data_loss_h": 0.5,
+    "rto_gap": 4,
+    "rpo_gap": 0.25,
+    "chain": [
+     "S03",
+     "A06",
+     "I03",
+     "P02"
+    ],
+    "cost": 460000,
+    "cost_wk": 322000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 4,
+    "data_loss_h": 0.5,
+    "rto_gap": 2,
+    "rpo_gap": 0.45,
+    "chain": [
+     "S04",
+     "A05",
+     "A04",
+     "I02",
+     "P02"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 4,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05",
+     "A09",
+     "A01",
+     "I02",
+     "P02"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 4,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0.25,
+    "chain": [
+     "S06",
+     "A10",
+     "A01",
+     "I02",
+     "P02"
+    ],
+    "cost": 64000,
+    "cost_wk": 64000,
+    "txn_lost": 600
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 8,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07",
+     "A12",
+     "D05",
+     "P06"
+    ],
+    "cost": 110000,
+    "cost_wk": 110000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 4,
+    "data_loss_h": 0.05,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08",
+     "A14",
+     "P02"
+    ],
+    "cost": 40000,
+    "cost_wk": 40000,
+    "txn_lost": 8
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 4,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09",
+     "A15",
+     "A01",
+     "I02",
+     "P02"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 12,
+    "data_loss_h": 0.5,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11",
+     "A18",
+     "P02"
+    ],
+    "cost": 30000,
+    "cost_wk": 30000,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 23,
+  "total_cost": 856000,
+  "start": "2026-10-29T02:00:00"
+ },
+ "SC16": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S02"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 18,
+    "data_loss_h": 24,
+    "rto_gap": 14,
+    "rpo_gap": 23.75,
+    "chain": [
+     "S03",
+     "A06",
+     "A04",
+     "D03",
+     "H10"
+    ],
+    "cost": 1840000,
+    "cost_wk": 1288000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 18,
+    "data_loss_h": 24,
+    "rto_gap": 16,
+    "rpo_gap": 23.95,
+    "chain": [
+     "S04",
+     "A05",
+     "A04",
+     "D03",
+     "H10"
+    ],
+    "cost": 2720000,
+    "cost_wk": 2312000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 18,
+    "data_loss_h": 24,
+    "rto_gap": 14,
+    "rpo_gap": 23,
+    "chain": [
+     "S08",
+     "A14",
+     "D03",
+     "H10"
+    ],
+    "cost": 315000,
+    "cost_wk": 315000,
+    "txn_lost": 7440
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 6,
+  "total_cost": 4875000,
+  "start": "2026-11-01T22:00:00"
+ },
+ "SC17": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 3,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S02",
+     "A07",
+     "P04"
+    ],
+    "cost": 285000,
+    "cost_wk": 285000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S03"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 3,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07",
+     "A11",
+     "I01",
+     "P04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 3,
+    "data_loss_h": 0.02,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08",
+     "A13",
+     "P04"
+    ],
+    "cost": 75000,
+    "cost_wk": 75000,
+    "txn_lost": 8
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 6,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11",
+     "A19",
+     "P03"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 8,
+  "total_cost": 360000,
+  "start": "2026-10-31T14:00:00"
+ },
+ "SC18": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S02"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S03"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 6,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05",
+     "A09",
+     "N07"
+    ],
+    "cost": 420000,
+    "cost_wk": 280000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 2,
+  "total_cost": 420000,
+  "start": "2026-10-26T09:00:00"
+ },
+ "SC19": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 3,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S02",
+     "A07",
+     "I01"
+    ],
+    "cost": 114000,
+    "cost_wk": 114000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S03"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 3,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07",
+     "A11",
+     "I01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S10"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 4,
+  "total_cost": 114000,
+  "start": "2026-10-26T00:00:00"
+ },
+ "SC20": {
+  "rows": [
+   {
+    "id": "S01",
+    "name": "Card payments",
+    "rto": 1,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S01"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S02",
+    "name": "Digital banking",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S02"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S03",
+    "name": "ACH and payroll",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S03"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S04",
+    "name": "Wire transfers",
+    "rto": 2,
+    "rpo": 0.05,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S04"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S05",
+    "name": "Branch banking",
+    "rto": 8,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S05"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S06",
+    "name": "ATM network",
+    "rto": 4,
+    "rpo": 0.25,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S06"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S07",
+    "name": "Lending",
+    "rto": 24,
+    "rpo": 4,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S07"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S08",
+    "name": "Financial crime",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S08"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S09",
+    "name": "Treasury and liquidity",
+    "rto": 4,
+    "rpo": 1,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S09"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   },
+   {
+    "id": "S10",
+    "name": "Customer contact",
+    "rto": 4,
+    "rpo": 24,
+    "down_h": 8,
+    "data_loss_h": 0.0,
+    "rto_gap": 4,
+    "rpo_gap": 0,
+    "chain": [
+     "S10",
+     "A16",
+     "X08"
+    ],
+    "cost": 120000,
+    "cost_wk": 90000,
+    "txn_lost": 0
+   },
+   {
+    "id": "S11",
+    "name": "Finance and reporting",
+    "rto": 48,
+    "rpo": 24,
+    "down_h": 0.0,
+    "data_loss_h": 0.0,
+    "rto_gap": 0,
+    "rpo_gap": 0,
+    "chain": [
+     "S11"
+    ],
+    "cost": 0,
+    "cost_wk": 0,
+    "txn_lost": 0
+   }
+  ],
+  "assets_down": 2,
+  "total_cost": 120000,
+  "start": "2026-10-26T08:00:00"
+ }
+}

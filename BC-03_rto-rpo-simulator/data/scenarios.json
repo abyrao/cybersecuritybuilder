@@ -1,0 +1,383 @@
+[
+ {
+  "id": "SC01",
+  "name": "Ransomware in the data centers",
+  "category": "Cyber",
+  "start": "Fri 07:00",
+  "seeds": [
+   {
+    "node": "H01",
+    "mode": "compromise"
+   },
+   {
+    "node": "P01",
+    "mode": "corruption"
+   },
+   {
+    "node": "P02",
+    "mode": "corruption"
+   },
+   {
+    "node": "D01",
+    "mode": "corruption"
+   },
+   {
+    "node": "D03",
+    "mode": "corruption"
+   },
+   {
+    "node": "D05",
+    "mode": "corruption"
+   }
+  ],
+  "suggested_whatif": "W1",
+  "injects": [
+   "Hour 0: VMs in both data centers show a ransom note. Domain admin accounts were used.",
+   "Hour 2: Payroll Friday. 6,200 business clients expect payroll to land today.",
+   "Hour 12: A reporter asks whether customer balances are accurate."
+  ]
+ },
+ {
+  "id": "SC02",
+  "name": "Core banking DB corruption",
+  "category": "Operational",
+  "start": "Mon 06:00",
+  "seeds": [
+   {
+    "node": "D01",
+    "mode": "corruption"
+   }
+  ],
+  "suggested_whatif": "W5",
+  "injects": [
+   "Hour 0: A bad patch corrupts ledger rows. Replication copies the damage to DC2 within seconds.",
+   "Hour 3: Branches report wrong balances.",
+   "Hour 8: Finance asks if month-end close can proceed."
+  ]
+ },
+ {
+  "id": "SC03",
+  "name": "Primary data center power loss",
+  "category": "Facilities",
+  "start": "Wed 10:00",
+  "seeds": [
+   {
+    "node": "F1",
+    "mode": "site"
+   }
+  ],
+  "suggested_whatif": "W3",
+  "injects": [
+   "Hour 0: Utility power and both generators fail at the primary site.",
+   "Hour 1: Card declines spike across all regions.",
+   "Hour 6: The facility team estimates 48 hours."
+  ]
+ },
+ {
+  "id": "SC04",
+  "name": "Cloud region East outage",
+  "category": "Third party",
+  "start": "Sat 20:00",
+  "seeds": [
+   {
+    "node": "R1",
+    "mode": "vendor",
+    "duration": 10
+   }
+  ],
+  "suggested_whatif": "W6",
+  "injects": [
+   "Hour 0: The cloud provider confirms a regional outage in East.",
+   "Hour 1: Fraud scoring is unavailable; card authorizations are waiting.",
+   "Hour 4: Mobile app reviews spike."
+  ]
+ },
+ {
+  "id": "SC05",
+  "name": "Active Directory corruption",
+  "category": "Operational",
+  "start": "Tue 09:00",
+  "seeds": [
+   {
+    "node": "H01",
+    "mode": "corruption"
+   }
+  ],
+  "suggested_whatif": "W2",
+  "injects": [
+   "Hour 0: A bad replication event deletes thousands of AD objects in every domain controller.",
+   "Hour 1: Staff can't sign in. Internal DNS answers fail.",
+   "Hour 6: The identity team starts forest recovery."
+  ]
+ },
+ {
+  "id": "SC06",
+  "name": "Cloud SSO and MFA outage",
+  "category": "Third party",
+  "start": "Mon 08:00",
+  "seeds": [
+   {
+    "node": "H02",
+    "mode": "vendor",
+    "duration": 6
+   }
+  ],
+  "suggested_whatif": null,
+  "injects": [
+   "Hour 0: SSO provider outage. No one can sign in to cloud apps.",
+   "Hour 1: Online banking login fails for customers.",
+   "Hour 3: Contact center agents can't reach CRM."
+  ]
+ },
+ {
+  "id": "SC07",
+  "name": "HSM cluster failure",
+  "category": "Operational",
+  "start": "Fri 17:00",
+  "seeds": [
+   {
+    "node": "H05",
+    "mode": "outage"
+   }
+  ],
+  "suggested_whatif": "W3",
+  "injects": [
+   "Hour 0: A firmware update bricks both HSM units.",
+   "Hour 0: PIN verification and wire signing stop.",
+   "Hour 4: The vendor ships replacements; keys must be restored from smart cards."
+  ]
+ },
+ {
+  "id": "SC08",
+  "name": "Card network link down",
+  "category": "Third party",
+  "start": "Sat 12:00",
+  "seeds": [
+   {
+    "node": "X01",
+    "mode": "vendor",
+    "duration": 3
+   }
+  ],
+  "suggested_whatif": null,
+  "injects": [
+   "Hour 0: Card network connectivity drops on both circuits.",
+   "Hour 1: Weekend shoppers see declines."
+  ]
+ },
+ {
+  "id": "SC09",
+  "name": "ACH operator outage",
+  "category": "Third party",
+  "start": "Fri 07:00",
+  "seeds": [
+   {
+    "node": "X02",
+    "mode": "vendor",
+    "duration": 6
+   }
+  ],
+  "suggested_whatif": null,
+  "injects": [
+   "Hour 0: The ACH operator delays all settlement windows.",
+   "Hour 2: Business clients call about payroll."
+  ]
+ },
+ {
+  "id": "SC10",
+  "name": "Wire network outage near cutoff",
+  "category": "Third party",
+  "start": "Fri 14:00",
+  "seeds": [
+   {
+    "node": "X03",
+    "mode": "vendor",
+    "duration": 4
+   }
+  ],
+  "suggested_whatif": null,
+  "injects": [
+   "Hour 0: Wire network messaging unavailable.",
+   "Hour 3: Real estate closings waiting on wires.",
+   "Hour 4: Same-day cutoff passes."
+  ]
+ },
+ {
+  "id": "SC11",
+  "name": "DDoS on digital channels",
+  "category": "Cyber",
+  "start": "Mon 12:00",
+  "seeds": [
+   {
+    "node": "N03",
+    "mode": "vendor",
+    "duration": 5
+   }
+  ],
+  "suggested_whatif": null,
+  "injects": [
+   "Hour 0: Traffic spikes 40x on online banking.",
+   "Hour 2: The DDoS provider is scrubbing; some traffic still drops."
+  ]
+ },
+ {
+  "id": "SC12",
+  "name": "Fiber cut at the primary site",
+  "category": "Facilities",
+  "start": "Thu 15:00",
+  "seeds": [
+   {
+    "node": "C1",
+    "mode": "outage",
+    "duration": 20
+   }
+  ],
+  "suggested_whatif": "W4",
+  "injects": [
+   "Hour 0: Construction crew cuts the street conduit.",
+   "Hour 0: Both ISPs report circuits down. They were sold as diverse.",
+   "Hour 3: Payroll files from clients can't reach file transfer."
+  ]
+ },
+ {
+  "id": "SC13",
+  "name": "Internal DNS failure",
+  "category": "Operational",
+  "start": "Wed 08:00",
+  "seeds": [
+   {
+    "node": "H07",
+    "mode": "corruption"
+   }
+  ],
+  "suggested_whatif": null,
+  "injects": [
+   "Hour 0: A bad zone push breaks internal name resolution.",
+   "Hour 1: Core banking and payments can't find their services."
+  ]
+ },
+ {
+  "id": "SC14",
+  "name": "Service bus failure",
+  "category": "Operational",
+  "start": "Tue 11:00",
+  "seeds": [
+   {
+    "node": "I02",
+    "mode": "outage"
+   }
+  ],
+  "suggested_whatif": null,
+  "injects": [
+   "Hour 0: The enterprise service bus stops processing.",
+   "Hour 2: Payments queue; core banking can't post."
+  ]
+ },
+ {
+  "id": "SC15",
+  "name": "SAN array failure",
+  "category": "Operational",
+  "start": "Thu 02:00",
+  "seeds": [
+   {
+    "node": "P05",
+    "mode": "outage"
+   }
+  ],
+  "suggested_whatif": null,
+  "injects": [
+   "Hour 0: The primary SAN controller pair fails.",
+   "Hour 1: Everything on VM cluster DC1 is down; failover to DC2 starts."
+  ]
+ },
+ {
+  "id": "SC16",
+  "name": "Backup console compromised",
+  "category": "Cyber",
+  "start": "Sun 22:00",
+  "seeds": [
+   {
+    "node": "H10",
+    "mode": "compromise"
+   },
+   {
+    "node": "D03",
+    "mode": "corruption"
+   }
+  ],
+  "suggested_whatif": "W5",
+  "injects": [
+   "Hour 0: Attacker deletes backup jobs and encrypts the payments DB.",
+   "Hour 1: The vault copies are intact, but the console must be rebuilt first."
+  ]
+ },
+ {
+  "id": "SC17",
+  "name": "Fraud platform outage",
+  "category": "Operational",
+  "start": "Sat 14:00",
+  "seeds": [
+   {
+    "node": "P03",
+    "mode": "outage"
+   }
+  ],
+  "suggested_whatif": "W6",
+  "injects": [
+   "Hour 0: Kubernetes East fails; fraud scoring stops.",
+   "Hour 0: Decide: approve cards without scoring, or decline?"
+  ]
+ },
+ {
+  "id": "SC18",
+  "name": "Branch network outage",
+  "category": "Operational",
+  "start": "Mon 09:00",
+  "seeds": [
+   {
+    "node": "N07",
+    "mode": "outage"
+   }
+  ],
+  "suggested_whatif": null,
+  "injects": [
+   "Hour 0: SD-WAN controller fails; 62 branches lose connection.",
+   "Hour 1: Branch managers switch to offline teller mode."
+  ]
+ },
+ {
+  "id": "SC19",
+  "name": "Expired API certificate",
+  "category": "Operational",
+  "start": "Mon 00:00",
+  "seeds": [
+   {
+    "node": "I01",
+    "mode": "corruption"
+   }
+  ],
+  "suggested_whatif": null,
+  "injects": [
+   "Hour 0: The API gateway certificate expires in both regions.",
+   "Hour 0: Failover doesn't help; the same certificate is used everywhere."
+  ]
+ },
+ {
+  "id": "SC20",
+  "name": "Telephony carrier outage",
+  "category": "Third party",
+  "start": "Mon 08:00",
+  "seeds": [
+   {
+    "node": "X08",
+    "mode": "vendor",
+    "duration": 8
+   }
+  ],
+  "suggested_whatif": null,
+  "injects": [
+   "Hour 0: Inbound calls fail.",
+   "Hour 2: Social media complaints rise; customers can't report lost cards."
+  ]
+ }
+]
