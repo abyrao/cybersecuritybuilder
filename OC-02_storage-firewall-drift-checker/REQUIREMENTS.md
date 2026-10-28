@@ -2,7 +2,7 @@
 
 **Build type:** Script (with a dashboard) · **Mindset shift:** Ownership and craft · **Owner:** Aby Rao
 **Visual scheme:** 4 · Forest Ledger (drawn at random from schemes no build has used)
-**Status:** Requirements ready · Prototype not yet built
+**Status:** Prototype built (see README.md)
 
 Requirements captured from Aby's voice notes on Oct 27, 2026, mapped to the ten build questions in the master template (`claude/Builder_Prototype_Template.md` in the project). Items marked *(assumed)* were filled in by Claude and need Aby's confirmation.
 
@@ -45,8 +45,8 @@ Six clouds: AWS, Microsoft Azure, Google Cloud, Oracle Cloud (OCI), Alibaba Clou
 
 Estate (generated from a fixed seed so every load matches):
 * 48 accounts, subscriptions, projects, and compartments across 6 business units, with production and non-production.
-* 172 virtual networks (VPC, VNet, VCN) and 610 subnets.
-* About **1,250 storage resources** of 33 types and about **920 firewall objects** holding about **6,400 rules**, across 26 types (below).
+* 176 virtual networks (VPC, VNet, VCN) and 637 subnets.
+* **1,267 storage resources** of 33 types and **1,023 firewall objects** of 26 types holding **5,026 rules** (as generated; below).
 * 90 days of configuration history per resource, so drift age and re-drift can be computed.
 
 Storage types (33):
@@ -84,14 +84,14 @@ Each resource carries business context: owner team, business unit, environment, 
 
 **6. What should the demo reveal?**
 Headline finding:
-* **Fixed isn't fixed.** About 1 in 4 of last quarter's remediations drifted back within 30 days. Every one of them was a console fix with no code change; none of the fixes made in code drifted back.
+* **Fixed isn't fixed.** 40 of last quarter's 160 remediations (25%) drifted back within 30 days. Every one was a console fix on a resource a pipeline manages, so the next deployment put the old setting back. None of the 72 code fixes drifted back.
 
 Supporting findings:
 * **A "temporary" rule that stayed.** 14 security groups in the production payroll network still allow SSH and RDP from 0.0.0.0/0, opened 97 days ago for a vendor migration. Priority P1, risk 25 of 25.
-* **Conformance varies by cloud.** AWS is highest (about 92%), and Alibaba Cloud and IBM Cloud are lowest (about 70%), mostly missing logging and network defaults.
+* **Conformance varies by cloud.** AWS is highest (97%); Alibaba Cloud (85%) and IBM Cloud (82%) are lowest, mostly on encryption, logging, and network defaults. Fleet conformance fell from 97% to 92.5% over 90 days.
 * **Blind spots.** 23 virtual networks have no flow logs at all, and Azure NSG flow logs keep 30 days against a 90-day baseline (drift 67%).
 * **Breadth matters.** A partner rule opens PostgreSQL (5432) to a /8: less open than 0.0.0.0/0 but still about 16.7 million addresses. Exposure drift 0.75.
-* **Quick wins.** About 210 drifts are safe to auto-fix (logging, versioning, default encryption) and remove about a third of the total drift score, with one approval.
+* **Quick wins.** 636 drifts are safe to auto-fix (logging, versioning, default encryption, retention) and hold 46% of open drift points. One approval takes fleet conformance from 92.5% to 96.0%.
 * **Expected, not drift.** The public static-website bucket is public by design and covered by an approved exception until Jan 31, 2027. It shows as excepted, not as drift.
 
 **7. What will I click during the demo?** *(assumed)*
@@ -254,7 +254,7 @@ Each control also stores: the intent, the per-cloud setting name and CIS section
 
 | Likelihood (1–5) | Rule |
 |---|---|
-| Exposure | Internet or anonymous 5 · partner range 4 · peered network 2 · isolated 1 |
+| Exposure | Exposure controls: internet or anonymous 5 · partner range or shared credentials 4 · inside the network 3 · peered network 2. Hygiene controls (logging, encryption, versioning, tags) start at 1 |
 | Attack path | +1 for admin or database port, or anonymous write |
 | Compensating control | −1 for WAF, private endpoint, or just-in-time access |
 | Drift age | +1 if older than 30 days |
@@ -298,7 +298,7 @@ One question per view. Top navigation: **Baseline · Inventory · Drift · Expos
 
 ### Workflow
 `Drifted → Fix submitted (code or console) → Re-check → Conforming`, or `Excepted (until date)`.
-* Console fixes have a 45% chance to re-drift on the next simulated deployment *(assumed)*; code fixes do not.
+* **Run pipeline** simulates the next deployment: console fixes on module-managed resources are overwritten; console fixes on console-managed resources, code fixes, and auto-fixes (module pull requests) hold.
 * Auto-fix batch: select eligible drifts → lead approves → apply → re-check all.
 
 ### Global
@@ -385,7 +385,12 @@ Drift result schema:
 
 ---
 
-## Open questions for Aby
-1. Keep Google Cloud as the sixth cloud? Azure was mentioned twice in the voice notes.
-2. Fix-time targets (48 hours, 7, 30, 90 days): use these, or your own?
-3. Should the Report view group conformance by business unit, by team, or both?
+## Decisions (Oct 27, 2026)
+1. Google Cloud is the sixth cloud.
+2. Fix-time targets: P1 48 hours, P2 7 days, P3 30 days, P4 90 days.
+3. The Report groups conformance by business unit and team together.
+
+## As-built results (seeded data)
+* Fleet conformance 92.5% · 1,392 open drifts on 855 resources · P1 145, P2 192, P3 672, P4 383.
+* Conformance by cloud: AWS 97.2% · Google Cloud 95.9% · Oracle Cloud 92.5% · Azure 91.5% · Alibaba Cloud 85.4% · IBM Cloud 82.2%.
+* All ten known-answer checks pass.
